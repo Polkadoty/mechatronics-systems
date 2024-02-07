@@ -3,9 +3,9 @@ clear all; clc;
 
 %Load in file 
 file0 = ['lab2sheets\room-Temp','.xlsx'];
-T = readmatrix(file0);
+M0 = readmatrix(file0);
 
-N = length(T(:,2));
+N = length(M0(:,2));
 
 freq = 1000; %Hz
 minute = 60; %minute in s
@@ -13,9 +13,9 @@ time = N/(minute*freq);
 dt = (freq*minute)^-1;
 
 %data
-thermistordata = T(:,2);
-ICdata = T(:,4);
-thermocoupledata = T(:,6);
+thermistordata = M0(:,2);
+ICdata = M0(:,4);
+thermocoupledata = M0(:,6);
 
 %averages and SD
 avgthermistor = mean(thermistordata);
