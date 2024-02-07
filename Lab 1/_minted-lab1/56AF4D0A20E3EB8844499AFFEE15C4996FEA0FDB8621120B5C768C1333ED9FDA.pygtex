@@ -1,0 +1,168 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k+kn}{import} \PYG{n+nn}{math}
+  \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+
+  \PYG{c+c1}{\PYGZsh{} Define the given dimensions in millimeters as dictionaries}
+  \PYG{n}{measurement1} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+  	\PYG{l+s+s1}{\PYGZsq{}trapezoid1\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}short\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{19.03}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}long\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.03}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{8.66}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}trapezoid2\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}short\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{19.27}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}long\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.03}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{8.33}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}rectangle\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}base\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.03}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{23.60}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}circle\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}diameter\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{15.89}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{41.03}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{134.45}\PYG{p}{\PYGZcb{}}
+
+
+  \PYG{p}{\PYGZcb{}}
+
+
+  \PYG{n}{measurement2} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+  	\PYG{l+s+s1}{\PYGZsq{}trapezoid1\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}short\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{19.11}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}long\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.04}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{8.74}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}trapezoid2\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}short\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{19.31}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZus{}long\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.04}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{8.47}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}rectangle\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}base\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{38.04}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{23.60}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}circle\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}diameter\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{15.77}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{41.06}\PYG{p}{\PYGZcb{},}
+  	\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{134.43}\PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+
+
+  \PYG{c+c1}{\PYGZsh{} Combine the measurements into one dictionary called dimensions}
+  \PYG{n}{dimensions} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{o}{**}\PYG{n}{measurement1}\PYG{p}{,} \PYG{o}{**}\PYG{n}{measurement2}\PYG{p}{\PYGZcb{}}
+
+
+  \PYG{c+c1}{\PYGZsh{} Define uncertainty}
+  \PYG{n}{uncertainty} \PYG{o}{=} \PYG{l+m+mf}{.005}  \PYG{c+c1}{\PYGZsh{} mm}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to calculate the area of a trapezoid}
+  \PYG{k}{def} \PYG{n+nf}{area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{n}{b\PYGZus{}short}\PYG{p}{,} \PYG{n}{b\PYGZus{}long}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{l+m+mf}{0.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{b\PYGZus{}short} \PYG{o}{+} \PYG{n}{b\PYGZus{}long}\PYG{p}{)} \PYG{o}{*} \PYG{n}{height}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to calculate the area of a rectangle}
+  \PYG{k}{def} \PYG{n+nf}{area\PYGZus{}rectangle}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{base} \PYG{o}{*} \PYG{n}{height}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to calculate the area of a circle}
+  \PYG{k}{def} \PYG{n+nf}{area\PYGZus{}circle}\PYG{p}{(}\PYG{n}{diameter}\PYG{p}{):}
+  	\PYG{n}{radius} \PYG{o}{=} \PYG{n}{diameter} \PYG{o}{/} \PYG{l+m+mi}{2}
+  	\PYG{k}{return} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{*} \PYG{p}{(}\PYG{n}{radius}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate areas of the shapes}
+  \PYG{n}{A\PYGZus{}trapezoid1} \PYG{o}{=} \PYG{n}{area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}trapezoid1\PYGZsq{}}\PYG{p}{])}
+  \PYG{n}{A\PYGZus{}trapezoid2} \PYG{o}{=} \PYG{n}{area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}trapezoid2\PYGZsq{}}\PYG{p}{])}
+  \PYG{n}{A\PYGZus{}rectangle} \PYG{o}{=} \PYG{n}{area\PYGZus{}rectangle}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}rectangle\PYGZsq{}}\PYG{p}{])}
+  \PYG{n}{A\PYGZus{}circle} \PYG{o}{=} \PYG{n}{area\PYGZus{}circle}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}circle\PYGZsq{}}\PYG{p}{])}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate the total area of the cross\PYGZhy{}section}
+  \PYG{n}{total\PYGZus{}area\PYGZus{}cross\PYGZus{}section} \PYG{o}{=} \PYG{n}{A\PYGZus{}trapezoid1} \PYG{o}{+} \PYG{n}{A\PYGZus{}trapezoid2} \PYG{o}{+} \PYG{n}{A\PYGZus{}rectangle} \PYG{o}{\PYGZhy{}} \PYG{n}{A\PYGZus{}circle}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to calculate volume}
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}volume}\PYG{p}{(}\PYG{n}{area}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{area} \PYG{o}{*} \PYG{n}{height}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to calculate density}
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}density}\PYG{p}{(}\PYG{n}{mass}\PYG{p}{,} \PYG{n}{volume}\PYG{p}{):}
+  	\PYG{n}{volume\PYGZus{}cm3} \PYG{o}{=} \PYG{n}{volume} \PYG{o}{/} \PYG{l+m+mi}{1000}  \PYG{c+c1}{\PYGZsh{} Convert mm\PYGZca{}3 to cm\PYGZca{}3 for density calculation}
+  	\PYG{k}{return} \PYG{n}{mass} \PYG{o}{/} \PYG{n}{volume\PYGZus{}cm3}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate volume and density}
+  \PYG{n}{volume\PYGZus{}mm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}volume}\PYG{p}{(}\PYG{n}{total\PYGZus{}area\PYGZus{}cross\PYGZus{}section}\PYG{p}{,} \PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{])}
+  \PYG{n}{density\PYGZus{}g\PYGZus{}cm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}density}\PYG{p}{(}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{],} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{)}
+
+
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{A\PYGZus{}trapezoid1}\PYG{p}{,} \PYG{n}{A\PYGZus{}trapezoid2}\PYG{p}{,} \PYG{n}{A\PYGZus{}rectangle}\PYG{p}{,} \PYG{n}{A\PYGZus{}circle}\PYG{p}{,} \PYG{n}{total\PYGZus{}area\PYGZus{}cross\PYGZus{}section}\PYG{p}{,} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{,} \PYG{n}{density\PYGZus{}g\PYGZus{}cm3}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate uncertainty in areas}
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{n}{b\PYGZus{}short}\PYG{p}{,} \PYG{n}{b\PYGZus{}long}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{l+m+mf}{0.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{b\PYGZus{}short} \PYG{o}{+} \PYG{n}{b\PYGZus{}long}\PYG{p}{)} \PYG{o}{*} \PYG{n}{height} \PYG{o}{*} \PYG{n}{uncertainty}
+
+
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}rectangle}\PYG{p}{(}\PYG{n}{base}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{base} \PYG{o}{*} \PYG{n}{height} \PYG{o}{*} \PYG{n}{uncertainty}
+
+
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}circle}\PYG{p}{(}\PYG{n}{diameter}\PYG{p}{):}
+  	\PYG{n}{radius} \PYG{o}{=} \PYG{n}{diameter} \PYG{o}{/} \PYG{l+m+mi}{2}
+  	\PYG{k}{return} \PYG{n}{math}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{*} \PYG{p}{(}\PYG{n}{radius}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{*} \PYG{n}{uncertainty}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate uncertainty in volume}
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}uncertainty\PYGZus{}volume}\PYG{p}{(}\PYG{n}{area}\PYG{p}{,} \PYG{n}{height}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{area} \PYG{o}{*} \PYG{n}{height} \PYG{o}{*} \PYG{n}{uncertainty}
+
+
+  \PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}volume}\PYG{p}{(}\PYG{n}{total\PYGZus{}area\PYGZus{}cross\PYGZus{}section}\PYG{p}{,} \PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{])}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate uncertainty in density}
+  \PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}uncertainty\PYGZus{}density}\PYG{p}{(}\PYG{n}{mass}\PYG{p}{,} \PYG{n}{volume}\PYG{p}{):}
+  	\PYG{k}{return} \PYG{n}{calculate\PYGZus{}density}\PYG{p}{(}\PYG{n}{mass}\PYG{p}{,} \PYG{n}{volume}\PYG{p}{)} \PYG{o}{*} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{((}\PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3} \PYG{o}{/} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{)}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+
+  \PYG{n}{uncertainty\PYGZus{}density\PYGZus{}g\PYGZus{}cm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}density}\PYG{p}{(}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{],} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{)}
+
+
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}density\PYGZus{}g\PYGZus{}cm3}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Print results}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}The volume of the object is\PYGZsq{}}\PYG{p}{,} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}mm\PYGZca{}3\PYGZsq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}The density of the object is\PYGZsq{}}\PYG{p}{,} \PYG{n}{density\PYGZus{}g\PYGZus{}cm3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}g/cm\PYGZca{}3\PYGZsq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}The uncertainty in the volume is\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}mm\PYGZca{}3\PYGZsq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}The uncertainty in the density is\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}density\PYGZus{}g\PYGZus{}cm3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}g/cm\PYGZca{}3\PYGZsq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Function to propagate uncertainty through the entire process}
+  \PYG{k}{def} \PYG{n+nf}{propagate\PYGZus{}uncertainty}\PYG{p}{():}
+  	\PYG{c+c1}{\PYGZsh{} Calculate uncertainty in areas}
+  	\PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid1} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}trapezoid1\PYGZsq{}}\PYG{p}{])}
+  	\PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid2} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}trapezoid}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}trapezoid2\PYGZsq{}}\PYG{p}{])}
+  	\PYG{n}{uncertainty\PYGZus{}A\PYGZus{}rectangle} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}rectangle}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}rectangle\PYGZsq{}}\PYG{p}{])}
+  	\PYG{n}{uncertainty\PYGZus{}A\PYGZus{}circle} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}area\PYGZus{}circle}\PYG{p}{(}\PYG{o}{**}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}circle\PYGZsq{}}\PYG{p}{])}
+
+
+  	\PYG{c+c1}{\PYGZsh{} Calculate uncertainty in total area}
+  	\PYG{n}{uncertainty\PYGZus{}total\PYGZus{}area\PYGZus{}cross\PYGZus{}section} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid1}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid2}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}rectangle}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}circle}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+
+  	\PYG{c+c1}{\PYGZsh{} Calculate uncertainty in volume}
+  	\PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}volume}\PYG{p}{(}\PYG{n}{total\PYGZus{}area\PYGZus{}cross\PYGZus{}section}\PYG{p}{,} \PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}height\PYGZsq{}}\PYG{p}{])}
+
+
+  	\PYG{c+c1}{\PYGZsh{} Calculate uncertainty in density}
+  	\PYG{n}{uncertainty\PYGZus{}density\PYGZus{}g\PYGZus{}cm3} \PYG{o}{=} \PYG{n}{calculate\PYGZus{}uncertainty\PYGZus{}density}\PYG{p}{(}\PYG{n}{dimensions}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}mass\PYGZsq{}}\PYG{p}{],} \PYG{n}{volume\PYGZus{}mm3}\PYG{p}{)}
+
+
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in A\PYGZus{}trapezoid1:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid1}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in A\PYGZus{}trapezoid2:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}trapezoid2}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in A\PYGZus{}rectangle:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}rectangle}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in A\PYGZus{}circle:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}A\PYGZus{}circle}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in total\PYGZus{}area\PYGZus{}cross\PYGZus{}section:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}total\PYGZus{}area\PYGZus{}cross\PYGZus{}section}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in volume:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}volume\PYGZus{}mm3}\PYG{p}{)}
+  	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uncertainty in density:\PYGZsq{}}\PYG{p}{,} \PYG{n}{uncertainty\PYGZus{}density\PYGZus{}g\PYGZus{}cm3}\PYG{p}{)}
+
+
+  \PYG{n}{propagate\PYGZus{}uncertainty}\PYG{p}{()}
+
+    \PYG{c+c1}{\PYGZsh{} Calculate the sample mean for each density value:}
+  \PYG{n}{density\PYGZus{}values} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{2.7396}\PYG{p}{,} \PYG{l+m+mf}{2.7541}\PYG{p}{]}
+  \PYG{n}{mean\PYGZus{}density} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{density\PYGZus{}values}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Sample Mean: \PYGZsq{}}\PYG{p}{,} \PYG{n}{mean\PYGZus{}density}\PYG{p}{)}
+
+  \PYG{c+c1}{\PYGZsh{} Calculate the standard deviation of the density values}
+  \PYG{n}{std\PYGZus{}dev\PYGZus{}density} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{density\PYGZus{}values}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Standard Deviation: \PYGZsq{}}\PYG{p}{,} \PYG{n}{std\PYGZus{}dev\PYGZus{}density}\PYG{p}{)}
+
+  \PYG{c+c1}{\PYGZsh{} Calculate the measurement with confidence interval}
+  \PYG{n}{confidence\PYGZus{}interval} \PYG{o}{=} \PYG{l+m+mf}{1.96} \PYG{o}{*} \PYG{p}{(}\PYG{n}{std\PYGZus{}dev\PYGZus{}density} \PYG{o}{/} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{density\PYGZus{}values}\PYG{p}{)))}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Confidence Interval: \PYGZsq{}}\PYG{p}{,} \PYG{n}{confidence\PYGZus{}interval}\PYG{p}{)}
+
+\end{Verbatim}

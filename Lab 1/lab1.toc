@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Equipment}{2}{section.2}%
+\contentsline {section}{\numberline {3}Procedure}{2}{section.3}%
+\contentsline {section}{\numberline {4}Data Processing}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Part 1}{4}{subsection.4.1}%
+\contentsline {paragraph}{Total Area in Different Units}{5}{section*.5}%
+\contentsline {paragraph}{Uncertainty Propagation}{5}{section*.6}%
+\contentsline {subsubsection}{\numberline {4.1.1}Confidence Interval I}{5}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Part 2}{6}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Triangular Approximation}{6}{subsubsection.4.2.1}%
+\contentsline {paragraph}{Triangle Areas}{6}{section*.7}%
+\contentsline {paragraph}{Square Area}{6}{section*.8}%
+\contentsline {paragraph}{Circular Area}{6}{section*.9}%
+\contentsline {paragraph}{Total Cross-Sectional Area}{6}{section*.10}%
+\contentsline {paragraph}{Volume and Density}{7}{section*.11}%
+\contentsline {paragraph}{Volume Calculation}{7}{section*.12}%
+\contentsline {paragraph}{Density Calculation}{7}{section*.13}%
+\contentsline {subsubsection}{\numberline {4.2.2}Trapezoidal Approximation}{7}{subsubsection.4.2.2}%
+\contentsline {paragraph}{Area Calculations}{7}{section*.14}%
+\contentsline {paragraph}{Total Area and Volume}{7}{section*.15}%
+\contentsline {paragraph}{Density Calculation}{7}{section*.16}%
+\contentsline {paragraph}{Uncertainty in Areas}{8}{section*.17}%
+\contentsline {paragraph}{Total Uncertainty}{8}{section*.18}%
+\contentsline {subsubsection}{\numberline {4.2.3}Confidence Interval II}{8}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {5}Results}{9}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}%

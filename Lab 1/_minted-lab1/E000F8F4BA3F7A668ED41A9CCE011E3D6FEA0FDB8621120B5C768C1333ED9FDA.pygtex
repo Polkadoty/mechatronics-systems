@@ -1,0 +1,72 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+  \PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+  \PYG{k+kn}{import} \PYG{n+nn}{math}
+
+
+  \PYG{k}{def} \PYG{n+nf}{propagate\PYGZus{}uncertainty}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n}{uncertainty}\PYG{p}{,} \PYG{n}{func}\PYG{p}{):}
+  	\PYG{n}{derivative} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{func}\PYG{p}{(}\PYG{n}{value} \PYG{o}{+} \PYG{n}{uncertainty}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{func}\PYG{p}{(}\PYG{n}{value} \PYG{o}{\PYGZhy{}} \PYG{n}{uncertainty}\PYG{p}{))} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{uncertainty}\PYG{p}{)}
+  	\PYG{n}{propagated\PYGZus{}uncertainty} \PYG{o}{=} \PYG{n}{derivative} \PYG{o}{*} \PYG{n}{uncertainty}
+  	\PYG{k}{return} \PYG{n}{propagated\PYGZus{}uncertainty}
+
+
+  \PYG{n}{door\PYGZus{}frame} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{7.171}\PYG{p}{,} \PYG{l+m+mf}{7.154}\PYG{p}{,} \PYG{l+m+mf}{7.177}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} mm}
+  \PYG{n}{conversion2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{door\PYGZus{}frame}\PYG{p}{)} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{door\PYGZus{}frame}\PYG{p}{)}
+  \PYG{n}{conversion} \PYG{o}{=} \PYG{l+m+mi}{36} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{door\PYGZus{}frame}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} in}
+  \PYG{n}{in\PYGZus{}to\PYGZus{}ft} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{l+m+mi}{12} \PYG{c+c1}{\PYGZsh{} ft}
+  \PYG{n}{foot\PYGZus{}to\PYGZus{}m} \PYG{o}{=} \PYG{l+m+mf}{0.3048}  \PYG{c+c1}{\PYGZsh{} ft/m}
+
+
+  \PYG{n}{totalAreaCAD} \PYG{o}{=} \PYG{l+m+mf}{9431.731} \PYG{c+c1}{\PYGZsh{} mm\PYGZca{}2}
+  \PYG{n}{cadUncertainty} \PYG{o}{=} \PYG{l+m+mf}{0.0005} \PYG{c+c1}{\PYGZsh{} mm\PYGZca{}2}
+
+
+  \PYG{n}{totalArea\PYGZus{}CAD2} \PYG{o}{=} \PYG{n}{totalAreaCAD} \PYG{o}{*} \PYG{n}{conversion2}\PYG{o}{**}\PYG{l+m+mi}{2}
+
+
+
+
+  \PYG{n}{totalArea\PYGZus{}in} \PYG{o}{=} \PYG{n}{totalAreaCAD} \PYG{o}{*} \PYG{n}{conversion}\PYG{o}{**}\PYG{l+m+mi}{2}
+
+
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Total area of cross section CAD: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}CAD2}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} CADmm\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Total area of cross section in: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} in\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Total area of cross section ft: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} ft\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Total area of cross section m: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{foot\PYGZus{}to\PYGZus{}m}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} m\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Example usage of the propagate\PYGZus{}uncertainty function}
+  \PYG{n}{propagated\PYGZus{}area\PYGZus{}uncertainty} \PYG{o}{=} \PYG{n}{propagate\PYGZus{}uncertainty}\PYG{p}{(}\PYG{n}{totalAreaCAD}\PYG{p}{,} \PYG{n}{cadUncertainty}\PYG{p}{,} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x} \PYG{o}{*} \PYG{n}{conversion}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Propagated uncertainty of total area: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{propagated\PYGZus{}area\PYGZus{}uncertainty}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} in\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Take mean of areas in feet}
+  \PYG{n}{mean\PYGZus{}area\PYGZus{}ft} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mean area in ft: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{mean\PYGZus{}area\PYGZus{}ft}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} ft\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Take standard deviation of areas compared to mean}
+  \PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}ft} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Standard deviation of area in ft: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}ft}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} ft\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Take mean of areas in meters}
+  \PYG{n}{mean\PYGZus{}area\PYGZus{}m} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{foot\PYGZus{}to\PYGZus{}m}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mean area in m: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{mean\PYGZus{}area\PYGZus{}m}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} m\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Take standard deviation of areas compared to mean}
+  \PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}m} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{std}\PYG{p}{(}\PYG{n}{totalArea\PYGZus{}in} \PYG{o}{*} \PYG{n}{in\PYGZus{}to\PYGZus{}ft}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{foot\PYGZus{}to\PYGZus{}m}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Standard deviation of area in m: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}m}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} m\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate bias error}
+  \PYG{n}{bias\PYGZus{}error} \PYG{o}{=} \PYG{n}{cadUncertainty} \PYG{o}{\PYGZhy{}} \PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}m}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Bias error: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{bias\PYGZus{}error}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} m\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} Calculate standard error}
+  \PYG{n}{standard\PYGZus{}error} \PYG{o}{=} \PYG{n}{propagated\PYGZus{}area\PYGZus{}uncertainty} \PYG{o}{\PYGZhy{}} \PYG{n}{std\PYGZus{}dev\PYGZus{}area\PYGZus{}m}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Standard error: \PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{standard\PYGZus{}error}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} m\PYGZca{}2\PYGZdq{}}\PYG{p}{)}
+
+\end{Verbatim}
