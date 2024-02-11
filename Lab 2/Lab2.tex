@@ -13,7 +13,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{matlab-prettifier}
 \usepackage{minted}
-\usepackage{pdfpages}
+\usepackage{enumitem}
 
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
@@ -68,13 +68,13 @@ The equipment used in this experiment include .....
 
 K-type Thermocouple:  connected to NI 9211
 
-Thermistor:  connected to NI 9215 via breadboard w/ $1\text{k}\;\Omega$ resistor etc....
+Thermistor:  connected to NI 9215 via breadboard w/ $1\text{k}\Omega$ resistor etc....
 
 IC Temperature Sensor: connected to NI 9215
 
 Breadboard: 
 
-Circuit Components:  various male-to-male jumper wires, $1\text{k}\;\Omega$ resistor, etc... and 5V power supply
+Circuit Components:  various male-to-male jumper wires, $1\text{k}\Omega$ resistor, etc... and 5V power supply
 
 DAQ:  Data Aquisition system that digitizes analog information into "bins" for a computer.  The specific DAQ had two units, the NI 9215 and NI 9211.  Specific Datasheets for each are included in the appendices.  
 
@@ -95,6 +95,21 @@ Water:  Access to water near a boiling temperature, and water in an ice bath.
 
 
 \section{Data Processing}
+\subsection{Variables}
+\begin{enumerate}[label = \roman*.]
+    \item \(N = \) Number of Samples
+    \item \(f = \) Sampling Frequency
+    \item \(\gamma = \) Confidence Level \%
+    \item \(R_{s} = \) Sensor Resistance [Ohms = $\Omega$], in this experiment it will be $1\text{k}\Omega$
+\end{enumerate}
+
+\subsection{Equations}
+\begin{enumerate}[label = \Roman*.]
+    \item Sample Mean: \(\bar{x} = \dfrac{1}{N}\displaystyle\sum_{i=1}^{N} x_{i}\) 
+    \item Standard Deviation of the Mean: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
+    \item 
+\end{enumerate}
+ 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, angle = -90]{Lab 2/lab2images/labview_plots.jpg}
