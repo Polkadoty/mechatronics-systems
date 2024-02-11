@@ -14,6 +14,7 @@
 \usepackage{matlab-prettifier}
 \usepackage{minted}
 \usepackage{enumitem}
+\usepackage{float}
 
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
@@ -69,6 +70,11 @@ The equipment used in this experiment include .....
 K-type Thermocouple:  connected to NI 9211
 
 Thermistor:  connected to NI 9215 via breadboard w/ $1\text{k}\Omega$ resistor etc....
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Lab 2/lab2images/thermistor_circuit.jpg}
+    \caption{Thermistor Circuit}
+\end{figure}
 
 IC Temperature Sensor: connected to NI 9215
 
@@ -95,16 +101,18 @@ Water:  Access to water near a boiling temperature, and water in an ice bath.
 
 
 \section{Data Processing}
-\subsection{Variables}
+\subsubsection*{Variables}
 \begin{enumerate}[label = \roman*.]
     \item \(N = \) Number of Samples
     \item \(f_{s} = \) Sampling Frequency, $s^{-1}$
     \item \(\Delta t = \) Sampling Interval, $s$
     \item \(\gamma = \) Confidence Level, \%
     \item \(R_{s} = \) Sensor Resistance, Ohms = $\Omega$ (In this experiment it will be $1\text{k}\Omega$)
+    \item \(V_{S} = \) Source voltage, Volts = $V$ ($5\;V$ for this experiment)
+    \item \(R_{T} = \) Themistor resistance, $\Omega$
 \end{enumerate}
 
-\subsection{Equations}
+\subsubsection*{Equations}
 \begin{enumerate}[label = \Roman*.]
     \item Sample Mean: \(\bar{x} = \dfrac{1}{N}\displaystyle\sum_{i=1}^{N} x_{i}\) 
     \item Standard Deviation of the Mean: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
