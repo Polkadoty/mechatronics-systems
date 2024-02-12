@@ -96,7 +96,15 @@ Water:  Access to water at two temperatures, near boiling, and ice cold.
 \caption{Temperature Sensors, Water mug, and Breadboard circuit}
 \end{figure}
 
-The DAQ, with the NI 9211 and NI 9215 modules already installed, was connected to an external 5V power supply as well as to the computer.  The LabVIEW software is used to digitize the data from the temperature sensors.  To do this, the following block diagram was created '''''''insert picture here from lab session''''''''' (figure xxx).    The DAQ block had signals for each sensor, measuring at a 1000hz frequency.  The collector is initially given a size of 500,000 samples.  Each sensor from the DAQ was given its own graph using a split signal, and a "write to measure file" block was placed to save our data to an Excel file.  
+The DAQ, with the NI 9211 and NI 9215 modules already installed, was connected to an external 5V power supply as well as to the computer.  The LabVIEW software is used to digitize the data from the temperature sensors.  To do this, the following block diagram was created.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{lab2images/ProcessDiagram.png}
+\caption{Temperature Sensors, Water mug, and Breadboard circuit}
+\end{figure}
+
+The DAQ block had signals for each sensor, measuring at a 1000hz frequency.  The collector is initially given a size of 500,000 samples.  Each sensor from the DAQ was given its own graph using a split signal, and a "write to measure file" block was placed to save our data to an Excel file.  
 
 Now that our digital sensing was set up, we had to create the physical circuits. The thermocouple was connected directly into the NI 9211 module.  The NI 9215 and power supply were connected to a breadboard. 
  The Thermistor was connected to a $1\text{k}\Omega$ resistor in a voltage divider configuration. The TMP36 was connected to the 5V power supply and the NI 9215 module.  This configuration is shown in figure 2.
@@ -111,7 +119,7 @@ To gather the room temperature data, the sensors were placed in an unused area i
  
 \subsubsection{Part 2a: Hot Water} % Subsubsection 1
 
-An electric kettle was used to heat up water to near boiling.  The LabVIEW simulation was started with the sensors in the ambient environment until the graphs appeared to reach steady-state, which is ________________, and then were abruptly submerged in the boiling water.  They stayed in the water until the graph once again appeared at steady-state.  This experiment was run over 2 minutes and at a frequency of 1000hz.  The region between the two steady-states will be used to calculate the time-constant.  
+An electric kettle was used to heat up water to near boiling.  The LabVIEW simulation was started with the sensors in the ambient environment until the graphs appeared to reach steady-state, which acts as an asymptote on the value from the sensors, and then were abruptly submerged in the boiling water.  They stayed in the water until the graph once again appeared at steady-state.  This experiment was run over 2 minutes and at a frequency of 1000hz.  The region between the two steady-states will be used to calculate the time-constant.  
 
 \subsubsection{Part 2b: Water Cooling} % Subsubsection 2
 
@@ -148,46 +156,13 @@ The data was measured simultaneously for each sensor.
     \item Standard Deviation of the Mean: \(\dfrac{S_{x}}{\sqrt{N}}\)
     \item Average Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
     \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\), where $A$, $B$, $C$ are the Thermistor's calibration coefficients.
-\end{enumerate}
- 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth, angle = -90]{lab2images/labview_plots.jpg}
-\caption{Plotting data on LabVIEW}
-\end{figure}
+\end{enumerate}  
 
-\subsection{Part 1: Ambient Temperature}
-In Part 1 of the experiment we take measurements of the laboratory room temperature using each of the three sensors: thermocouple, thermistor, and IC TMP36. The data displayed below shows the temperature sensors at work for $1$ minute of sampling at $f_{s} = 1000\; s^{-1}$. This means $\Delta t_{s} = (f_{s}\cdot 60)^{-1} = 1.6667\times10^{-5}\; \text{minutes}$.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.655\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
-    \caption{Thermistor at ambient temperature}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.655\textwidth]{lab2images/ICTMP36_roomtemp_1min_plot.png}
-    \caption{IC TMP36 at ambient temperature}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.655\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
-    \caption{Thermocouple at ambient temperature}
-\end{figure}
-
-There are small spikes occurring around half of the period for the Thermistor's output. This disturbance could have been due to the Thermistor's sensitivity to very small changes in temperature, possibly due to slight movement (increased kinetic energy correlates to increased thermal energy).
-
-The TMP36 data appears to be white noise for the entirety of the $1$ minute period with a large temperature interval. This shows the inaccuracy of the TMP36 when comparing to the other two sensors.
-
-Similar to the small change in the Thermistor's output, the Thermocouple sees small changes as it is decreasing to a steady-state.  
-
+\subsection*{Conversions}
 The IC/TMP36 sensor originally outputs voltage. This was converted to $\degree C$ by taking the IC TMP36 output, say $x_{V}$ ($V$ for volt), and converting by $x_{\degree C} = 100\cdot(x_{V}-0.5)$. This conversion comes from the TMP36 datasheet ($10\,mV/\degree C$ w/ $500\,mV$ offset):
 \begin{center}
     \href{https://www.analog.com/media/en/technical-documentation/data-sheets/tmp35_36_37.pdf}{\includegraphics[width = 0.6\textwidth]{lab2images/tmp36_offset_documentation.png}}
 \end{center}
-
 
 
 \subsubsection{Mean Temperature in Laboratory w/ Confidence Interval}
@@ -228,8 +203,41 @@ Below are the average temperatures w/ the confidence interval for each of the th
 \subsection{Part 2: Hot and Cold Water}
 
 
-\section{Results and Analysis}
-(Answer Observation Questions from Part 2)
+\section{Results}
+This section analyzes the results of our data for the three temperature sensors in each environment.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth, angle = -90]{lab2images/labview_plots.jpg}
+    \caption{Plotting data on LabVIEW}
+    \end{figure}
+    
+    \subsection{Part 1: Ambient Temperature}
+    In Part 1 of the experiment we take measurements of the laboratory room temperature using each of the three sensors: thermocouple, thermistor, and IC TMP36. The data displayed below shows the temperature sensors at work for $1$ minute of sampling at $f_{s} = 1000\; s^{-1}$. This means $\Delta t_{s} = (f_{s}\cdot 60)^{-1} = 1.6667\times10^{-5}\; \text{minutes}$.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.655\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
+        \caption{Thermistor at ambient temperature}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.655\textwidth]{lab2images/ICTMP36_roomtemp_1min_plot.png}
+        \caption{IC TMP36 at ambient temperature}
+    \end{figure}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.655\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
+        \caption{Thermocouple at ambient temperature}
+    \end{figure}
+    
+    There are small spikes occurring around half of the period for the Thermistor's output. This disturbance could have been due to the Thermistor's sensitivity to very small changes in temperature, possibly due to slight movement (increased kinetic energy correlates to increased thermal energy).
+    
+    The TMP36 data appears similar to a white noise response for the entirety of the $1$ minute period with its large temperature interval. This shows the inaccuracy of the TMP36 when comparing to the other two sensors.
+    
+    Similar to the small change in the Thermistor's output, the Thermocouple sees small changes as it is decreasing to a steady-state. 
 
 
 \section{Conclusion}
