@@ -57,8 +57,6 @@
 \thispagestyle{empty}
 \newpage
 
-
-
 \section{Introduction}
 This experiment consisted of measuring temperature with three different sensors: a Thermocouple, Thermistor, and an Integrated Circuit Temperature sensor. Data collection was made possible through a Data Acquisition (DAQ) system used to process the different temperature measurements in LabVIEW, a graphical interface that modeled the temperature sensors' measurements in real-time. 
 
@@ -89,8 +87,6 @@ Thermometer:  used to measure true temperature w/ 0.5 degrees
 Water:  Access to water near a boiling temperature, and water in an ice bath.   
 
 
-
-
 \section{Procedure}
 \begin{figure}[H]
 \centering
@@ -98,16 +94,14 @@ Water:  Access to water near a boiling temperature, and water in an ice bath.
 \caption{Temperature Sensors, Water mug, and Breadboard circuit}
 \end{figure}
 
-
-
 \section{Data Processing}
 \subsubsection*{Variables}
 \begin{enumerate}[label = \roman*.]
     \item \(N = \) Number of Samples
     \item \(f_{s} = \) Sampling Frequency, $s^{-1}$
-    \item \(\Delta t = \) Sampling Interval, $s$
+    \item \(\Delta t_{s} = \) Sampling Interval, $s$
     \item \(\gamma = \) Confidence Level, \%
-    \item \(R_{s} = \) Sensor Resistance, Ohms = $\Omega$ (In this experiment it will be $1\text{k}\Omega$)
+    \item \(R_{S} = \) Sensor Resistance, Ohms = $\Omega$ (In this experiment it will be $1\text{k}\Omega$)
     \item \(V_{S} = \) Source voltage, Volts = $V$ ($5\;V$ for this experiment)
     \item \(R_{T} = \) Themistor resistance, $\Omega$
 \end{enumerate}
@@ -127,14 +121,32 @@ Water:  Access to water near a boiling temperature, and water in an ice bath.
 \caption{Plotting data on LabVIEW}
 \end{figure}
 
-\subsection{Part 1}
+\subsection{Part 1: Ambient Temperature}
+In Part 1 of the experiment we take measurements of the laboratory room temperature using each of the three sensors: thermocouple, thermistor, and IC TMP36. The data displayed below shows the temperature sensors at work for $1$ minute of sampling at $f_{s} = 1000\; s^{-1}$. This means $\Delta t_{s} = (f_{s}\cdot 60)^{-1} = 1.6667\times10^{-5}\; \text{minutes}$.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/thermistor_volt_roomtemp_1min_plot.png}
+    \caption{Thermistor at ambient temperature}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/ICTMP36_roomtemp_1min_plot.png}
+    \caption{IC TMP36 at ambient temperature}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/thermocouple_roomtemp_1min_plot.png}
+    \caption{Thermocouple at ambient temperature}
+\end{figure}
 
 \subsection{Part 2}
 
 
 \section{Results and Analysis}
-
+(Answer Observation Questions from Part 2)
 
 
 \section{Conclusion}
