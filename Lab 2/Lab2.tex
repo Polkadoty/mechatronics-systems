@@ -1,4 +1,6 @@
 \documentclass{article}
+
+%package setup
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
@@ -15,6 +17,7 @@
 \usepackage{minted}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage{textcomp, gensymb}
 
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
@@ -70,7 +73,7 @@ K-type Thermocouple:  Temperature sensor with two different metals joined togeth
 SA1-TH Series Thermistor:  Temperature sensor that measures electrical resistance as a response to a change in temperature.  It is connected to the NI 9215 via breadboard in its own circuit with $1\text{k}\Omega$ resistor.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.25\textwidth]{lab2images/thermistor_circuit.jpg}
+    \includegraphics[width=0.25\textwidth]{Lab 2/lab2images/thermistor_circuit.jpg}
     \caption{Thermistor Circuit}
 \end{figure}
 
@@ -140,7 +143,7 @@ We repeated the above steps for each sensor to see if there were any differences
     \item Sample Mean: \(\bar{x} = \dfrac{1}{N}\displaystyle\sum_{i=1}^{N} x_{i}\) 
     \item Standard Deviation of finite $N$, normalized by $N-1$: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
     \item Standard Deviation of the Mean: \(\dfrac{S_{x}}{\sqrt{N}}\)
-    \item Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
+    \item Average Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
     \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\), where $A$, $B$, $C$ are the Thermistor's calibration coefficients.
 \end{enumerate}
  
@@ -155,21 +158,34 @@ In Part 1 of the experiment we take measurements of the laboratory room temperat
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.955\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
+    \includegraphics[width=0.655\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
     \caption{Thermistor at ambient temperature}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.955\textwidth]{lab2images/ICTMP36_roomtemp_1min_plot.png}
+    \includegraphics[width=0.655\textwidth]{lab2images/ICTMP36_roomtemp_1min_plot.png}
     \caption{IC TMP36 at ambient temperature}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.955\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
+    \includegraphics[width=0.655\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
     \caption{Thermocouple at ambient temperature}
 \end{figure}
+
+There are small spikes occurring around half of the period for the Thermistor's output. This disturbance could have been due to the Thermistor's sensitivity to very small changes in temperature, possibly due to slight movement (increased kinetic energy correlates to increased thermal energy).
+
+The TMP36 data appears to be white noise for the entirety of the $1$ minute period with a large temperature interval. This shows the inaccuracy of the TMP36 when comparing to the other two sensors.
+
+Similar to the small change in the Thermistor's output, the Thermocouple sees small changes as it is decreasing to a steady-state.  
+
+The IC/TMP36 sensor originally outputs voltage. This was converted to $\degree C$ by taking the IC TMP36 output, say $x_{V}$ ($V$ for volt), and converting by $x_{\degree C} = 100\cdot(x_{V}-0.5)$. This conversion comes from the TMP36 datasheet ($10\,mV/\degree C$ w/ $500\,mV$ offset):
+\begin{center}
+    \href{https://www.analog.com/media/en/technical-documentation/data-sheets/tmp35_36_37.pdf}{\includegraphics[width = 0.6\textwidth]{lab2images/tmp36_offset_documentation.png}}
+\end{center}
+
+
 
 \subsubsection{Mean Temperature in Laboratory w/ Confidence Interval}
 Calculation of the mean temperature with confidence interval of $\gamma = 95\%$ was implemented through MATLAB as shown below:
@@ -183,7 +199,7 @@ nu = Q-1; %DOF
 
 p = (1-gamma)/2; %probability
 
-tstat = tinv(p,nu); %returns 
+tstat = tinv(p,nu); 
 
 % (SAMPLE MEANS) Mean w/ Confidence Interval
 avg_unc_thermistor = [mean(thermistordata) 
@@ -196,7 +212,14 @@ avg_unc_thermocouple = [mean(thermocoupledata)
                        tstat*std(thermocoupledata)/sqrt(Q)];
 \end{lstlisting}
 
+We define $F(z) = \frac{1}{2}(1+\gamma) = 0.9750$. The degrees of freedom (D.O.F.) $\nu = N - 1 = 59,999$ where $N=60,000$ samples. Set $P=\dfrac{1-\gamma}{2}=0.0250$. Using MATLAB function \textit{tinv}, we calculate the t-statistic to be $t_{stat} = -1.960$ or according to the \hyperlink{1}{t-distribution tables} this is also just $t_{stat}=1.960$.
 
+Below are the average temperatures w/ the confidence interval for each of the three sensors:
+\begin{itemize}
+    \item Thermistor: \(1.1743 \pm 0.0001\; V \)
+    \item IC/TMP36: \(20.8415 \pm 0.0038\; \degree C\)
+    \item Thermocouple: \(21.6671 \pm 0.0005\; \degree C\)
+\end{itemize}
 
 
 \subsection{Part 2: Hot and Cold Water}
@@ -227,8 +250,7 @@ avg_unc_thermocouple = [mean(thermocoupledata)
 \setcounter{figure}{0}
 
 \section*{Appendix: t-Distribution Tables}
-\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}
+\hypertarget{1}{\includegraphics[width=0.95\textwidth]{Lab 1/t_distribution_Table_lecture3.png}}
 \end{appendices}
-
 
 \end{document}
