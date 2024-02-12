@@ -75,15 +75,5 @@ avg_unc_IC = [mean(ICdata) tstat*std(ICdata)/sqrt(Q)];
 
 avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)/sqrt(Q)];
 
-%% Parts (a) and (d)
-clear all; clc;
-
-%load in file
-pt2_ad = ['lab2sheets\Part_a-and-d','.xlsx'];
-M1 = readmatrix(pt2_ad);
-
-
-
-
 
 
