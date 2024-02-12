@@ -115,9 +115,10 @@ Water:  Access to water near a boiling temperature, and water in an ice bath.
 \subsubsection*{Equations}
 \begin{enumerate}[label = \Roman*.]
     \item Sample Mean: \(\bar{x} = \dfrac{1}{N}\displaystyle\sum_{i=1}^{N} x_{i}\) 
-    \item Standard Deviation of the Mean: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
+    \item Standard Deviation of finite $N$, normalized by $N-1$: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
+    \item Standard Deviation of the Mean: \(\dfrac{S_{x}}{\sqrt{N}}\)
+    \item Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
     \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\)
-    \item 
 \end{enumerate}
  
 \begin{figure}[H]
