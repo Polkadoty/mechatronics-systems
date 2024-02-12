@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 15:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 17:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -470,8 +470,7 @@ runsystem(del Lab2.aex)...executed.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count346
 \l__pdf_internal_box=\box65
-)
-No file Lab2.aux.
+) (./Lab2.aux)
 \openout1 = `Lab2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -492,7 +491,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
-(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count347
 \scratchdimen=\dimen257
@@ -551,6 +550,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 27.
+(./Lab2.out) (./Lab2.out)
 \@outlinefile=\write6
 \openout6 = `Lab2.out'.
 
@@ -565,15 +565,14 @@ Package gensymb Info: Using text companion symbols for \degree, \celsius and \pe
 LaTeX Info: Redefining \ohm on input line 27.
 Package gensymb Info: Using \textohm for \ohm on input line 27.
 Package gensymb Info: Using \textmu for \micro on input line 27.
-<ase-logo-formal.png, id=4, 412.54124pt x 107.40125pt>
+<ase-logo-formal.png, id=68, 412.54124pt x 107.40125pt>
 File: ase-logo-formal.png Graphic file (type png)
 <use ase-logo-formal.png>
 Package pdftex.def Info: ase-logo-formal.png  used on input line 31.
 (pdftex.def)             Requested size: 284.52756pt x 74.07414pt.
-[1
+ [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>]
-No file Lab2.toc.
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>] (./Lab2.toc)
 \tf@toc=\write7
 \openout7 = `Lab2.toc'.
 
@@ -583,88 +582,70 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.61 \newpage
               [1]
-<lab2images/thermistor_circuit.jpg, id=18, 243.91125pt x 199.34476pt>
+<lab2images/thermistor_circuit.jpg, id=99, 243.91125pt x 199.34476pt>
 File: lab2images/thermistor_circuit.jpg Graphic file (type jpg)
 <use lab2images/thermistor_circuit.jpg>
 Package pdftex.def Info: lab2images/thermistor_circuit.jpg  used on input line 76.
 (pdftex.def)             Requested size: 117.43875pt x 95.98247pt.
-<lab2images/circuit_board_mug_and_sensors.jpg, id=19, 4047.12pt x 3035.34pt>
+<lab2images/circuit_board_mug_and_sensors.jpg, id=100, 4047.12pt x 3035.34pt>
 File: lab2images/circuit_board_mug_and_sensors.jpg Graphic file (type jpg)
 <use lab2images/circuit_board_mug_and_sensors.jpg>
 Package pdftex.def Info: lab2images/circuit_board_mug_and_sensors.jpg  used on input line 95.
 (pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
  [2 <./lab2images/thermistor_circuit.jpg>] [3 <./lab2images/circuit_board_mug_and_sensors.jpg>] [4]
-<lab2images/labview_plots.jpg, id=63, 4047.12pt x 3035.34pt>
+<lab2images/labview_plots.jpg, id=133, 4047.12pt x 3035.34pt>
 File: lab2images/labview_plots.jpg Graphic file (type jpg)
 <use lab2images/labview_plots.jpg>
-Package pdftex.def Info: lab2images/labview_plots.jpg  used on input line 152.
+Package pdftex.def Info: lab2images/labview_plots.jpg  used on input line 155.
 (pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
-<lab2images/thermistor_volt_roomtemp_1min_plot.png, id=64, 1445.4pt x 787.44188pt>
+<lab2images/thermistor_volt_roomtemp_1min_plot.png, id=134, 1445.4pt x 787.44188pt>
 File: lab2images/thermistor_volt_roomtemp_1min_plot.png Graphic file (type png)
 <use lab2images/thermistor_volt_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/thermistor_volt_roomtemp_1min_plot.png  used on input line 161.
+Package pdftex.def Info: lab2images/thermistor_volt_roomtemp_1min_plot.png  used on input line 164.
 (pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
-<lab2images/ICTMP36_roomtemp_1min_plot.png, id=65, 1445.4pt x 787.44188pt>
+<lab2images/ICTMP36_roomtemp_1min_plot.png, id=135, 1445.4pt x 787.44188pt>
 File: lab2images/ICTMP36_roomtemp_1min_plot.png Graphic file (type png)
 <use lab2images/ICTMP36_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/ICTMP36_roomtemp_1min_plot.png  used on input line 167.
+Package pdftex.def Info: lab2images/ICTMP36_roomtemp_1min_plot.png  used on input line 170.
 (pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
  [5 <./lab2images/labview_plots.jpg> <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)>]
-<lab2images/thermocouple_roomtemp_1min_plot.png, id=77, 1445.4pt x 787.44188pt>
+<lab2images/thermocouple_roomtemp_1min_plot.png, id=145, 1445.4pt x 787.44188pt>
 File: lab2images/thermocouple_roomtemp_1min_plot.png Graphic file (type png)
 <use lab2images/thermocouple_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 173.
+Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 176.
 (pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
-
-
-LaTeX Warning: File `lab2images/tmp36_offset_documentation.png' not found on input line 185.
-
-
-c:/Programs/E-Mech Labs/Lab 2/Lab2.tex:185: Package pdftex.def Error: File `lab2images/tmp36_offset_documentation.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.185 ...b2images/tmp36_offset_documentation.png}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[6{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)> <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)>] [7] [8] [9]
-<t_distribution_Table_lecture3.png, id=129, 399.29175pt x 486.01575pt>
+<lab2images/tmp36_offset_documentation.png, id=147, 334.24875pt x 100.57574pt>
+File: lab2images/tmp36_offset_documentation.png Graphic file (type png)
+<use lab2images/tmp36_offset_documentation.png>
+Package pdftex.def Info: lab2images/tmp36_offset_documentation.png  used on input line 188.
+(pdftex.def)             Requested size: 281.85587pt x 84.81758pt.
+ [6{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)> <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)> <./lab2images/tmp36_offset_documentation.png>] [7] [8]
+<t_distribution_Table_lecture3.png, id=192, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 253.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 256.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
- [10 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
+ [9 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-Package rerunfilecheck Warning: File `Lab2.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Lab2.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  5DF51657C375F99535195AC603375B21;2479.
+Package rerunfilecheck Info: File `Lab2.out' has not changed.
+(rerunfilecheck)             Checksum: 5DF51657C375F99535195AC603375B21;2479.
  ) 
 Here is how much of TeX's memory you used:
- 17401 strings out of 474222
- 293245 string characters out of 5750209
- 2002978 words of memory out of 5000000
- 39376 multiletter control sequences out of 15000+600000
+ 17405 strings out of 474222
+ 292432 string characters out of 5750209
+ 2011978 words of memory out of 5000000
+ 39373 multiletter control sequences out of 15000+600000
  562487 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,77p,989b,1308s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,11n,77p,694b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Lab2.pdf (11 pages, 5128730 bytes).
+Output written on Lab2.pdf (10 pages, 5146992 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 71 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 277 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 

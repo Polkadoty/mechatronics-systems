@@ -11,6 +11,6 @@
 \contentsline {section}{\numberline {4}Data Processing}{4}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Part 1: Ambient Temperature}{5}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Mean Temperature in Laboratory w/ Confidence Interval}{7}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Part 2: Hot and Cold Water}{8}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Results and Analysis}{8}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}%
+\contentsline {subsection}{\numberline {4.2}Part 2: Hot and Cold Water}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Results and Analysis}{7}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}%

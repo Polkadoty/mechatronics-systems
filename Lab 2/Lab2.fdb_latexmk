@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1707772110.79036 "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" "Lab2.pdf" "Lab2" 1707772113.54938 2
-  "Lab2.aux" 1707772113 3081 a6a6cf5e7be0357b571079d661a6e22a "pdflatex"
-  "Lab2.out" 1707772113 2479 5df51657c375f99535195ac603375b21 "pdflatex"
-  "Lab2.tex" 1707772105 13907 3f4ce6a5ccf00ef3cf7d6dc11cdbdd9e ""
-  "Lab2.toc" 1707772113 1353 d9307b7375dea6b9ddcb44640bf41e54 "pdflatex"
+["pdflatex"] 1707781376.05328 "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" "Lab2.pdf" "Lab2" 1707781379.24854 0
+  "Lab2.aux" 1707781378 3081 d135d788bb2cc0721c1e2c37f06b1240 "pdflatex"
+  "Lab2.out" 1707781379 2479 5df51657c375f99535195ac603375b21 "pdflatex"
+  "Lab2.tex" 1707781368 13374 1e3f95e0ab2b15111ae9aa4faf25ad2c ""
+  "Lab2.toc" 1707781379 1353 01aee249fcdce448111e117c27d4a45d "pdflatex"
   "ase-logo-formal.png" 1694451038 34404 5ee524f99c04ac6220becc16cea7da79 ""
-  "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" 1707772105 13907 3f4ce6a5ccf00ef3cf7d6dc11cdbdd9e ""
+  "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" 1707781368 13374 1e3f95e0ab2b15111ae9aa4faf25ad2c ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1706547675 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1706548829 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1706548340 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -125,7 +125,7 @@
   "lab2images/thermistor_circuit.jpg" 1707761520 12695 cd5dbe3f10de34d4b778060a390392a1 ""
   "lab2images/thermistor_volt_roomtemp_1min_plot.png" 1707761520 43865 60ec7882561b440f886d32b1b0dbb2b4 ""
   "lab2images/thermocouple_roomtemp_1min_plot.png" 1707761520 47236 98a1dfb5bd18ed08ec5542ee152b2587 ""
-  "lab2images/tmp36_offset_documentation.png" 0 -1 0 ""
+  "lab2images/tmp36_offset_documentation.png" 1707781236 27631 4d2eff0e01f673f0ca457c28e99345c5 ""
   "t_distribution_Table_lecture3.png" 1707181593 223726 706861b879ad324ee7cfda91ec3adcef ""
   (generated)
   "Lab2.aux"
