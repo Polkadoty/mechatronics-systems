@@ -63,9 +63,9 @@ p = (1-gamma)/2; %probability
 
 tstat = tinv(p,nu); %returns 
 
-% (SAMPLE MEANS) Averages and SD of mean
-avg_unc_thermistor = [mean(thermistordata) tstat*std(thermistordata)];
+% (SAMPLE MEANS) Mean w/ Confidence Interval
+avg_unc_thermistor = [mean(thermistordata) tstat*std(thermistordata)/sqrt(Q)];
 
-avg_unc_IC = [mean(ICdata) tstat*std(ICdata)];
+avg_unc_IC = [mean(ICdata) tstat*std(ICdata)/sqrt(Q)];
 
-avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)];
+avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)/sqrt(Q)];
