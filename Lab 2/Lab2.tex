@@ -96,35 +96,38 @@ Water:  Access to water at two temperatures, near boiling, and ice cold.
 \caption{Temperature Sensors, Water mug, and Breadboard circuit}
 \end{figure}
 
-The first step was to setup LabVIEW to simulate the temperature sensors. Before the lab session, the DAQ was connected to the computer and various sensors were connected to the DAQ in modules NI 9211 and NI 9215. The following simulation was created by creating a virtual DAQ by rightclicking the desktop and searching for a DAQ in the popup menu. Next we created a collector and set the value to 500000, indicating we were taking 500000 samples. We imported a split signal and ran the output from the collector into the split signal. Each of the signals went to a specific graph, one for each sensor. A structure in LabVIEW (while loop) enclosed the system and was set to run for the number of iterations specified in the collector. And a "Write to Measure File" block was placed outside of the while loop to save the data to a file. We right-clicked the block and selected "Excel File" and set the file name to not overwrite.
+The DAQ, with the NI 9211 and NI 9215 modules already installed, was connected to an external 5V power supply as well as to the computer.  The LabVIEW software is used to digitize the data from the temperature sensors.  To do this, the following block diagram was created '''''''insert picture here from lab session''''''''' (figure xxx).    The DAQ block had signals for each sensor, measuring at a 1000hz frequency.  The collector is initially given a size of 500,000 samples.  Each sensor from the DAQ was given its own graph using a split signal, and a "write to measure file" block was placed to save our data to an Excel file.  
 
-Now that our digital sensing was set up, we had to create the physical circuits. The thermistor was connected to the NI 9215 module, and the TMP36 was connected to the same module. The thermocouple was connected to the NI 9211 module. The thermistor was connected to a $1\text{k}\Omega$ resistor in a voltage divider configuration. The TMP36 was connected to the 5V power supply and the NI 9215 module. The thermocouple was connected to the NI 9211 module. This breadboard configuration is shown in the figure above.
+Now that our digital sensing was set up, we had to create the physical circuits. The thermocouple was connected directly into the NI 9211 module.  The NI 9215 and power supply were connected to a breadboard. 
+ The Thermistor was connected to a $1\text{k}\Omega$ resistor in a voltage divider configuration. The TMP36 was connected to the 5V power supply and the NI 9215 module.  This configuration is shown in figure 2.
+
+ Additionally, for each part of this experiment, the true temperature was measured via a mercury thermometer.
 
 \subsection{Part 1} % Subsection 1
 
-To gather the room temperature data, we placed the sensors in an unused area in the lab room and let them sit for a few minutes without any of us moving near them or touching them, to stop heat from diffusing through the rubber casing of the wire or through the air. We then ran the LabVIEW simulation for 1 minute and saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation are shown in the figures below.
+To gather the room temperature data, the sensors were placed in an unused area in the lab room and left to sit for a few minutes without anyone moving near them or touching them.  This was to stop heat from diffusing through the rubber casing of the wire or through the air. The LabVIEW simulation was run for 3 minutes at 1000hz and the data was saved to the Excel file. The results of the simulation are shown in the figures below.
 
 \subsection{Part 2} % Subsection 2
-
+ 
 \subsubsection{Part 2a: Hot Water} % Subsubsection 1
 
-We used the electric kettle in the lab to heat up water to near boiling. We then started the LabVIEW simulation, waited a couple seconds to make sure the results were normalized, and suddenly placed the sensors in the water. After letting them sit for a few minutes to reach equilibrium, we saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+An electric kettle was used to heat up water to near boiling.  The LabVIEW simulation was started with the sensors in the ambient environment until the graphs appeared to reach steady-state, which is ________________, and then were abruptly submerged in the boiling water.  They stayed in the water until the graph once again appeared at steady-state.  This experiment was run over 2 minutes and at a frequency of 1000hz.  The region between the two steady-states will be used to calculate the time-constant.  
 
 \subsubsection{Part 2b: Water Cooling} % Subsubsection 2
 
-Using the same simulation from last time, we timed from when the water was at its hottest temperature until the water went to \(60^\circ\) C, as that is considered the cold end of the ideal coffee drinking temperature, which is less than the overall temperature. However, after checking the EPA's recommendations, they listed \(40^\circ C\) as the optimal high-end temperature for drinking water. We placed markers at each of these temperatures to be safe and saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+For this part of the experiment, the collector block's size was changed to one million samples to account for the amount of time it would take for the water to cool from its initial boiling state to a safe and drinkable condition.  At a frequency of 1000hz, this gave us approximately 16 minutes of data collection.  The sensors were placed in the boiling water and the data was collected until the true temperature, measured via a thermometer, was at \(40^\circ C\), as that is the optimal temperature for safe drinking water.  
 
 \subsubsection{Part 2c: Ice-Hot} % Subsubsection 3
 
-To give us more information to calibrate our sensors, we took a bowl of water with \( 2^\circ \) C temperature and a bowl of water with \( 90^\circ \) C temperature. We placed the sensors in the cold water, took a measurement, and waited around 1 minute for the sensors to each equilibirum. We then quickly placed the sensors in the hot water while taking a measurement to check how long it takes for the sensors to reach steady state, and what the time constant was.
+Place the three sensors in a bowl of ice-cold water, wait for the graphs to reach equilibrium, and then quickly take them out of the ice water, and into the hot water, measuring until it reaches steady-state.  The region between the equilibrium in ice water and the equilibrium in hot water is the time constant we are measuring.  In our experiment, the ice water was at ASK ANDREW FOR EXACT TEMP and the hot water was at ASK ANDREW FOR TEMP.  
 
 \subsubsection{Part 2d: Quick Changes} % Subsubsection 4
 
-Lastly, after the sensor had reached steady state in the water above, we took the sensors out of the water while taking a measurement to see how quickly the sensors would return to room temperature. We saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+Lastly, after the sensor had reached steady state in the water above, we took the sensors out of the water and measured the time it takes for the sensors to return to room temperature. We saved the data to an Excel file with a frequency of 1000 hz. 
 
 \subsubsection{Part 2e: Sensor Repetition} % Subsubsection 5
 
-We repeated the above steps for each sensor to see if there were any differences in the sensors' responses to the different temperatures. The results of the simulation will also be shown in the results section below.
+The data was measured simultaneously for each sensor.  
 
 \section{Data Processing}
 \subsubsection*{Variables}
