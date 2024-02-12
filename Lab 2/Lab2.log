@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  7 FEB 2024 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 13:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/My Brain/_Media/School/ASE375/Lab 2/Lab2.tex"
-(c:/My Brain/_Media/School/ASE375/Lab 2/Lab2.tex
+**"c:/Programs/E-Mech Labs/Lab 2/Lab2.tex"
+(c:/Programs/E-Mech Labs/Lab 2/Lab2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -451,39 +451,14 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 runsystem(if not exist _minted-Lab2 mkdir _minted-Lab2)...executed.
 
- (c:/texlive/2023/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2024/01/21 v0.5y Insert pages of external PDF documents (AM)
- (c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count344
-\calc@Bcount=\count345
-\calc@Adimen=\dimen256
-\calc@Bdimen=\dimen257
-\calc@Askip=\skip69
-\calc@Bskip=\skip70
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count346
-\calc@Cskip=\skip71
-) (c:/texlive/2023/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen258
-\ESO@tempdimb=\dimen259
-)
-\AM@pagewidth=\dimen260
-\AM@pageheight=\dimen261
-\AM@fboxrule=\dimen262
- (c:/texlive/2023/texmf-dist/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2024/01/21 v0.5y Pdfpages driver for pdfTeX (AM)
-)
-\pdfpages@includegraphics@status=\count347
-\AM@pagebox=\box64
-\AM@global@opts=\toks36
-\AM@pagecnt=\count348
-\AM@toc@title=\toks37
-\AM@lof@heading=\toks38
-\c@AM@survey=\count349
-\AM@templatesizebox=\box65
+ (c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip69
+\enit@outerparindent=\dimen256
+\enit@toks=\toks36
+\enit@inbox=\box64
+\enit@count@id=\count344
+\enitdp@description=\count345
 )
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Lab2.aex <nul: /p x=^%~$PATH:i>> Lab2.aex)...executed.
 
@@ -491,42 +466,42 @@ runsystem(del Lab2.aex)...executed.
 
  (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count350
-\l__pdf_internal_box=\box66
+\l__color_backend_stack_int=\count346
+\l__pdf_internal_box=\box65
 ) (./Lab2.aux)
 \openout1 = `Lab2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
-\scratchdimen=\dimen263
-\scratchbox=\box67
-\nofMPsegments=\count352
-\nofMParguments=\count353
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count354
-\MPscratchDim=\dimen264
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count347
+\scratchdimen=\dimen257
+\scratchbox=\box66
+\nofMPsegments=\count348
+\nofMParguments=\count349
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen258
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
+\everyMPtoPDFconversion=\toks38
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -572,25 +547,16 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 24.
 (./Lab2.out) (./Lab2.out)
 \@outlinefile=\write6
 \openout6 = `Lab2.out'.
 
-\c@lstlisting=\count357
- (c:/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
- (c:/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
- (c:/texlive/2023/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-))
-<ase-logo-formal.png, id=36, 412.54124pt x 107.40125pt>
+\c@lstlisting=\count353
+<ase-logo-formal.png, id=68, 412.54124pt x 107.40125pt>
 File: ase-logo-formal.png Graphic file (type png)
 <use ase-logo-formal.png>
-Package pdftex.def Info: ase-logo-formal.png  used on input line 27.
+Package pdftex.def Info: ase-logo-formal.png  used on input line 28.
 (pdftex.def)             Requested size: 284.52756pt x 74.07414pt.
  [1
 
@@ -602,39 +568,67 @@ Package pdftex.def Info: ase-logo-formal.png  used on input line 27.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57 \newpage
-              [1] [2] [3]
-<t_distribution_Table_lecture3.png, id=68, 399.29175pt x 486.01575pt>
+l.58 \newpage
+              [1]
+<lab2images/thermistor_circuit.jpg, id=99, 243.91125pt x 199.34476pt>
+File: lab2images/thermistor_circuit.jpg Graphic file (type jpg)
+<use lab2images/thermistor_circuit.jpg>
+Package pdftex.def Info: lab2images/thermistor_circuit.jpg  used on input line 73.
+(pdftex.def)             Requested size: 117.43875pt x 95.98247pt.
+<lab2images/circuit_board_mug_and_sensors.jpg, id=100, 4047.12pt x 3035.34pt>
+File: lab2images/circuit_board_mug_and_sensors.jpg Graphic file (type jpg)
+<use lab2images/circuit_board_mug_and_sensors.jpg>
+Package pdftex.def Info: lab2images/circuit_board_mug_and_sensors.jpg  used on input line 92.
+(pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
+ [2 <./lab2images/thermistor_circuit.jpg>] [3 <./lab2images/circuit_board_mug_and_sensors.jpg>] [4]
+<lab2images/labview_plots.jpg, id=132, 4047.12pt x 3035.34pt>
+File: lab2images/labview_plots.jpg Graphic file (type jpg)
+<use lab2images/labview_plots.jpg>
+Package pdftex.def Info: lab2images/labview_plots.jpg  used on input line 149.
+(pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
+<lab2images/thermistor_volt_roomtemp_1min_plot.png, id=133, 1445.4pt x 787.44188pt>
+File: lab2images/thermistor_volt_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/thermistor_volt_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/thermistor_volt_roomtemp_1min_plot.png  used on input line 158.
+(pdftex.def)             Requested size: 448.6169pt x 244.40485pt.
+ [5 <./lab2images/labview_plots.jpg>]
+<lab2images/ICTMP36_roomtemp_1min_plot.png, id=143, 1445.4pt x 787.44188pt>
+File: lab2images/ICTMP36_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/ICTMP36_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/ICTMP36_roomtemp_1min_plot.png  used on input line 164.
+(pdftex.def)             Requested size: 448.6169pt x 244.40485pt.
+<lab2images/thermocouple_roomtemp_1min_plot.png, id=144, 1445.4pt x 787.44188pt>
+File: lab2images/thermocouple_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/thermocouple_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 170.
+(pdftex.def)             Requested size: 448.6169pt x 244.40485pt.
+ [6 <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)> <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)>] [7 <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)>] [8] [9]
+<t_distribution_Table_lecture3.png, id=189, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 123.
-(pdftex.def)             Requested size: 469.75502pt x 571.79535pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
-
- []
-
-[4 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 230.
+(pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
+ [10 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `Lab2.out' has not changed.
-(rerunfilecheck)             Checksum: C582631F09082432746F95A93223D469;822.
+(rerunfilecheck)             Checksum: 5DF51657C375F99535195AC603375B21;2479.
  ) 
 Here is how much of TeX's memory you used:
- 17313 strings out of 474222
- 292803 string characters out of 5750209
- 1929978 words of memory out of 5000000
- 39326 multiletter control sequences out of 15000+600000
- 560960 words of font info for 46 fonts, out of 8000000 for 9000
+ 17321 strings out of 474222
+ 290890 string characters out of 5750209
+ 2004978 words of memory out of 5000000
+ 39297 multiletter control sequences out of 15000+600000
+ 561474 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,77p,561b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Lab2.pdf (5 pages, 296541 bytes).
+ 70i,11n,77p,989b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Lab2.pdf (11 pages, 5117958 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 75 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

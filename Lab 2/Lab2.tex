@@ -93,6 +93,36 @@ Water:  Access to water at two temperatures, near boiling, and ice cold.
 \caption{Temperature Sensors, Water mug, and Breadboard circuit}
 \end{figure}
 
+The first step was to setup LabVIEW to simulate the temperature sensors. Before the lab session, the DAQ was connected to the computer and various sensors were connected to the DAQ in modules NI 9211 and NI 9215. The following simulation was created by creating a virtual DAQ by rightclicking the desktop and searching for a DAQ in the popup menu. Next we created a collector and set the value to 500000, indicating we were taking 500000 samples. We imported a split signal and ran the output from the collector into the split signal. Each of the signals went to a specific graph, one for each sensor. A structure in LabVIEW (while loop) enclosed the system and was set to run for the number of iterations specified in the collector. And a "Write to Measure File" block was placed outside of the while loop to save the data to a file. We right-clicked the block and selected "Excel File" and set the file name to not overwrite.
+
+Now that our digital sensing was set up, we had to create the physical circuits. The thermistor was connected to the NI 9215 module, and the TMP36 was connected to the same module. The thermocouple was connected to the NI 9211 module. The thermistor was connected to a $1\text{k}\Omega$ resistor in a voltage divider configuration. The TMP36 was connected to the 5V power supply and the NI 9215 module. The thermocouple was connected to the NI 9211 module. This breadboard configuration is shown in the figure above.
+
+\subsection{Part 1} % Subsection 1
+
+To gather the room temperature data, we placed the sensors in an unused area in the lab room and let them sit for a few minutes without any of us moving near them or touching them, to stop heat from diffusing through the rubber casing of the wire or through the air. We then ran the LabVIEW simulation for 1 minute and saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation are shown in the figures below.
+
+\subsection{Part 2} % Subsection 2
+
+\subsubsection{Part 2a: Hot Water} % Subsubsection 1
+
+We used the electric kettle in the lab to heat up water to near boiling. We then started the LabVIEW simulation, waited a couple seconds to make sure the results were normalized, and suddenly placed the sensors in the water. After letting them sit for a few minutes to reach equilibrium, we saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+
+\subsubsection{Part 2b: Water Cooling} % Subsubsection 2
+
+Using the same simulation from last time, we timed from when the water was at its hottest temperature until the water went to \(60^\circ\) C, as that is considered the cold end of the ideal coffee drinking temperature, which is less than the overall temperature. However, after checking the EPA's recommendations, they listed \(40^\circ C\) as the optimal high-end temperature for drinking water. We placed markers at each of these temperatures to be safe and saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+
+\subsubsection{Part 2c: Ice-Hot} % Subsubsection 3
+
+To give us more information to calibrate our sensors, we took a bowl of water with \( 2^\circ \) C temperature and a bowl of water with \( 90^\circ \) C temperature. We placed the sensors in the cold water, took a measurement, and waited around 1 minute for the sensors to each equilibirum. We then quickly placed the sensors in the hot water while taking a measurement to check how long it takes for the sensors to reach steady state, and what the time constant was.
+
+\subsubsection{Part 2d: Quick Changes} % Subsubsection 4
+
+Lastly, after the sensor had reached steady state in the water above, we took the sensors out of the water while taking a measurement to see how quickly the sensors would return to room temperature. We saved the data to an Excel file with a frequency of at least 100 hertz. The results of the simulation will also be shown in the results section below.
+
+\subsubsection{Part 2e: Sensor Repetition} % Subsubsection 5
+
+We repeated the above steps for each sensor to see if there were any differences in the sensors' responses to the different temperatures. The results of the simulation will also be shown in the results section below.
+
 \section{Data Processing}
 \subsubsection*{Variables}
 \begin{enumerate}[label = \roman*.]
@@ -197,7 +227,7 @@ avg_unc_thermocouple = [mean(thermocoupledata)
 \setcounter{figure}{0}
 
 \section*{Appendix: t-Distribution Tables}
-\includegraphics[width=0.95\textwidth]{Lab 1/t_distribution_Table_lecture3.png}
+\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}
 \end{appendices}
 
 
