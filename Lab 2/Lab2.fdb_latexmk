@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1707781376.05328 "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" "Lab2.pdf" "Lab2" 1707781379.24854 0
-  "Lab2.aux" 1707781378 3081 d135d788bb2cc0721c1e2c37f06b1240 "pdflatex"
-  "Lab2.out" 1707781379 2479 5df51657c375f99535195ac603375b21 "pdflatex"
-  "Lab2.tex" 1707781368 13374 1e3f95e0ab2b15111ae9aa4faf25ad2c ""
-  "Lab2.toc" 1707781379 1353 01aee249fcdce448111e117c27d4a45d "pdflatex"
+["pdflatex"] 1707782222.21801 "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" "Lab2.pdf" "Lab2" 1707782225.68595 0
+  "Lab2.aux" 1707782225 3243 38eb778b0a8b1f35ab637f8f9e533a6a "pdflatex"
+  "Lab2.out" 1707782225 2403 7182f6b9a12edfc4cfde7f86aa1617fb "pdflatex"
+  "Lab2.tex" 1707782216 13703 d1b6e363f44bf04e9503b2d3f9276006 ""
+  "Lab2.toc" 1707782225 1340 b3288a9a50705c57f672befe0546e870 "pdflatex"
   "ase-logo-formal.png" 1694451038 34404 5ee524f99c04ac6220becc16cea7da79 ""
-  "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" 1707781368 13374 1e3f95e0ab2b15111ae9aa4faf25ad2c ""
+  "c:/Programs/E-Mech Labs/Lab 2/Lab2.tex" 1707782216 13703 d1b6e363f44bf04e9503b2d3f9276006 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1706547675 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1706548829 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1706548340 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -120,6 +120,7 @@
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1706560418 8211034 057f0fe11a358dd5941cb25543c45d2d ""
   "c:/texlive/2023/texmf.cnf" 1706558340 713 614551405fc44b98efbf516466e3c909 ""
   "lab2images/ICTMP36_roomtemp_1min_plot.png" 1707761520 63264 be1dbb21cb69ea99a1a3983a4ce83dbe ""
+  "lab2images/ProcessDiagram.png" 1707781905 28444 5351031d98bd9a749ec10c7bf3fce69d ""
   "lab2images/circuit_board_mug_and_sensors.jpg" 1707761520 2898035 a02f3e43439e11fef9a2913b5903813d ""
   "lab2images/labview_plots.jpg" 1707761520 1652092 ced1bc60adba579bba3fed85ae9871a5 ""
   "lab2images/thermistor_circuit.jpg" 1707761520 12695 cd5dbe3f10de34d4b778060a390392a1 ""

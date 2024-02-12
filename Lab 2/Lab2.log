@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 17:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -592,60 +592,72 @@ File: lab2images/circuit_board_mug_and_sensors.jpg Graphic file (type jpg)
 <use lab2images/circuit_board_mug_and_sensors.jpg>
 Package pdftex.def Info: lab2images/circuit_board_mug_and_sensors.jpg  used on input line 95.
 (pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
- [2 <./lab2images/thermistor_circuit.jpg>] [3 <./lab2images/circuit_board_mug_and_sensors.jpg>] [4]
-<lab2images/labview_plots.jpg, id=133, 4047.12pt x 3035.34pt>
-File: lab2images/labview_plots.jpg Graphic file (type jpg)
-<use lab2images/labview_plots.jpg>
-Package pdftex.def Info: lab2images/labview_plots.jpg  used on input line 155.
-(pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
-<lab2images/thermistor_volt_roomtemp_1min_plot.png, id=134, 1445.4pt x 787.44188pt>
-File: lab2images/thermistor_volt_roomtemp_1min_plot.png Graphic file (type png)
-<use lab2images/thermistor_volt_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/thermistor_volt_roomtemp_1min_plot.png  used on input line 164.
-(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
-<lab2images/ICTMP36_roomtemp_1min_plot.png, id=135, 1445.4pt x 787.44188pt>
-File: lab2images/ICTMP36_roomtemp_1min_plot.png Graphic file (type png)
-<use lab2images/ICTMP36_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/ICTMP36_roomtemp_1min_plot.png  used on input line 170.
-(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
- [5 <./lab2images/labview_plots.jpg> <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)>]
-<lab2images/thermocouple_roomtemp_1min_plot.png, id=145, 1445.4pt x 787.44188pt>
-File: lab2images/thermocouple_roomtemp_1min_plot.png Graphic file (type png)
-<use lab2images/thermocouple_roomtemp_1min_plot.png>
-Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 176.
-(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
-<lab2images/tmp36_offset_documentation.png, id=147, 334.24875pt x 100.57574pt>
+ [2 <./lab2images/thermistor_circuit.jpg>]
+<lab2images/ProcessDiagram.png, id=106, 694.595pt x 554.07pt>
+File: lab2images/ProcessDiagram.png Graphic file (type png)
+<use lab2images/ProcessDiagram.png>
+Package pdftex.def Info: lab2images/ProcessDiagram.png  used on input line 103.
+(pdftex.def)             Requested size: 234.8775pt x 187.35832pt.
+ [3 <./lab2images/circuit_board_mug_and_sensors.jpg> <./lab2images/ProcessDiagram.png>] [4]
+<lab2images/tmp36_offset_documentation.png, id=123, 334.24875pt x 100.57574pt>
 File: lab2images/tmp36_offset_documentation.png Graphic file (type png)
 <use lab2images/tmp36_offset_documentation.png>
-Package pdftex.def Info: lab2images/tmp36_offset_documentation.png  used on input line 188.
+Package pdftex.def Info: lab2images/tmp36_offset_documentation.png  used on input line 164.
 (pdftex.def)             Requested size: 281.85587pt x 84.81758pt.
- [6{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)> <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)> <./lab2images/tmp36_offset_documentation.png>] [7] [8]
-<t_distribution_Table_lecture3.png, id=192, 399.29175pt x 486.01575pt>
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 168.
+
+[5{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab2images/tmp36_offset_documentation.png>]
+<lab2images/labview_plots.jpg, id=162, 4047.12pt x 3035.34pt>
+File: lab2images/labview_plots.jpg Graphic file (type jpg)
+<use lab2images/labview_plots.jpg>
+Package pdftex.def Info: lab2images/labview_plots.jpg  used on input line 211.
+(pdftex.def)             Requested size: 234.8775pt x 176.13783pt.
+ [6 <./lab2images/labview_plots.jpg>]
+<lab2images/thermistor_volt_roomtemp_1min_plot.png, id=181, 1445.4pt x 787.44188pt>
+File: lab2images/thermistor_volt_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/thermistor_volt_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/thermistor_volt_roomtemp_1min_plot.png  used on input line 220.
+(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
+<lab2images/ICTMP36_roomtemp_1min_plot.png, id=182, 1445.4pt x 787.44188pt>
+File: lab2images/ICTMP36_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/ICTMP36_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/ICTMP36_roomtemp_1min_plot.png  used on input line 226.
+(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
+<lab2images/thermocouple_roomtemp_1min_plot.png, id=183, 1445.4pt x 787.44188pt>
+File: lab2images/thermocouple_roomtemp_1min_plot.png Graphic file (type png)
+<use lab2images/thermocouple_roomtemp_1min_plot.png>
+Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 232.
+(pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
+ [7 <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)> <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)>] [8 <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)>] [9]
+<t_distribution_Table_lecture3.png, id=200, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 256.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 264.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
- [9 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
+ [10 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `Lab2.out' has not changed.
-(rerunfilecheck)             Checksum: 5DF51657C375F99535195AC603375B21;2479.
+(rerunfilecheck)             Checksum: 7182F6B9A12EDFC4CFDE7F86AA1617FB;2403.
  ) 
 Here is how much of TeX's memory you used:
- 17405 strings out of 474222
- 292432 string characters out of 5750209
- 2011978 words of memory out of 5000000
- 39373 multiletter control sequences out of 15000+600000
+ 17415 strings out of 474222
+ 292718 string characters out of 5750209
+ 1977978 words of memory out of 5000000
+ 39380 multiletter control sequences out of 15000+600000
  562487 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,77p,694b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,12n,77p,601b,2174s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Lab2.pdf (10 pages, 5146992 bytes).
+Output written on Lab2.pdf (11 pages, 5156340 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 229 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
