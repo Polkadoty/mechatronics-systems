@@ -86,12 +86,10 @@ Thermometer:  Regular mercury thermometer, using change in volume as a response 
 
 Water:  Access to water at two temperatures, near boiling, and ice cold. 
 
-
-
 \section{Procedure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth, angle = -90]{Lab 2/lab2images/circuit_board_mug_and_sensors.jpg}
+\includegraphics[width=0.5\textwidth, angle = -90]{lab2images/circuit_board_mug_and_sensors.jpg}
 \caption{Temperature Sensors, Water mug, and Breadboard circuit}
 \end{figure}
 
@@ -113,12 +111,12 @@ Water:  Access to water at two temperatures, near boiling, and ice cold.
     \item Standard Deviation of finite $N$, normalized by $N-1$: \(S_{x} = \sqrt{\displaystyle\sum_{i=1}^{N} \dfrac{(x_{i} - \bar{x})^{2}}{N-1}}\)
     \item Standard Deviation of the Mean: \(\dfrac{S_{x}}{\sqrt{N}}\)
     \item Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
-    \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\)
+    \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\), where $A$, $B$, $C$ are the Thermistor's calibration coefficients.
 \end{enumerate}
  
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth, angle = -90]{Lab 2/lab2images/labview_plots.jpg}
+\includegraphics[width=0.5\textwidth, angle = -90]{lab2images/labview_plots.jpg}
 \caption{Plotting data on LabVIEW}
 \end{figure}
 
@@ -127,23 +125,51 @@ In Part 1 of the experiment we take measurements of the laboratory room temperat
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/thermistor_volt_roomtemp_1min_plot.png}
+    \includegraphics[width=0.955\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
     \caption{Thermistor at ambient temperature}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/ICTMP36_roomtemp_1min_plot.png}
+    \includegraphics[width=0.955\textwidth]{lab2images/ICTMP36_roomtemp_1min_plot.png}
     \caption{IC TMP36 at ambient temperature}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.985\textwidth]{Lab 2/lab2images/thermocouple_roomtemp_1min_plot.png}
+    \includegraphics[width=0.955\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
     \caption{Thermocouple at ambient temperature}
 \end{figure}
 
-\subsection{Part 2}
+\subsubsection{Mean Temperature in Laboratory w/ Confidence Interval}
+Calculation of the mean temperature with confidence interval of $\gamma = 95\%$ was implemented through MATLAB as shown below:
+\begin{lstlisting}[style=Matlab-editor]
+% Confidence Interval in Laboratory
+gamma = 0.95; %95 percent confidence
+
+Fz = 0.5*(1+gamma);
+
+nu = Q-1; %DOF
+
+p = (1-gamma)/2; %probability
+
+tstat = tinv(p,nu); %returns 
+
+% (SAMPLE MEANS) Mean w/ Confidence Interval
+avg_unc_thermistor = [mean(thermistordata) 
+                     tstat*std(thermistordata)/sqrt(Q)];
+
+avg_unc_IC = [mean(ICdata) 
+             tstat*std(ICdata)/sqrt(Q)];
+
+avg_unc_thermocouple = [mean(thermocoupledata)  
+                       tstat*std(thermocoupledata)/sqrt(Q)];
+\end{lstlisting}
+
+
+
+
+\subsection{Part 2: Hot and Cold Water}
 
 
 \section{Results and Analysis}
