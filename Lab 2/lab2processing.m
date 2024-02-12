@@ -35,22 +35,27 @@ thermocoupledata = M0(1:i,6); % Thermistor convert to C ****
 
 %plots: thermistor, IC, thermocouple
 
-subplot(3,1,1)
-plot(0:dt:time1-dt,thermistordata,'r-',"LineWidth",1.25)
+figure(1);
+plot(0:dt:time1-dt,thermistordata,'r-')
 title('Temperature Sensor Data @ Room Temperature')
-ylabel('Thermistor [Volt]')
-
-
-subplot(3,1,2)
-plot(0:dt:time1-dt,ICdata,'k-',"LineWidth",1.25)
-ylabel('IC [Celsius]')
-
-
-subplot(3,1,3)
-plot(0:dt:time1-dt,thermocoupledata,'b-',"LineWidth",1.25)
-ylabel('Thermocouple [Celsius]')
-
 xlabel('Time [minutes]')
+ylabel('Thermistor [Volts]')
+grid on;
+
+figure(2);
+plot(0:dt:time1-dt,ICdata,'k-')
+title('IC Temperature Sensor @ Room Temperature')
+xlabel('Time [minutes]')
+ylabel('IC [\circ Celsius]')
+grid on;
+
+figure(3);
+plot(0:dt:time1-dt,thermocoupledata,'b-')
+title('Thermocouple @ Room Temperature')
+xlabel('Time [minutes]')
+ylabel('Thermocouple [\circ Celsius]')
+grid on;
+
 
 % Confidence Interval in Laboratory
 gamma = 0.95; %95 percent confidence
@@ -69,3 +74,16 @@ avg_unc_thermistor = [mean(thermistordata) tstat*std(thermistordata)/sqrt(Q)];
 avg_unc_IC = [mean(ICdata) tstat*std(ICdata)/sqrt(Q)];
 
 avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)/sqrt(Q)];
+
+%% Parts (a) and (d)
+clear all; clc;
+
+%load in file
+pt2_ad = ['lab2sheets\Part_a-and-d','.xlsx'];
+M1 = readmatrix(pt2_ad);
+
+
+
+
+
+
