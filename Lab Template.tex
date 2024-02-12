@@ -1,0 +1,94 @@
+\documentclass{article}
+
+%package setup
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{comment}
+\usepackage{placeins}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{appendix}
+\usepackage{soul}
+\usepackage{comment}
+\usepackage[hidelinks]{hyperref}
+\usepackage{matlab-prettifier}
+\usepackage{minted}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{textcomp, gensymb}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear header/footer settings
+\rhead{\thepage} % Page number on the right in the header
+\lhead{ASE375 Lab Report 3} % Your lab report title on the left
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \includegraphics[width=10cm]{ase-logo-formal.png}  % Adjust the width as needed
+  \vspace{1cm}  % Add some vertical space
+ 
+  \Large \textbf{ASE 375 Electromechanical Systems}\\
+  \large \textbf{Section 14115}\\
+  \vspace{0.5cm}
+  \textbf{Monday: 3:00 - 6:00 pm}\\
+ 
+  \vspace{1cm}
+ 
+  \hrule
+  \vspace{0.5cm}
+ 
+  \Huge \textbf{Report 3:\\
+  Measuring Displacement}\\
+  \Huge \textbf{}\\
+ 
+  \vspace{0.5cm}
+  \hrule
+ 
+  \vspace{1cm}
+ 
+  \normalsize \textbf{Andrew Doty, Andres Suniaga, Dennis Hom}\\
+  \normalsize \textbf{Due Date: 02/12/2024}
+ 
+\end{titlepage}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\section{Introduction}
+
+\section{Equipment}
+
+\section{Procedure}
+
+\section{Data Processing}
+
+\section{Results and Analysis}
+
+\section{Conclusion}
+
+\newpage
+\thispagestyle{empty}  % Clear header/footer
+\begin{center}
+	\vspace*{\fill}
+	{\Huge Appendices}
+	\vspace*{\fill}
+\end{center}
+
+% Start appendices
+\newpage
+\begin{appendices}
+\pagestyle{fancy}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+\section*{Appendix: t-Distribution Tables}
+\hypertarget{1}{\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}}
+\end{appendices}
+
+\end{document}
