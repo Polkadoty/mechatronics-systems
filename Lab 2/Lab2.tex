@@ -18,6 +18,8 @@
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{textcomp, gensymb}
+\usepackage{tabularx}
+
 
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
@@ -164,13 +166,21 @@ The data was measured simultaneously for each sensor.
     \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\), where $A$, $B$, $C$ are the Thermistor's calibration coefficients.
 \end{enumerate}  
 
-\subsection*{Conversions}
+\subsection*{Conversion and Calibration}
 The IC/TMP36 sensor originally outputs voltage. This was converted to $\degree C$ by taking the IC TMP36 output, say $x_{V}$ ($V$ for volt), and converting by $x_{\degree C} = 100\cdot(x_{V}-0.5)$. This conversion comes from the TMP36 datasheet ($10\,mV/\degree C$ w/ $500\,mV$ offset):
 \begin{center}
     \href{https://www.analog.com/media/en/technical-documentation/data-sheets/tmp35_36_37.pdf}{\includegraphics[width = 0.6\textwidth]{lab2images/tmp36_offset_documentation.png}}
 \end{center}
 
-For the Thermistor, we utilize \textbf{Eq.(5)} to convert the output voltage into degrees Celsius. By gathering the Thermistor's resistance along with the temperature in each environment we can set up and solve a system of linear equations as shown below:
+
+We utilize \textbf{Eq.(V)} to calibrate the Thermistor.
+
+Thermistor Calibration:
+\[
+    T = \dfrac{1}{A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}}
+\]
+
+By gathering the Thermistor's resistance along with the temperature in each environment we can set up and solve a system of linear equations as shown below:
 \begin{center}
     $\begin{bmatrix}
         1 & ln(R_{T_{1}}) & (ln(R_{T_{1}}))^{3}\\[3pt]
@@ -192,6 +202,9 @@ For the Thermistor, we utilize \textbf{Eq.(5)} to convert the output voltage int
         \frac{1}{T_{3}+273.15}
     \end{bmatrix}$
 \end{center}
+
+Temperature is converted to Kelvin for calculation purposes. This temperature is the (approximate) true measurement. The $1$,$2$,and $3$ subscripts represent the three environments (in no particular order).
+
 
 \subsubsection*{Mean Temperature in Laboratory w/ Confidence Interval}
 Calculation of the mean temperature with confidence interval of $\gamma = 95\%$ was implemented through MATLAB as shown below:
@@ -227,65 +240,29 @@ Below are the average temperatures w/ the confidence interval for each of the th
     \item Thermocouple: \(21.6671 \pm 0.0005\; \degree C\)
 \end{itemize}
 
-For calibration, we had three different equations, one for each sensor. The thermistor's calibration equation was the Steinhart-Hart relation, the IC/TMP36 was a simple linear equation, and the thermocouple was a simple linear equation.
-
-IC TMP36 Calibration:
-\[
-    T = a * V_{out} + b
-\]
-where $a = 100\; \degree C/V$ and $b = -50\; \degree C$.
-
-Thermocouple Calibration:
-\[
-    T = a * V_{out} + b
-\]
-
-Thermistor Calibration:
-\[
-    T = \dfrac{1}{A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}}
-\]
-
-
-
-
-\subsection{Part 2: Hot and Cold Water}
-
-\subsubsection{Part 2a: Hot Water} % Subsubsection 1
-
-
-
-\subsubsection{Part 2b: Water Cooling} % Subsubsection 2
-
-
-\subsubsection{Part 2c: Ice-Hot} % Subsubsection 3
-
-
-\subsubsection{Part 2d: Quick Changes} % Subsubsection 4
-
-
-\subsubsection{Part 2e: Sensor Repetition} % Subsubsection 5
-
-
 
 \section{Results}
 This section analyzes the results of our data for the three temperature sensors in each environment.
 
 \begin{table}
     \centering
-    \begin{tabular}{cccc}
-         &  Ambient&  Hot& Cold\\
-         True Temperature ()&  &  & \\
-         Voltage (V)&  &  & \\
- Resistance ()& & &\\
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         &  Ambient & Cold & Hot \\
+         \hline
+         Temperature (°C) & 20.6 & 4.5 & 86.3 \\
+         \hline
+         Voltage (V) & 1.8428 & 2.5041 & 0.3188 \\
+         \hline
+         Resistance \((k\Omega)\) & 0.8639 & 1.4849 & 0.1008 \\
+         \hline
     \end{tabular}
     \caption{Caption}
-    \label{tab:my_label}
+    \label{tab:Initial_Values}
 \end{table}
+
 The values in table 1 are gathered from parts a-d of the experiment, and alongside Eq. (5), are used to calibrate the thermistor from voltages to output temperature.  
 
-The time constant, \(\tau\),  is defined as the time it takes for the system to change from its original state by 63.2\%.  For a first order sensor, Equation xx is used.  The time constant is measured from steady-state before a step input until the sensor reaches steady-state again.  Therefore To will be the initial steady-state temperature and Tf will be the final steady-state temperature after the step input. 
-%USE THIS THING >>> % T(t)=(Tf=To)(1-exp(-t/tau))+To then find T at t=tau
-At a time T=tau, the equation becomes T-subscript-tau = +/- 0.632abs(Tf-To)+To (+/- depends on increase/decrease in temp)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth, angle = -90]{lab2images/labview_plots.jpg}
@@ -329,40 +306,97 @@ At a time T=tau, the equation becomes T-subscript-tau = +/- 0.632abs(Tf-To)+To (
   %  d) how long does it take to cool to ambient temp.  is this time constant different than a? 
 
 Part 1 %For ambient temp
+
 \begin{table}
     \centering
-    \begin{tabular}{ccccc}
-         &  Mean&  STD&  95\% confidence& Error\\
-         Thermocouple&  &  &  & \\
-         Thermistor&  &  &  & \\
-         IC Sensor&  &  &  & \\
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+        \hline
+        & Mean (°C) & Standard Dev. (°C) & 95\% Confidence Interval & Bias Error (\%) & Percent Error (\%) \\
+        \hline
+        Thermocouple & 21.6671 & 0.0578 & 0.0005 & - & - \\
+        \hline
+        IC Sensor & 20.8415 & 0.4722 & 0.0038 & - & -\\
+        \hline
+        Thermistor & 20.6000 & 0.0653 & 4.9328E-04 & - & - \\
+        \hline
+    \end{tabularx}
+    \caption{Part 1 Values for the ambient temperature measurements}
+    \label{tab:Ambient_temp_stats}
 \end{table}
-    %add another column if needed?
-    
-%add graphs here of part a,b,c,d etc...
+
+At ambient room temperatures, all three sensors reported temperatures within xxx\% of the true temperature, which was 20.8\degree C.  The BLANK SENSOR had the most accurate readings, and the BLANK SENSOR was the most precise.  
+%use std for precision, mean for accuracy    
+%add more about why these relationships make sense (cant do bc i don't have the data yet) 
 
 Part 2: %sudden changes in temp
+
+The time constant, \(\tau\),  is defined as the time it takes for the system to change from its original state by 63.2\%.  For a first order sensor, Equation xx is used.  The time constant is measured from steady-state before a step input until the sensor reaches steady-state again.  Therefore To will be the initial steady-state temperature and Tf will be the final steady-state temperature after the step input. 
+%USE THIS THING >>> % T(t)=(Tf=To)(1-exp(-t/tau))+To then find T at t=tau
+At a time T=tau, the equation becomes The equation can be written in LaTeX as: \( T_{\tau} = \pm 0.632|T_f - T_o| + T_o \) (+/- depends on increase/decrease in temp) 
+
+After taking the data for Part 1, the thermistor data only gave ~4.9V for the remainder of the experiments.  It is unknown what happened between Part 1 and Part 2, but all data concerning the thermistor for this section is invalid.  
 
 \begin{table}
     \centering
     \begin{tabular}{cccccc}
          &  Part a&  Part b&  Part c&  Part d& \\
-         Initial Temp (To)&  &  &  &  & \\
-         Final Temp (Tf)&  &  &  &  & \\
-         Time (t)&  &  &  &  & \\
-         T at t=tau&  &  &  &  & \\
-         time constant (Tau)&  &  &  &  & \\
+         Initial Temp (To)&  t11&  t12&  t13&  t14& \\
+         Final Temp (Tf)&  t21&  t22&  t23&  t24& \\
+         Time (t)&  t31&  t32&  t33&  t34& \\
+         T at t=tau&  t41&  t42&  t43&  t44& \\
+         time constant (Tau)&  t51&  t52&  t53&  & \\
     \end{tabular}
-    \caption{Caption}
+    \caption{Thermocouple Data}
     \label{tab:sudden_temp}
 \end{table}
 
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+         &  Part a&  Part b&  Part c&  Part d& \\
+         Initial Temp (To)&  t11&  t12&  t13&  t14& \\
+         Final Temp (Tf)&  t21&  t22&  t23&  t24& \\
+         Time (t)&  t31&  t32&  t33&  t34& \\
+         T at t=tau&  t41&  t42&  t43&  t44& \\
+         time constant (Tau)&  t51&  t52&  t53&  & \\
+    \end{tabular}
+    \caption{IC Sensor Data}
+    \label{tab:sudden_temp2}
+\end{table}
+
+
+%PUT SOME GRAPHS IN SECTIONS BELOW, Not all of em unless u wanna (up to u) BUT MAKE SURE THEY ONLY FEATURE A LITTLE STEADY STATE BUT MAINLY FOCUS ON THE STEP INPUT (TIME CONSTANT) STUFF BC THATS ALL WE WANT (EXCEPT FOR PART B) and maybe D
+
+\textbf{Part 2a}
+
+As in part 1, the ambient temperature was very similar for all 3 sensors.  The time it took for each sensor to reach steady-state after being inserted in the boiling water took longer for the XXX sensor than it did for the XXX sensor.  The XXX sensor was the closest to the true temperature of the boiling water and the XXX was the least accurate.  % thermocouple has large temp range (1400C) + large error (2.2 C), thermistor has mid range (200C) w/ small error (0.2 C), TMP36 has mid range (200C) + big error (2 C)
+
+\textbf{Part 2b}
+
+For each sensor, the starting temperature was within X \degree C of each other, and each sensor took over X seconds to reach a temperature of X %whatever we said earlier
+degrees.  The XX sensor took the shortest, the XX sensor was the longest, but they were still within X seconds of each other.  This data produced a linear graph, which can be attributed to the slow temperature change, rather than a sudden spike.  % maybe add another sentence here about sensors idk?
+
+\textbf{Part 2c}
+
+In cold temperatures, the sensors were within X\% of the true temperature, with the XX being the most accurate, and the XX being the least.  After the sudden temperature change, they were within X\% of the true temperature.  As shown in table XX, during the sudden temperature changes, the time constant was XX, which is \textbf{different / the same} as in part a.  
+
+\textbf{Part 2d}
+
+Once again, the steady-states of the hot water were within X\degree C of each other.  The time it took for the sensors to reach the True temperature of the room ranged from X seconds for the XX sensor to X seconds for the XX sensor.  The time constants for this experiment are (different / the same) as in part a.  This is because %explain why or why not?
+
+\textbf{Part 2e}
+
+When comparing parts a and d, when the sensors are submerged into the water, the reaction is much faster compared to when the sensors are pulled out into the air.  A similar concept arises in part b, when the sensors slowly measure the temperature decrease of the water over time.  Water has a much larger specific heat compared to air, which allows for better retention of the heat, and also allows for a more rapid reaction when introduced to a sudden change in temperature.  
+
 \section{Conclusion}
 
+The first goal of this lab was to learn about three different temperature sensors: Thermocouples, IC Sensors, and Thermistors.  The thermocouple and IC Sensor report voltage changes as a response to temperature changes, whereas the Thermistor uses resistance.  The outputted voltage data was calibrated and converted into usable temperature data through equations given in lectures.  The IC Sensor linearly changed in voltage as the temperature changed linearly.  The thermistor has an inversely proportional relationship because it uses resistance rather than voltage.  Our data for the IC sensor and thermocouple supported this, but the lack of valid data for the thermistor in Part 2 left us unable to quantify this relationship.  
 
+The second goal of this lab was the acquire and process data in the LabVIEW software.  After the lab session, each group member can comfortably recreate this experiment.  This includes the physical circuits and connections, as well as the block diagrams and data collection via LabVIEW.  However, it is unknown what the cause is for the lack of valid thermistor data.  It could be a simple wire becoming loose as someone moved the breadboard, or it could be a software related issue.  
+
+The final goal of this lab was to investigate the transient behavior of a thermistor (first-order sensor).  We were unable to properly complete this task.  For a majority of the Part 2 experiments, the thermistor graphs should have looked like logarithmic curves, with a fast rate of change initally before slowing down towards the end.  \
+
+Disregarding the obvious thermistor errors, the rest of the data satisfied every 95\% confidence interval.  This data showed that the most accurate sensor compared to the true mean was the IC Sensor, with the thermocouple having higher precision.
 
 
 \newpage

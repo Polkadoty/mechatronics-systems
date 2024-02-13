@@ -29,9 +29,9 @@ dt = (freq*minute)^-1;
 ohm = 1000; % 1k ohm resistor
 
 %data
-thermistordata = M0(1:i,2);
+thermistordata = M0(1:i,2); % Thermistor convert to C ****
 ICdata = 100.*(M0(1:i,4) - 0.5); %IC data converted to C
-thermocoupledata = M0(1:i,6); % Thermistor convert to C ****
+thermocoupledata = M0(1:i,6); 
 
 %plots: thermistor, IC, thermocouple
 

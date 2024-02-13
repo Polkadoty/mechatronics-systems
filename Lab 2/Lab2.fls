@@ -1,8 +1,8 @@
-PWD c:/Programs/E-Mech Labs/Lab 2
+PWD a:/Programs/mechatronics-systems/Lab 2
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Programs/E-Mech Labs/Lab 2/Lab2.tex
+INPUT a:/Programs/mechatronics-systems/Lab 2/Lab2.tex
 OUTPUT Lab2.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -170,6 +170,10 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/gensymb/gensymb.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/gensymb/gensymb.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 INPUT Lab2.aex
 INPUT ./Lab2.aex
 INPUT ./Lab2.aex
