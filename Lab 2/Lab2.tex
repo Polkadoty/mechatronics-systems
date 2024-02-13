@@ -100,13 +100,13 @@ The DAQ, with the NI 9211 and NI 9215 modules already installed, was connected t
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{lab2images/ProcessDiagram.png}
+\includegraphics[width=0.7\textwidth]{lab2images/ProcessDiagram.png}
 \caption{Process Diagram}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{lab2images/68154.jpg}
+    \includegraphics[width=0.7\textwidth]{lab2images/68154.jpg}
     \caption{Process Diagram screenshot}
     \end{figure}
 
@@ -162,6 +162,7 @@ The data was measured simultaneously for each sensor.
     \item Standard Deviation of the Mean: \(\dfrac{S_{x}}{\sqrt{N}}\)
     \item Average Measurement w/ Confidence Interval: \(\bar{x} \pm t_{stat}\cdot \dfrac{S_{x}}{\sqrt{N}}\)
     \item \textit{Steinhart-Hart Relation}: \(\dfrac{1}{T} = A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}\), where $A$, $B$, $C$ are the Thermistor's calibration coefficients.
+    \item 
 \end{enumerate}  
 
 \subsection*{Voltage to Temperature Conversions}
@@ -274,11 +275,11 @@ This section analyzes the results of our data for the three temperature sensors 
     \subsection{Part 1: Ambient Temperature}
     In Part 1 of the experiment we take measurements of the laboratory room temperature using each of the three sensors: thermocouple, thermistor, and IC TMP36. The data displayed below shows the temperature sensors at work for $1$ minute of sampling at $f_{s} = 1000\; s^{-1}$. This means $\Delta t_{s} = (f_{s}\cdot 60)^{-1} = 1.6667\times10^{-5}\; \text{minutes}$.
     
-    % \begin{figure}[H]
-    %     \centering
-    %     \includegraphics[width=0.695\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
-    %     \caption{Thermistor at ambient temperature}
-    % \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.695\textwidth]{lab2images/thermistor_volt_roomtemp_1min_plot.png}
+        \caption{Thermistor at ambient temperature}
+    \end{figure}
     
     \begin{figure}[H]
         \centering
