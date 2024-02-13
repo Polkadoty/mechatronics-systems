@@ -101,8 +101,14 @@ The DAQ, with the NI 9211 and NI 9215 modules already installed, was connected t
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{lab2images/ProcessDiagram.png}
-\caption{Temperature Sensors, Water mug, and Breadboard circuit}
+\caption{Process Diagram}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{lab2images/68154.jpg}
+    \caption{Process Diagram screenshot}
+    \end{figure}
 
 The DAQ block had signals for each sensor, measuring at a 1000hz frequency.  The collector is initially given a size of 500,000 samples.  Each sensor from the DAQ was given its own graph using a split signal, and a "write to measure file" block was placed to save our data to an Excel file.  
 
@@ -127,7 +133,7 @@ For this part of the experiment, the collector block's size was changed to one m
 
 \subsubsection{Part 2c: Ice-Hot} % Subsubsection 3
 
-Place the three sensors in a bowl of ice-cold water, wait for the graphs to reach equilibrium, and then quickly take them out of the ice water, and into the hot water, measuring until it reaches steady-state.  The region between the equilibrium in ice water and the equilibrium in hot water is the time constant we are measuring.  In our experiment, the ice water was at ASK ANDREW FOR EXACT TEMP and the hot water was at ASK ANDREW FOR TEMP.  
+Place the three sensors in a bowl of ice-cold water, wait for the graphs to reach equilibrium, and then quickly take them out of the ice water, and into the hot water, measuring until it reaches steady-state.  The region between the equilibrium in ice water and the equilibrium in hot water is the time constant we are measuring.  In our experiment, the ice water was at \(40^\circ C\) and the hot water was at \(87^\circ C\).  
 
 \subsubsection{Part 2d: Quick Changes} % Subsubsection 4
 
@@ -165,7 +171,7 @@ The IC/TMP36 sensor originally outputs voltage. This was converted to $\degree C
 \end{center}
 
 
-\subsubsection{Mean Temperature in Laboratory w/ Confidence Interval}
+\subsubsection*{Mean Temperature in Laboratory w/ Confidence Interval}
 Calculation of the mean temperature with confidence interval of $\gamma = 95\%$ was implemented through MATLAB as shown below:
 \begin{lstlisting}[style=Matlab-editor]
 % Confidence Interval in Laboratory
@@ -199,8 +205,44 @@ Below are the average temperatures w/ the confidence interval for each of the th
     \item Thermocouple: \(21.6671 \pm 0.0005\; \degree C\)
 \end{itemize}
 
+For calibration, we had three different equations, one for each sensor. The thermistor's calibration equation was the Steinhart-Hart relation, the IC/TMP36 was a simple linear equation, and the thermocouple was a simple linear equation.
+
+IC TMP36 Calibration:
+\[
+    T = a * V_{out} + b
+\]
+where $a = 100\; \degree C/V$ and $b = -50\; \degree C$.
+
+Thermocouple Calibration:
+\[
+    T = a * V_{out} + b
+\]
+
+Thermistor Calibration:
+\[
+    T = \dfrac{1}{A + B\cdot ln(R_{T}) + C\cdot (ln(R_{T}))^{3}}
+\]
+
+
+
 
 \subsection{Part 2: Hot and Cold Water}
+
+\subsubsection{Part 2a: Hot Water} % Subsubsection 1
+
+
+
+\subsubsection{Part 2b: Water Cooling} % Subsubsection 2
+
+
+\subsubsection{Part 2c: Ice-Hot} % Subsubsection 3
+
+
+\subsubsection{Part 2d: Quick Changes} % Subsubsection 4
+
+
+\subsubsection{Part 2e: Sensor Repetition} % Subsubsection 5
+
 
 
 \section{Results}
