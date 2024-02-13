@@ -281,7 +281,11 @@ This section analyzes the results of our data for the three temperature sensors 
     \caption{Caption}
     \label{tab:my_label}
 \end{table}
+The values in table 1 are gathered from parts a-d of the experiment, and alongside Eq. (5), are used to calibrate the thermistor from voltages to output temperature.  
 
+The time constant, \(\tau\),  is defined as the time it takes for the system to change from its original state by 63.2\%.  For a first order sensor, Equation xx is used.  The time constant is measured from steady-state before a step input until the sensor reaches steady-state again.  Therefore To will be the initial steady-state temperature and Tf will be the final steady-state temperature after the step input. 
+%USE THIS THING >>> % T(t)=(Tf=To)(1-exp(-t/tau))+To then find T at t=tau
+At a time T=tau, the equation becomes T-subscript-tau = +/- 0.632abs(Tf-To)+To (+/- depends on increase/decrease in temp)
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth, angle = -90]{lab2images/labview_plots.jpg}
@@ -317,19 +321,13 @@ This section analyzes the results of our data for the three temperature sensors 
     
     Similar to the small change in the Thermistor's output, the Thermocouple sees small changes as it is decreasing to a steady-state. 
 
-(Answer Observation Questions from Part 2)
-QUESTIONS THAT GOTTA BE ANSWERED.
-    a) time to reach steady state.  time constant of the sensor.  
-    b) how long to cool to a safe, drinkable temp?
-    c) how long to reach steady state.  is the time constant different than a?
-    d) how long does it take to cool to ambient temp.  is this time constant different than a? 
+%(Answer Observation Questions from Part 2)
+%QUESTIONS THAT GOTTA BE ANSWERED.
+    %a) time to reach steady state.  time constant of the sensor.  
+   % b) how long to cool to a safe, drinkable temp?
+    %c) how long to reach steady state.  is the time constant different than a?
+  %  d) how long does it take to cool to ambient temp.  is this time constant different than a? 
 
-% someone should make a table 
-
-
-% use these to calculate A,B,C from steinhart-hart for calibrated output temp
-
-The time constant, \(\tau\),  is defined as the time it takes for the system to change from its original state by 63\%.  % T(t)=(Tf=To)(1-exp(-t/tau))+To then find T at t=tau
 Part 1 %For ambient temp
 \begin{table}
     \centering
@@ -351,12 +349,12 @@ Part 2: %sudden changes in temp
 \begin{table}
     \centering
     \begin{tabular}{cccccc}
-         &  ambient to hot: sudden&  hot to cool: slow&  cold to hot: sudden&  hot to ambient: sudden& \\
-         Initial Temp&  &  &  &  & \\
-         Final Temp&  &  &  &  & \\
-         Time Change From steady-state to steady-state&  &  &  &  & \\
+         &  Part a&  Part b&  Part c&  Part d& \\
+         Initial Temp (To)&  &  &  &  & \\
+         Final Temp (Tf)&  &  &  &  & \\
+         Time (t)&  &  &  &  & \\
          T at t=tau&  &  &  &  & \\
-         time constant Tau&  &  &  &  & \\
+         time constant (Tau)&  &  &  &  & \\
     \end{tabular}
     \caption{Caption}
     \label{tab:sudden_temp}
