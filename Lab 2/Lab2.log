@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  12 FEB 2024 18:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -470,7 +470,11 @@ runsystem(del Lab2.aex)...executed.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count346
 \l__pdf_internal_box=\box65
-) (./Lab2.aux)
+) (./Lab2.aux
+
+LaTeX Warning: Label `tab:my_label' multiply defined.
+
+)
 \openout1 = `Lab2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -631,33 +635,42 @@ File: lab2images/thermocouple_roomtemp_1min_plot.png Graphic file (type png)
 <use lab2images/thermocouple_roomtemp_1min_plot.png>
 Package pdftex.def Info: lab2images/thermocouple_roomtemp_1min_plot.png  used on input line 274.
 (pdftex.def)             Requested size: 307.68895pt x 167.62656pt.
- [8 <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)> <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)> <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)>] [9] [10]
-<t_distribution_Table_lecture3.png, id=227, 399.29175pt x 486.01575pt>
+ [8 <./lab2images/thermistor_volt_roomtemp_1min_plot.png (PNG copy)> <./lab2images/ICTMP36_roomtemp_1min_plot.png (PNG copy)> <./lab2images/thermocouple_roomtemp_1min_plot.png (PNG copy)>]
+Overfull \hbox (176.19058pt too wide) in paragraph at lines 327--335
+ [][] 
+ []
+
+[9] [10]
+<t_distribution_Table_lecture3.png, id=230, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 306.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 360.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
  [11 <./t_distribution_Table_lecture3.png>] (./Lab2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Lab2.out' has not changed.
 (rerunfilecheck)             Checksum: 2B55F1293D160306685871596EEB53F9;2959.
  ) 
 Here is how much of TeX's memory you used:
- 17437 strings out of 474222
- 293227 string characters out of 5750209
+ 17448 strings out of 474222
+ 293453 string characters out of 5750209
  2012978 words of memory out of 5000000
- 39395 multiletter control sequences out of 15000+600000
+ 39403 multiletter control sequences out of 15000+600000
  562487 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,601b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Lab2.pdf (12 pages, 6259623 bytes).
+Output written on Lab2.pdf (12 pages, 6261111 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 
