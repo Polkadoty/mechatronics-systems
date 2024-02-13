@@ -1,5 +1,5 @@
 %% Room Temp
-clear all; clc;
+clear; clc;
 
 %Load in file 
 file0 = ['lab2sheets\room-Temp','.xlsx'];
@@ -74,6 +74,16 @@ avg_unc_thermistor = [mean(thermistordata) tstat*std(thermistordata)/sqrt(Q)];
 avg_unc_IC = [mean(ICdata) tstat*std(ICdata)/sqrt(Q)];
 
 avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)/sqrt(Q)];
+
+function tau = calculateTimeConstant(V, t)
+    % V(t) = c1 * (1 - exp(-t/tau))
+    % Solve for tau
+    % tau = -t / log(1 - V(t) / c1)
+    
+    c1 = max(V);
+    % Assuming c1 is the maximum voltage value
+    tau = -t / log(1 - V(end) / c1);
+end
 
 
 
