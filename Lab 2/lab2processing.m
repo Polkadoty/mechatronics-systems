@@ -29,7 +29,7 @@ dt = (freq*minute)^-1;
 ohm = 1000; % 1k ohm resistor
 
 %data
-thermistordata = M0(1:i,2); % Thermistor convert to C ****
+thermistordata = M0(1:i,2)/0.05; % Thermistor convert to C 
 ICdata = 100.*(M0(1:i,4) - 0.5); %IC data converted to C
 thermocoupledata = M0(1:i,6); 
 
@@ -37,23 +37,23 @@ thermocoupledata = M0(1:i,6);
 
 figure(1);
 plot(0:dt:time1-dt,thermistordata,'r-')
-title('Temperature Sensor Data @ Room Temperature')
-xlabel('Time [minutes]')
-ylabel('Thermistor [Volts]')
+title('Temperature Sensor Data @ Room Temperature','FontSize',15)
+xlabel('Time [minutes]','FontSize',15)
+ylabel('Thermistor [Volts]','FontSize',15)
 grid on;
 
 figure(2);
 plot(0:dt:time1-dt,ICdata,'k-')
-title('IC Temperature Sensor @ Room Temperature')
-xlabel('Time [minutes]')
-ylabel('IC [\circ Celsius]')
+title('IC Temperature Sensor @ Room Temperature','FontSize',15)
+xlabel('Time [minutes]','FontSize',15)
+ylabel('IC [\circ Celsius]','FontSize',15)
 grid on;
 
 figure(3);
 plot(0:dt:time1-dt,thermocoupledata,'b-')
-title('Thermocouple @ Room Temperature')
-xlabel('Time [minutes]')
-ylabel('Thermocouple [\circ Celsius]')
+title('Thermocouple @ Room Temperature','FontSize',15)
+xlabel('Time [minutes]','FontSize',15)
+ylabel('Thermocouple [\circ Celsius]','FontSize',15)
 grid on;
 
 
@@ -66,14 +66,16 @@ nu = Q-1; %DOF
 
 p = (1-gamma)/2; %probability
 
-tstat = tinv(p,nu); %returns 
+tstat = tinv(p,nu);  
 
 % (SAMPLE MEANS) Mean w/ Confidence Interval
-avg_unc_thermistor = [mean(thermistordata) tstat*std(thermistordata)/sqrt(Q)];
 
-avg_unc_IC = [mean(ICdata) tstat*std(ICdata)/sqrt(Q)];
+sd_thermistor = std(thermistordata);
+sd_IC = std(ICdata);
+sd_thermocouple = std(thermocoupledata);
 
-avg_unc_thermocouple = [mean(thermocoupledata)  tstat*std(thermocoupledata)/sqrt(Q)];
+avg_unc_thermistor = [mean(thermistordata) tstat*sd_thermistor/sqrt(Q)];
 
+avg_unc_IC = [mean(ICdata) tstat*sd_IC/sqrt(Q)];
 
-
+avg_unc_thermocouple = [mean(thermocoupledata)  tstat*sd_thermocouple/sqrt(Q)];
