@@ -170,6 +170,28 @@ The IC/TMP36 sensor originally outputs voltage. This was converted to $\degree C
     \href{https://www.analog.com/media/en/technical-documentation/data-sheets/tmp35_36_37.pdf}{\includegraphics[width = 0.6\textwidth]{lab2images/tmp36_offset_documentation.png}}
 \end{center}
 
+For the Thermistor, we utilize \textbf{Eq.(5)} to convert the output voltage into degrees Celsius. By gathering the Thermistor's resistance along with the temperature in each environment we can set up and solve a system of linear equations as shown below:
+\begin{center}
+    $\begin{bmatrix}
+        1 & ln(R_{T_{1}}) & (ln(R_{T_{1}}))^{3}\\[3pt]
+        1 & ln(R_{T_{2}}) & (ln(R_{T_{2}}))^{3}\\[3pt]
+        1 & ln(R_{T_{3}}) & (ln(R_{T_{3}}))^{3}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        A\\[3pt]
+        B\\[3pt]
+        C
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+        \frac{1}{T_{1}+273.15}\\[3pt]
+            
+        \frac{1}{T_{2}+273.15}\\[3pt]
+        
+        \frac{1}{T_{3}+273.15}
+    \end{bmatrix}$
+\end{center}
 
 \subsubsection*{Mean Temperature in Laboratory w/ Confidence Interval}
 Calculation of the mean temperature with confidence interval of $\gamma = 95\%$ was implemented through MATLAB as shown below:
@@ -274,6 +296,18 @@ This section analyzes the results of our data for the three temperature sensors 
         \includegraphics[width=0.655\textwidth]{lab2images/thermocouple_roomtemp_1min_plot.png}
         \caption{Thermocouple at ambient temperature}
     \end{figure}
+
+    \begin{table}
+    \centering
+    \begin{tabular}{cccc}
+         &  Ambient&  Hot& Cold\\
+         Temperature ()&  &  & \\
+         Voltage (V)&  &  & \\
+ Resistance ()& & &\\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
     
     There are small spikes occurring around half of the period for the Thermistor's output. This disturbance could have been due to the Thermistor's sensitivity to very small changes in temperature, possibly due to slight movement (increased kinetic energy correlates to increased thermal energy).
     
@@ -290,17 +324,7 @@ QUESTIONS THAT GOTTA BE ANSWERED.
 
 % someone should make a table 
 
-\begin{table}
-    \centering
-    \begin{tabular}{cccc}
-         &  Ambient&  Hot& Cold\\
-         Temperature ()&  &  & \\
-         Voltage (V)&  &  & \\
- Resistance ()& & &\\
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
-\end{table}
+
 % use these to calculate A,B,C from steinhart-hart for calibrated output temp
 
 The time constant, \(\tau\),  is defined as the time it takes for the system to change from its original state by 63\%.  % T(t)=(Tf=To)(1-exp(-t/tau))+To then find T at t=tau
