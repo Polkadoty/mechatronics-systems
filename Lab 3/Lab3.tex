@@ -137,11 +137,11 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
 
   \subsection{Spanwise Displacement}
   Part 2 of displacement measurements involve measuring spanwise displacement due to weight hanging at three different trailing edge joints throughout the span of the wing platform. Ensure proper setup of linear potentiomenter under the span of the wing platform. 
-  \begin{figure}
-    \centering
-    \includegraphics[width = \textwidth]{lab3images/SpanwiseLocations.jpg}
-    \caption{Spanwise position indexing with Leading and Trailing Edge labels}
-  \end{figure}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width = \textwidth]{lab3images/SpanwiseLocations.jpg}
+  %   \caption{Spanwise position indexing with Leading and Trailing Edge labels}
+  % \end{figure}
   
   \begin{enumerate}
     \item Start by hanging the weight at the $6^{th}$ position as shown in \textbf{Figure (1)}. 
@@ -154,21 +154,20 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
     \vspace{2.5mm}
 
     \item Next, move the weight to the $5^{th}$ position.
-    \vspaceif evoba erugif eht ni n
+    \vspace{2.5mm}
   \end{enumerate}
 
 \section{Data Processing}
 \subsection*{Variables}
 \begin{enumerate}[label = \roman*.]
-    \item (EI): Bending Stiffness
-    \item (GJ): Torsional Stiffness
-    \item (e): Location of Shear Center
-    \item (S_{j}): Shear Force at a $j$ coordinate
-    \item (x_{j}): Spanwise coordinate
-    \item (y_{f}): Chordwise Coordinate
-    \item (M_{j}): Moment acting at $j$ coordinate
-    \item (\tau_{j}): Torque acting at $j$ coordinate
-    \item ()
+  \item (\(EI\)): Bending Stiffness
+  \item (\(GJ\)): Torsional Stiffness
+  \item (\(e\)): Location of Shear Center
+  \item (\(S_{j}\)): Shear Force at a \(j\) coordinate
+  \item (\(x_{j}\)): Spanwise coordinate
+  \item (\(y_{f}\)): Chordwise Coordinate
+  \item (\(M_{j}\)): Moment acting at \(j\) coordinate
+  \item (\(\tau_{j}\)): Torque acting at \(j\) coordinate
 \end{enumerate}
 
 \subsection*{Equations}
@@ -181,7 +180,7 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{cccccccc}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
   \hline
   LE X position & LE Voltage (V) & LE STD & LE Deflection (mm) & TE Voltage (V) & TE STD & TE Deflection (mm) & Theta (rad) \\
   \hline
@@ -206,25 +205,25 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   \centering
   \begin{tabular}{|c|c|}
   \hline
-  Weight (kg) & 0.25 \\
+  Weight \(kg\) & 0.25 \\
   \hline
-  Shear Force (N) & 2.4525 \\
+  Shear Force \(N\) & 2.4525 \\
   \hline
   Shear Center & 0.31\% Chord \\
   \hline
-  Moment (N*cm) & 67.44375 \\
+  Moment \(N*cm\) & 67.44375 \\
   \hline
-  Torque (N*mm^2) & 170.57628 \\
+  Torque \(N*mm^2\) & 170.57628 \\
   \hline
-  Deflection (X_i=11) & 4004.091667 \\
+  Deflection \(X_i=11\) & 4004.091667 \\
   \hline
-  Deflection (X_i=19.25) & 11753.00729 \\
+  Deflection \(X_i=19.25\) & 11753.00729 \\
   \hline
-  Deflection (X_i=27.5) & 22945.88542 \\
+  Deflection \(X_i=27.5\) & 22945.88542 \\
   \hline
-  EI (N*m^2) & 490.5 \\
+  EI \(N*m^2\) & 490.5 \\
   \hline
-  GJ (N*m) & 213.22035 \\
+  GJ \(N*m\) & 213.22035 \\
   \hline
   \end{tabular}
   \caption{Deflection and Stiffness Data}
@@ -288,20 +287,6 @@ Graphically, our results are as follows.
   \includegraphics[width=0.95\textwidth]{lab3images/SpanwiseDeflection.png}
   \caption{Spanwise Coordinates vs Deflection with varying weight placement}
   \label{fig:SpanwiseDeflection}
-\end{figure}
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{figure2.png}
-  \caption{Figure 2: Deflection and Stiffness Data}
-  \label{fig:deflect_stiff}
-\end{figure}
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{figure3.png}
-  \caption{Figure 3: Actual Deflection}
-  \label{fig:actual_deflection}
 \end{figure}
 
 
