@@ -1,11 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1707779178.20468 "c:/Programs/E-Mech Labs/Lab 3/Lab3.tex" "Lab3.pdf" "Lab3" 1707779179.73512 0
-  "Lab3.aux" 1707779179 2230 6345a9db037a878299a04778bfa74921 "pdflatex"
-  "Lab3.out" 1707779179 732 72c4ef6c4d9be3e4f0e34910c42be887 "pdflatex"
-  "Lab3.tex" 1707779177 5029 4ea65935d67d71b3962e515a8197e11f ""
-  "Lab3.toc" 1707779179 483 ece5ab9bdebe3184106b94e8628da530 "pdflatex"
+["pdflatex"] 1708367929.53628 "c:/Programs/E-Mech Labs/Lab 3/Lab3.tex" "Lab3.pdf" "Lab3" 1708367930.99998 0
+  "Lab3.aux" 1708367930 2657 9bf5addbea93b769c663d778c1a44936 "pdflatex"
+  "Lab3.out" 1708367930 1467 c73346e2c971a06ac56dfb10787d92e3 "pdflatex"
+  "Lab3.tex" 1708367927 8545 13d2181f5c89cf3246fcbb7a5c87cf92 ""
+  "Lab3.toc" 1708367930 787 ab04257310ed61b041352efb680b742a "pdflatex"
   "ase-logo-formal.png" 1694451038 34404 5ee524f99c04ac6220becc16cea7da79 ""
-  "c:/Programs/E-Mech Labs/Lab 3/Lab3.tex" 1707779177 5029 4ea65935d67d71b3962e515a8197e11f ""
+  "c:/Programs/E-Mech Labs/Lab 3/Lab3.tex" 1708367927 8545 13d2181f5c89cf3246fcbb7a5c87cf92 ""
+  "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1706547675 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1706548829 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1706548340 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1706548340 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -21,6 +22,9 @@
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1706546670 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1706546670 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1706546670 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1706546670 32762 7fee39e011c23b3589931effd97b9702 ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1706546670 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1706547675 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1706550891 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1706546826 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "c:/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1706547246 40635 c40361e206be584d448876bba8a64a3b ""
