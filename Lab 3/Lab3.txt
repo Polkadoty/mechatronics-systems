@@ -1,0 +1,136 @@
+
+Calibration:
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{X Position} & \textbf{Voltage Response} & \textbf{Standard Deviation} \\
+\hline
+$10 mm$ & $0.5706 V$ & 0.0007\\
+\hline
+$20.09 mm$ & $1.013 V$ & 0.00071 \\
+\hline
+$29.99 mm$ & $1.82 V$ & 0.00088 \\
+\hline
+$40.04 mm$ & $2.485 V$ & 0.0009\\
+\hline
+$50.01 mm$ & $3.023 V$ & 0.0008\\
+\hline
+$60.09 mm$ & $3.699 V$ & 0.00078\\
+\hline
+$80.06 mm$ & $4.996 V$ & 0.0004\\
+\hline
+\end{tabular}
+\caption{Table of X Position and Voltage Response}
+\label{tab:position_voltage}
+\end{table}
+
+C = 100.8 mm
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{X Position} & \textbf{Voltage Response} & \textbf{Standard Deviation} \\
+\hline
+$0 mm$ & $2.146 V$ & 0.00093 \\
+\hline
+$10 mm$ & $2.164 V$ & 0.00099\\
+\hline
+$20 mm$ & $2.184 V$ & 0.00095\\
+\hline
+$30 mm$ & $2.200 V$ & 0.0010 \\
+\hline
+$40 mm$ & $2.227 V$ & 0.00093 \\
+\hline
+$50 mm$ & $2.256 V$ & 0.0010 \\
+\hline
+$60 mm$ & $2.279 V$ & 0.00099 \\
+\hline
+$70 mm$ & $2.306 V$ & 0.00098 \\
+\hline
+$80 mm$ & $2.334 V$ & 0.00097\\
+\hline
+$90 mm$ & $2.363 V$ & 0.00100\\
+\hline
+$100 mm$ & $2.384 V$ & 0.00096\\
+\hline
+\end{tabular}
+\caption{Table of X Position, Voltage Response, and Standard Deviation Trailing Edge}
+\label{tab:position_voltage_stddev}
+\end{table}
+
+Calipers go to 0.5 mm in least count
+250g weight
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{X Position} & \textbf{Voltage Response} & \textbf{Standard Deviation} \\
+\hline
+$0 mm$ & $1.979 V$ & 0.00096\\
+\hline
+$10 mm$ & $1.988 V$ & 0.00096 \\
+\hline
+$20 mm$ & $1.988 V$ & 0.00096 \\
+\hline
+$30 mm$ & $1.985 V$ & 0.00095 \\
+\hline
+$40 mm$ & $1.993 V$ & 0.00096 \\
+\hline
+$50 mm$ & $1.997 V$ & 0.00100 \\
+\hline
+$60 mm$ & $1.990 V$ & 0.00099 \\
+\hline
+$70 mm$ & $2.004 V$ & 0.00097 \\
+\hline
+$80 mm$ & $2.005 V$ & 0.00099 \\
+\hline
+$90 mm$ & $2.014 V$ & 0.00100 \\
+\hline
+$100 mm$ & $2.014 V$ & 0.00098 \\
+\hline
+\end{tabular}
+\caption{Table of X Position, Voltage Response, and Standard Deviation Leading Edge}
+\label{tab:position_voltage_stddev2}
+\end{table}
+
+\subsection{Part 2}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Potential Position} & \textbf{Weight Position} & \textbf{Volts} & \textbf{Std} \\
+\hline
+$5$ & $6$ & $2.501 V$ & 0.00093 \\
+\hline
+$2$ & $6$ & $2.234 V$ & 0.00099 \\
+\hline
+$4$ & $6$ & $2.809 V$ & 0.00095 \\
+\hline
+$1$ & $6$ & $2.471 V$ & 0.00090 \\
+\hline
+$3$ & $6$ & $1.988 V$ & 0.00097 \\
+\hline
+$6$ & $6$ & $2.102 V$ & 0.00100 \\
+\hline
+$5$ & $5$ & $2.599 V$ & 0.00100 \\
+\hline
+$2$ & $5$ & $2.312 V$ & 0.00096 \\
+\hline
+$4$ & $5$ & $2.873 V$ & 0.00096 \\
+\hline
+$1$ & $5$ & $2.505 V$ & 0.00090 \\
+\hline
+$4$ & $4$ & $2.904 V$ & 0.00099 \\
+\hline
+$1$ & $4$ & $2.564 V$ & 0.00098 \\
+\hline
+\end{tabular}
+\caption{Table of Potential Position, Weight Position, Volts, and Std}
+\label{tab:position_weight_volts_std}
+\end{table}
