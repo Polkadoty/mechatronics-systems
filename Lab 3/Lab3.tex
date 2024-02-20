@@ -51,7 +51,7 @@
   \vspace{1cm}
  
   \normalsize \textbf{Andrew Doty, Andres Suniaga, Dennis Hom}\\
-  \normalsize \textbf{Due Date: 02/12/2024}
+  \normalsize \textbf{Due Date: 02/19/2024}
  
 \end{titlepage}
 \newpage
@@ -84,7 +84,7 @@ Devices used in this lab include:
 \item DAQ, NI-9215 Voltage Input Module, and LabVIEW: Data Acquisition System used to process data collected by digitizing the analog information into "bins" for a computer. NI-9215 used to measure the input voltage signals for the DAQ system. LabVIEW used to model voltages through the DAQ read from the linear potentiometer displacement.
 \vspace{2.5mm}
 
-\item Solderless Breadboard and Jumper Wires: Used to make connections from the linear potentiometer to power, ground, and signal for data collection.
+\item Solderless Breadboard and Jumper Wires: Used to make connections from the linear potentiometer to power, ground, and signals for data collection.
 
 \end{itemize}
 
@@ -139,7 +139,7 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   Part 2 of displacement measurements involve measuring spanwise displacement due to weight hanging at three different trailing edge joints throughout the span of the wing platform. Ensure proper setup of linear potentiomenter under the span of the wing platform. 
   \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{lab3images/SpanwiseLocations.jpg}
+    \includegraphics[width = 0.6\textwidth]{lab3images/SpanwiseLocations.jpg}
     \caption{Spanwise position indexing with Leading and Trailing Edge labels}
   \end{figure}
   
@@ -155,6 +155,17 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
 
     \item Next, move the weight to the $5^{th}$ position.
     \vspace{2.5mm}
+
+    \item Follow steps (2) and (3) for spanwise positions $x_{S} = \left[1,\, 2,\, 4,\, 5\right]$
+    \vspace{2.5mm}
+
+    \item Lastl, move the weight to position $4$
+    \vspace{2.5mm}
+
+    \item Follow steps (2) and (3) for positions $x_{S} = \left[1,\, 4\right]$
+    \vspace{2.5mm}
+    
+    \item Now the spanwise data can be taken to Data Processing for computing torque and stiffness on the wing model
   \end{enumerate}
 
 \section{Data Processing}
@@ -168,15 +179,66 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   \item (\(y_{f}\)): Chordwise Coordinate
   \item (\(M_{j}\)): Moment acting at \(j\) coordinate
   \item (\(\tau_{j}\)): Torque acting at \(j\) coordinate
+  \item \(x_{i}\): Spanwise locations 
+  \item \(w_{i}\): Bending deflection of the shear center 
+  \item \(\theta_{i}\): Sectional twist 
 \end{enumerate}
 
 \subsection*{Equations}
-\begin{enumerate}[label = \Roman*.]
-    \item 
-\end{enumerate} 
 
+\begin{equation}
+  M_j = S_j x_j
+  \label{eq:bendingmoment}
+\end{equation}
+
+\begin{equation}
+  \tau = S(y_f - e)
+  \label{eq:torque}
+\end{equation}
+
+\begin{equation}
+  w_i = \frac{S_j}{EI} \left( \frac{x_j x_i^2}{2} - \frac{x_i^3}{6} \right)
+  \label{eq:bendingdeflection}
+\end{equation}
+
+\begin{equation}
+  \theta = \frac{\tau}{GJ} x_i
+  \label{eq:twistangle}
+\end{equation}
+
+\begin{equation}
+  \theta = \arctan \left( \frac{x_B - x_A}{c} \right)
+  \label{eq:theta}
+\end{equation}
 
 \section{Results and Analysis}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{ccc}
+  \hline
+  Calibration (mm) & Voltage (V) & STD \\
+  \hline
+  10 & 0.5706 & 0.0007 \\
+  20.09 & 1.013 & 0.00071 \\
+  29.99 & 1.82 & 0.00088 \\
+  40.04 & 2.485 & 0.0009 \\
+  50.01 & 3.023 & 0.0008 \\
+  60.09 & 3.699 & 0.00078 \\
+  80.06 & 4.996 & 0.0004 \\
+  \hline
+  \end{tabular}
+  \caption{Calibration Data}
+  \label{table:calibration_data}
+  \end{table}
+  
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{lab3images/Calibration.png}
+  \caption{Calibrating our Linear Potentiometer}
+  \label{fig:Calibration}
+\end{figure}
 
 \begin{table}[hbtp]
   \centering
@@ -201,9 +263,18 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   \label{tab:LE_TE_Data}
 \end{table}
 
-Table 1 contains the voltage data at various positions along the chord.  It is then converted into distance using the calibration equation.  The deflection at the Leading Edge and Trailing Edge is used to calculate the angle of twist with Eq. XX %arctan eq
-and shear center of the wing.  Plotting the angle of twist against the X position gives a linear representation where the intersect at 0 radians will be the shear center.  This is shown in figure X %add graph here
-and the shear center is determined to be at 31% of the chord length, or at 31.25 (mm).
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{lab3images/YvsTwist.png}
+  \caption{Y distance vs Twist Angle}
+  \label{fig:YvsTwist}
+\end{figure}
+
+The calibration table in Table (\ref{table:calibration_data}) represents how we gained the voltage to displacement relationship for the linear potentiometer.  The voltage data was then plotted against the displacement data and a linear relationship was found, as shown in figure (\ref{fig:Calibration}). 
+
+(\ref{tab:LE_TE_Data}) contains the voltage data at various positions along the chord.  It is then converted into distance using the calibration equation.  The deflection at the Leading Edge and Trailing Edge is used to calculate the angle of twist with (\ref{eq:theta}) %arctan eq
+and shear center of the wing.  Plotting the angle of twist against the X position gives a linear representation where the intersect at 0 radians will be the shear center.  This is shown in figure (\ref{fig:YvsTwist}) %add graph here
+and the shear center is determined to be at 31\% of the chord length, or at 31.25 (mm).
 
 \begin{table}[hbtp]
   \centering
@@ -227,15 +298,22 @@ and the shear center is determined to be at 31% of the chord length, or at 31.25
   \hline
   EI \(N*m^2\) & 490.5 \\
   \hline
-  GJ \(N*m\) & 213.22035 \\
+  GJ \(N*m/rad\) & 213.22035 \\
   \hline
   \end{tabular}
   \caption{Deflection and Stiffness Data}
   \label{tab:deflect_stiff}
 \end{table}
 
-For this section, \(X_j\) was taken as 27.5 in, or 69.85 \(cm\), the following values were calculated using equations %Deflection equation, Moment equation, Torque Equation
-  The measured deflection at the 3 \(X_i\) values were plotted against the theoretical deflection and the slope of the graph was set equal to \(\frac{S_j}{EI}\).  Solving for EI yielded a bending stiffness value of 490.5 \(N*m^2\).
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{lab3images/SpanwiseDeflection.png}
+  \caption{Spanwise Coordinates vs Deflection with varying weight placement}
+  \label{fig:SpanwiseDeflection}
+\end{figure}
+
+For this section, \(X_j\) was taken as 27.5 in, or 69.85 \(cm\), the following values were calculated using equations (1), (2), (3), and (4).  
+The measured deflection at the 3 \(X_i\) values were plotted against the theoretical deflection and the slope of the graph was set equal to \(\frac{S_j}{EI}\).  Solving for EI yielded a bending stiffness value of 490.5 \(N*m^2\).
 
 \begin{table}[hbtp]
   \centering
@@ -256,49 +334,28 @@ For this section, \(X_j\) was taken as 27.5 in, or 69.85 \(cm\), the following v
   
 As for our uncertainty, we can use the least count of our different measuring devices as a basis for the overall uncertainty. That gives us the following equation:
 \[
-\delta_{\text{total}} = \sqrt{\delta_{\text{caliper}}^2 + \delta_{\text{potentiometer}}^2 + \delta_{\text{DAQ}}^2}
+\delta_{\text{total}} = \sqrt{\delta_{\text{caliper}}^2 + \delta_{\text{STD}}^2 + \delta_{\text{potentiometer}}^2 + \delta_{\text{DAQ}}^2}
 \]
 
 In this case, the caliper or ruler measurements are accurate to the nearest millimeter, the potentiomenter is accurate to the nearest hundredth of a millimeter, and the DAQ is accurate to the nearest thousandth of a volt. This gives us the following uncertainties: 
 \begin{itemize}
   \item Caliper: \(\delta_{\text{caliper}} = 0.5\, \text{mm}\)
-  \item Potentiometer: \(\delta_{\text{potentiometer}} = 0.005\, \text{mm}\)
+  \item Standard Deviation: \(\delta_{\text{std}} = 0.001\, \text{mm}\)
+  \item Potentiometer: \(\delta_{\text{potentiometer}} = 0.013\, \text{mm}\)
   \item DAQ: \(\delta_{\text{DAQ}} = 0.001\, \text{V}\)
 \end{itemize}
 
 For our overall propagation of uncertainty, we have:
 \[
-\delta_{\text{total}} = \sqrt{0.5^2 + 0.005^2 + 0.001^2} = 0.501\, \text{mm}
+\delta_{\text{total}} = \sqrt{0.5^2 + + 0.001^2 + 0.013^2 + 0.001^2} = 0.501\, \text{mm}
 \]
-Graphically, our results are as follows.
-
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{lab3images/Calibration.png}
-  \caption{Calibrating our Linear Potentiometer}
-  \label{fig:Calibration}
-\end{figure}
-
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{lab3images/YvsTwist.png}
-  \caption{Y distance vs Twist Angle}
-  \label{fig:YvsTwist}
-\end{figure}
-
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{lab3images/SpanwiseDeflection.png}
-  \caption{Spanwise Coordinates vs Deflection with varying weight placement}
-  \label{fig:SpanwiseDeflection}
-\end{figure}
-
 
 \section{Conclusion}
-
+The first goal of this lab was to learn how to use a linear potentiometer to measure displacement.  
+We successfully built a physical circuit containing the potentiometer and integrated it into the LabVIEW software, as well as calibrated it within 1\% FS.  
+The next goal was to determine the twist angle from displacement measurements.  The potentiometer was used at various points along the chord with a weight at one end to measure deflection due to the weight at one end.  
+Using geometric relations, the angle of twist was determined and the shear center location was calculated.  The final goal was to obtain the flexural and torsional stiffness of the wing section.  With several more potentiometer measurements along the span of the wing, these values were calculated 
+using equations provided in the lab manual.  
 \newpage
 \thispagestyle{empty}  % Clear header/footer
 \begin{center}
@@ -316,6 +373,9 @@ Graphically, our results are as follows.
 
 \section*{Appendix: t-Distribution Tables}
 \hypertarget{1}{\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}}
+
+\section*{Appendix: NI-9215 Datasheet}
+\href{https://www.amc-systeme.de/files/pdf/ni-9215-amc.pdf}{NI-9215 Datasheet}
 \end{appendices}
 
 \end{document}
