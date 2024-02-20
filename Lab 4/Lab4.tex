@@ -22,7 +22,7 @@
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
 \rhead{\thepage} % Page number on the right in the header
-\lhead{ASE375 Lab Report 3} % Your lab report title on the left
+\lhead{ASE375 Lab Report 4} % Your lab report title on the left
 
 \begin{document}
 
@@ -41,8 +41,8 @@
   \hrule
   \vspace{0.5cm}
  
-  \Huge \textbf{Report 3:\\
-  Measuring Displacement}\\
+  \Huge \textbf{Report 4:\\
+  Measuring Pressure Vessels}\\
   \Huge \textbf{}\\
  
   \vspace{0.5cm}
@@ -51,7 +51,7 @@
   \vspace{1cm}
  
   \normalsize \textbf{Andrew Doty, Andres Suniaga, Dennis Hom}\\
-  \normalsize \textbf{Due Date: 02/12/2024}
+  \normalsize \textbf{Due Date: 02/26/2024}
  
 \end{titlepage}
 \newpage
@@ -67,6 +67,20 @@
 \section{Procedure}
 
 \section{Data Processing}
+
+For part 1, our first values will be in voltages. We will convert these to pressures using the following equation:
+\[
+P = \frac{V}{0.004} - 14.7
+\]
+
+What are any of the sources of error or discrepancies in the data? How can we account for these?
+- The gauge on the pressure vessel may not be accurate
+- The true measurements were likely taken with an inaccurate gauge, and our uncertainties are likely larger than we think
+- Over time, the pressure vessel leaked
+- The pressure vessel could be at a different temperature than the room temperature
+- The DAQ could be interpreting the data incorrectly from an error in the voltage.
+- Delay in pressure changes from the valve opening.
+
 
 \section{Results and Analysis}
 

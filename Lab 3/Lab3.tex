@@ -137,11 +137,11 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
 
   \subsection{Spanwise Displacement}
   Part 2 of displacement measurements involve measuring spanwise displacement due to weight hanging at three different trailing edge joints throughout the span of the wing platform. Ensure proper setup of linear potentiomenter under the span of the wing platform. 
-  % \begin{figure}
-  %   \centering
-  %   \includegraphics[width = \textwidth]{lab3images/SpanwiseLocations.jpg}
-  %   \caption{Spanwise position indexing with Leading and Trailing Edge labels}
-  % \end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{lab3images/SpanwiseLocations.jpg}
+    \caption{Spanwise position indexing with Leading and Trailing Edge labels}
+  \end{figure}
   
   \begin{enumerate}
     \item Start by hanging the weight at the $6^{th}$ position as shown in \textbf{Figure (1)}. 
@@ -200,7 +200,11 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   \caption{Leading and Trailing Edge Data}
   \label{tab:LE_TE_Data}
 \end{table}
-  
+
+Table 1 contains the voltage data at various positions along the chord.  It is then converted into distance using the calibration equation.  The deflection at the Leading Edge and Trailing Edge is used to calculate the angle of twist with Eq. XX %arctan eq
+and shear center of the wing.  Plotting the angle of twist against the X position gives a linear representation where the intersect at 0 radians will be the shear center.  This is shown in figure X %add graph here
+and the shear center is determined to be at 31% of the chord length, or at 31.25 (mm).
+
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{|c|c|}
@@ -229,6 +233,9 @@ This is Part 1 of measuring displacements from weights attached to our wing mode
   \caption{Deflection and Stiffness Data}
   \label{tab:deflect_stiff}
 \end{table}
+
+For this section, \(X_j\) was taken as 27.5 in, or 69.85 \(cm\), the following values were calculated using equations %Deflection equation, Moment equation, Torque Equation
+  The measured deflection at the 3 \(X_i\) values were plotted against the theoretical deflection and the slope of the graph was set equal to \(\frac{S_j}{EI}\).  Solving for EI yielded a bending stiffness value of 490.5 \(N*m^2\).
 
 \begin{table}[hbtp]
   \centering

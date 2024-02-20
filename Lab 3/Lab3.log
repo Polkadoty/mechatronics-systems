@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  19 FEB 2024 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  19 FEB 2024 15:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -581,27 +581,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.61 \newpage
-              [1] [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3] [4]
-<lab3images/Calibration.png, id=110, 346.458pt x 356.532pt>
+              [1] [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<lab3images/SpanwiseLocations.jpg, id=71, 1716.4125pt x 1024.82875pt>
+File: lab3images/SpanwiseLocations.jpg Graphic file (type jpg)
+<use lab3images/SpanwiseLocations.jpg>
+Package pdftex.def Info: lab3images/SpanwiseLocations.jpg  used on input line 142.
+(pdftex.def)             Requested size: 469.75502pt x 280.47612pt.
+ [3] [4 <./lab3images/SpanwiseLocations.jpg>] [5]
+<lab3images/Calibration.png, id=119, 346.458pt x 356.532pt>
 File: lab3images/Calibration.png Graphic file (type png)
 <use lab3images/Calibration.png>
-Package pdftex.def Info: lab3images/Calibration.png  used on input line 271.
+Package pdftex.def Info: lab3images/Calibration.png  used on input line 278.
 (pdftex.def)             Requested size: 446.26582pt x 459.26447pt.
-<lab3images/YvsTwist.png, id=111, 474.573pt x 204.984pt>
+<lab3images/YvsTwist.png, id=120, 474.573pt x 204.984pt>
 File: lab3images/YvsTwist.png Graphic file (type png)
 <use lab3images/YvsTwist.png>
-Package pdftex.def Info: lab3images/YvsTwist.png  used on input line 279.
+Package pdftex.def Info: lab3images/YvsTwist.png  used on input line 286.
 (pdftex.def)             Requested size: 446.26582pt x 192.76003pt.
-<lab3images/SpanwiseDeflection.png, id=112, 505.014pt x 271.56pt>
+<lab3images/SpanwiseDeflection.png, id=121, 505.014pt x 271.56pt>
 File: lab3images/SpanwiseDeflection.png Graphic file (type png)
 <use lab3images/SpanwiseDeflection.png>
-Package pdftex.def Info: lab3images/SpanwiseDeflection.png  used on input line 287.
+Package pdftex.def Info: lab3images/SpanwiseDeflection.png  used on input line 294.
 (pdftex.def)             Requested size: 446.26582pt x 239.97215pt.
- [5] [6 <./lab3images/Calibration.png>] [7 <./lab3images/YvsTwist.png> <./lab3images/SpanwiseDeflection.png>] [8]
-<t_distribution_Table_lecture3.png, id=139, 399.29175pt x 486.01575pt>
+ [6 <./lab3images/Calibration.png>] [7 <./lab3images/YvsTwist.png> <./lab3images/SpanwiseDeflection.png>] [8]
+<t_distribution_Table_lecture3.png, id=142, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 311.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 318.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
  [9 <./t_distribution_Table_lecture3.png>] (./Lab3.aux)
  ***********
@@ -612,18 +618,18 @@ Package rerunfilecheck Info: File `Lab3.out' has not changed.
 (rerunfilecheck)             Checksum: 6EF2E7F0B478151E9A8160EE887E7563;1218.
  ) 
 Here is how much of TeX's memory you used:
- 17001 strings out of 474222
- 287223 string characters out of 5750209
- 1950978 words of memory out of 5000000
- 38986 multiletter control sequences out of 15000+600000
+ 17009 strings out of 474222
+ 287512 string characters out of 5750209
+ 1951978 words of memory out of 5000000
+ 38993 multiletter control sequences out of 15000+600000
  561973 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,77p,552b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Lab3.pdf (10 pages, 606706 bytes).
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Lab3.pdf (10 pages, 794906 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

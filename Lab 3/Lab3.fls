@@ -218,6 +218,11 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm
 OUTPUT Lab3.toc
 INPUT c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+INPUT ./lab3images/SpanwiseLocations.jpg
+INPUT ./lab3images/SpanwiseLocations.jpg
+INPUT ./lab3images/SpanwiseLocations.jpg
+INPUT ./lab3images/SpanwiseLocations.jpg
+INPUT ./lab3images/SpanwiseLocations.jpg
 INPUT ./lab3images/Calibration.png
 INPUT ./lab3images/Calibration.png
 INPUT ./lab3images/Calibration.png
@@ -245,6 +250,7 @@ INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
