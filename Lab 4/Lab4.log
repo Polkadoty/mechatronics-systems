@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  19 FEB 2024 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  19 FEB 2024 16:05
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Programs/E-Mech Labs/Lab 3/Lab3.tex"
-(c:/Programs/E-Mech Labs/Lab 3/Lab3.tex
+**"c:/Programs/E-Mech Labs/Lab 4/Lab4.tex"
+(c:/Programs/E-Mech Labs/Lab 4/Lab4.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -449,7 +449,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks35
 \c@listing=\count343
 )
-runsystem(if not exist _minted-Lab3 mkdir _minted-Lab3)...executed.
+runsystem(if not exist _minted-Lab4 mkdir _minted-Lab4)...executed.
 
  (c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
@@ -462,16 +462,16 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 ) (c:/texlive/2023/texmf-dist/tex/latex/gensymb/gensymb.sty
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
 )
-runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Lab3.aex <nul: /p x=^%~$PATH:i>> Lab3.aex)...executed.
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Lab4.aex <nul: /p x=^%~$PATH:i>> Lab4.aex)...executed.
 
-runsystem(del Lab3.aex)...executed.
+runsystem(del Lab4.aex)...executed.
 
  (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count346
 \l__pdf_internal_box=\box65
-) (./Lab3.aux)
-\openout1 = `Lab3.aux'.
+) (./Lab4.aux)
+\openout1 = `Lab4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -550,9 +550,9 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 27.
-(./Lab3.out) (./Lab3.out)
+(./Lab4.out) (./Lab4.out)
 \@outlinefile=\write6
-\openout6 = `Lab3.out'.
+\openout6 = `Lab4.out'.
 
 \c@lstlisting=\count353
 \symgns@font=\mathgroup4
@@ -565,71 +565,49 @@ Package gensymb Info: Using text companion symbols for \degree, \celsius and \pe
 LaTeX Info: Redefining \ohm on input line 27.
 Package gensymb Info: Using \textohm for \ohm on input line 27.
 Package gensymb Info: Using \textmu for \micro on input line 27.
-<ase-logo-formal.png, id=40, 412.54124pt x 107.40125pt>
+<ase-logo-formal.png, id=28, 412.54124pt x 107.40125pt>
 File: ase-logo-formal.png Graphic file (type png)
 <use ase-logo-formal.png>
 Package pdftex.def Info: ase-logo-formal.png  used on input line 31.
 (pdftex.def)             Requested size: 284.52756pt x 74.07414pt.
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>] (./Lab3.toc)
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>] (./Lab4.toc)
 \tf@toc=\write7
-\openout7 = `Lab3.toc'.
+\openout7 = `Lab4.toc'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.61 \newpage
-              [1] [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<lab3images/SpanwiseLocations.jpg, id=71, 1716.4125pt x 1024.82875pt>
-File: lab3images/SpanwiseLocations.jpg Graphic file (type jpg)
-<use lab3images/SpanwiseLocations.jpg>
-Package pdftex.def Info: lab3images/SpanwiseLocations.jpg  used on input line 142.
-(pdftex.def)             Requested size: 469.75502pt x 280.47612pt.
- [3] [4 <./lab3images/SpanwiseLocations.jpg>] [5]
-<lab3images/Calibration.png, id=119, 346.458pt x 356.532pt>
-File: lab3images/Calibration.png Graphic file (type png)
-<use lab3images/Calibration.png>
-Package pdftex.def Info: lab3images/Calibration.png  used on input line 278.
-(pdftex.def)             Requested size: 446.26582pt x 459.26447pt.
-<lab3images/YvsTwist.png, id=120, 474.573pt x 204.984pt>
-File: lab3images/YvsTwist.png Graphic file (type png)
-<use lab3images/YvsTwist.png>
-Package pdftex.def Info: lab3images/YvsTwist.png  used on input line 286.
-(pdftex.def)             Requested size: 446.26582pt x 192.76003pt.
-<lab3images/SpanwiseDeflection.png, id=121, 505.014pt x 271.56pt>
-File: lab3images/SpanwiseDeflection.png Graphic file (type png)
-<use lab3images/SpanwiseDeflection.png>
-Package pdftex.def Info: lab3images/SpanwiseDeflection.png  used on input line 294.
-(pdftex.def)             Requested size: 446.26582pt x 239.97215pt.
- [6 <./lab3images/Calibration.png>] [7 <./lab3images/YvsTwist.png> <./lab3images/SpanwiseDeflection.png>] [8]
-<t_distribution_Table_lecture3.png, id=142, 399.29175pt x 486.01575pt>
+              [1] [2] [3]
+<t_distribution_Table_lecture3.png, id=60, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 318.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 105.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
- [9 <./t_distribution_Table_lecture3.png>] (./Lab3.aux)
+ [4 <./t_distribution_Table_lecture3.png>] (./Lab4.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `Lab3.out' has not changed.
-(rerunfilecheck)             Checksum: 6EF2E7F0B478151E9A8160EE887E7563;1218.
+Package rerunfilecheck Info: File `Lab4.out' has not changed.
+(rerunfilecheck)             Checksum: C2E846D84863803027D273B222180EBD;642.
  ) 
 Here is how much of TeX's memory you used:
- 17009 strings out of 474222
- 287512 string characters out of 5750209
- 1951978 words of memory out of 5000000
- 38993 multiletter control sequences out of 15000+600000
+ 16906 strings out of 474222
+ 285430 string characters out of 5750209
+ 1927978 words of memory out of 5000000
+ 38933 multiletter control sequences out of 15000+600000
  561973 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,77p,552b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Lab3.pdf (10 pages, 794906 bytes).
+ 70i,11n,77p,552b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Lab4.pdf (5 pages, 310886 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
