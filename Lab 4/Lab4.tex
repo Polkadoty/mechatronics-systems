@@ -63,7 +63,7 @@
 \section{Introduction}
 In this experiment we (1) Learn how to measure pressure with different sensors, (2) Construct a Wheatstone quarter-bridge circuit, and (3) Develop an understanding for strain gauge measurements. 
 
-In this two-part experiment we gather input voltage readings for the pressure of two vessels containing liquid using two different methods. The first method involves calibrated pressure transducers and a full strain gauge bridge with a direct application of internal pressure to the vessel. The second method involves constructing a quarter-bridge circuit to read strain measurements on a soda can as pressure is released. These demonstrations set a foundation for understanding the precision and sensitivity of these sensors used to measure pressure. 
+This is a two-part experiment of gathering output voltage readings from pressure changes of two vessels containing liquid. The first part involves calibrated pressure transducers and a full strain gauge bridge with a direct application of internal pressure to the vessel. The second part involves constructing a quarter-bridge circuit to read strain measurements on a soda can as pressure is released. These demonstrations set a foundation for understanding the precision and sensitivity of these sensors used to measure strain and pressure. 
 
 \section{Equipment}
 Devices and hardware used in this lab include:
@@ -99,10 +99,10 @@ A vessel containing a liquid equipped with a pressure transducer, full strain ga
 A full diet coke can strapped with a strain gauge sensor for Part 2 of measurements in this lab. The can is then opened to release the internal pressure for which we gather our strain measurement.
 \vspace{2.5mm}
 
-\item Sand Paper: 
+\item 320 Grit Sand Paper and Clear Tape: 
 \vspace{1mm}
 
-Used to smooth the surface of the Aluminum soda can. The strain gauge sensor can then be securely adhered to the surface of the soda can.
+Used to smooth the surface of the Aluminum soda can. The strain gauge sensor can then be securely adhered to the surface of the soda can. The clear tape is for adhering the strain gauge to the surface of the soda can.
 
 \item Pressure Regulator/Dial: 
 \vspace{1mm}
@@ -116,26 +116,54 @@ A dial used to adjust the internal pressure of the Poly-carbonate vessel.
 Data Acquisition System used to process sample measurements into digital data. NI-9215 is an analog input module used to measure the output voltage signals of sensors and send it through the DAQ system. LabVIEW used to model these output voltages read from the DAQ of the transducer and strain gauge measurements.
 \vspace{2.5mm}
 
-\item Solderless Breadboard and Jumper Wires: 
+\item Solderless Breadboard, Jumper Wires, and $350\Omega$ Resistors: 
 \vspace{1mm}
 
-Used to make connections to the input analog modules and to construct circuits. In Part 2 of this lab we build the Wheatstone quarter-bridge circuit as shown below:
+Used to make connections to the input analog modules and to construct circuits. In Part 2 of this lab we build the Wheatstone quarter-bridge circuit with three $350\Omega$ resistors as shown below:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.69\textwidth]{lab4images/quarterbridge_circuit_lab4.jpg}
+    \hypertarget{Fig1}{\frame{\includegraphics[width=0.65\textwidth]{lab4images/quarterbridge_circuit_lab4.jpg}}}
     \caption{Quarter-Bridge Configuration with the strain gauge resistance $R_{g}(\epsilon)$}
 \end{figure}
 \end{itemize}
 \pagebreak
 
 \section{Procedure}
-The procedure for this experiment can be broken up into two parts:
+The procedure for this experiment is broken up into two parts:
 \subsection{Part 1: Poly-carbonate Vessel}
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.5\textwidth]{lab4images/pressuregage_lab4.jpg}}
+    \caption{Part 1: Devices Attached to the Poly-carbonate Vessel}
+\end{figure}
+
+\begin{enumerate}
+    \item Make sure all connections from the pressure transducer and Wheatstone bridge are powered and connected to the input analog module (NI-9215). Set up and run LabVIEW to plot the output voltages.
+    \item Before starting to adjust the pressure dial, \underline{release all the pressure or air from the vessel}. To do this, close the pressure valve and twist the air valve slightly such that it was open about a quarter of the way (labeled in \textbf{Figure (2)}). Unlock the knob and carefully increase the pressure dial until you hear the release of air. Let it release slowly. Once all the air has been released, turn back the knob and lock it, close the air valve, and open the pressure valve. 
+    \item Start by marking down the $P_{0} = 0\, psi$ pressure readings of the pressure transducer and Wheatstone bridge sensors from LabVIEW. 
+    \item Unlock the knob and slowly twist it until the pressure dial hand turns $\Delta P$ to the next pressure $P_{1}$. Lock in the knob. We choose $P_{1} = 5\, psi$ using step $\Delta P = 5\, psi$ for our measurements. 
+    \item Ensure the plot of the output voltage approaches an approximate steady state. Record the data of each sensor for $P_{1}$ and unlock and move the dial again by $\Delta P$ to $P_{2}$. Lock the knob and record the output voltages at $P_{2}$. 
+    \item Repeat $\Delta P$ movements of the pressure dial up to $P_{f}$ (at least 5 or 6 measurements), not to exceed $P_{max} = 50\, psi$. Record the output voltage of each sensor from LabVIEW for each $P_{i}$. We chose to gather $i=6$ measurements so that $P_{f} = P_{6} = 30\, psi$.
+    \item Once finished, close the pressure valve and turn the knob all the way back to $0$. Slightly and slowly open the air valve again to release all the pressure. This may require carefully increasing the knob to release the rest of the air. After all the air is out, close the air valve and turn the knob all the way back and lock it. 
+    \item With these output voltage readings we can now process this data to obtain a pressure measurement from the sensors.
+    \end{enumerate}
 
 \subsection{Part 2: Aluminum Soda Can}
+\begin{enumerate}
+    \item Acquire the soda can and begin sanding a spot on the surface of the soda can until the spot is just the plain aluminum surface (or sand for $\approx 1$ min). This is to smoothen out the surface of the soda can in order to make adhesion easier.
+    \item With the clear tape, stick the strain gauge on the plain aluminum surface of the soda can.
+    \item Grab three $350\Omega$ resistors and jumper wires. Construct the quarter-bridge circuit as seen in \hyperlink{Fig1}{\textbf{Figure (1)}} with the Strain Gauge. For measuring the output voltage $V_{OUT}$, connect wires from the null center of the bridge to the NI-9215.
+    \item Run LabVIEW to test the sensor. Place a finger on the strain gauge and carefully apply force to check that the resulting $V_{OUT}$ changes on the plot in LabVIEW. The null center voltage will no longer be $0$ (or null). In fact it will decrease (constant current) as the gauge resistance increases with increasing strain.
+    \item After testing the strain gauge, record the change in output voltage as the soda can is opened (releasing pressure within the can). Ensure this data is written to a spreadsheet for data processing.
+    \item With the collection of output voltages we can model the change in pressure and determine the pressure inside the unopened can. Next up: \textbf{Data Processing}.
+\end{enumerate}
 
 \section{Data Processing}
+\subsection{Variables and Equations}
+\begin{enumerate}[label = \Roman*.]
+    \item 
+\end{enumerate}
 
 For part 1, our first values will be in voltages. We will convert these to pressures using the following equation:
 \[
