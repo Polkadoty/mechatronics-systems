@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1708981488.52013 "c:/Programs/E-Mech Labs/Lab 4/Lab4.tex" "Lab4.pdf" "Lab4" 1708981491.11911 0
-  "Lab4.aux" 1708981490 1589 03ba3d8e9396de7a0ca376d4634b94ae "pdflatex"
-  "Lab4.out" 1708981490 1225 d1dc88338a9c908e5cf524a48b51e476 "pdflatex"
-  "Lab4.tex" 1708981480 11233 58e00550a5f707c78801d13303b3626a ""
-  "Lab4.toc" 1708981490 686 d8678055355d74cb8f8fb25affc8dfe4 "pdflatex"
+["pdflatex"] 1708984906.64427 "c:/Programs/E-Mech Labs/Lab 4/Lab4.tex" "Lab4.pdf" "Lab4" 1708984910.58934 0
+  "Lab4.aux" 1708984910 3133 f0a3735d6c0b9efd9ef9fc5730168164 "pdflatex"
+  "Lab4.out" 1708984910 1225 d1dc88338a9c908e5cf524a48b51e476 "pdflatex"
+  "Lab4.tex" 1708984905 16401 f484ed6c5adfaa76951b230197b6c213 ""
+  "Lab4.toc" 1708984910 686 17267ef8fb90e5364b847d44b530a4f2 "pdflatex"
   "ase-logo-formal.png" 1694451038 34404 5ee524f99c04ac6220becc16cea7da79 ""
-  "c:/Programs/E-Mech Labs/Lab 4/Lab4.tex" 1708981480 11233 58e00550a5f707c78801d13303b3626a ""
+  "c:/Programs/E-Mech Labs/Lab 4/Lab4.tex" 1708984905 16401 f484ed6c5adfaa76951b230197b6c213 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1706547675 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1706548829 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1706548340 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -112,6 +112,8 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1706558391 5035139 e8cdab388a5f122f6094769190400852 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1706560418 8211034 057f0fe11a358dd5941cb25543c45d2d ""
   "c:/texlive/2023/texmf.cnf" 1706558340 713 614551405fc44b98efbf516466e3c909 ""
+  "lab4images/Cokecan.png" 1708977981 230545 0720e7854be830c45b7402dd4ee1e3bc ""
+  "lab4images/SensorDifferentiation.png" 1708977993 81750 8677adb23179dfb4c07b25c1adc6f710 ""
   "lab4images/pressuregage_lab4.jpg" 1708976697 3275102 5d696913770238f1a182c5239a694e17 ""
   "lab4images/quarterbridge_circuit_lab4.jpg" 1708976697 877170 989d7afe87f318e6a00607e687869c0d ""
   "t_distribution_Table_lecture3.png" 1707181593 223726 706861b879ad324ee7cfda91ec3adcef ""
