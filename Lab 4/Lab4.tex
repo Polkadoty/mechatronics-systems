@@ -170,6 +170,33 @@ For part 1, our first values will be in voltages. We will convert these to press
 P = \frac{V}{0.004} - 14.7
 \]
 
+We can also represent the axial and tangential strain of the pressure vessel through the following equations:
+\[
+\epsilon_{axial} = \frac{PR}{2E t}(1 - 2\nu)
+\]
+
+\[
+\epsilon_{tangential} = \frac{PR}{2E t}(2 - \nu)
+\]
+
+For the strain gauge on the polycarbonate cylinder, we can balance the voltage to strains through the following relation:
+\[
+  \frac{V_{out}}{V_{DC}} = \frac{S_g}{2}(\epsilon_t - \epsilon_a)
+\]
+
+In this case, $V_{DC}$ is the excitation voltage, and $S_g$ is the gauge factor.
+
+For the quarter-bridge gauge on the soda can, the voltage imbalance is related to the strain through the following relation:
+\[
+  \frac{V_{out}}{V_{DC}} = \frac{S_g}{4}(\epsilon_t)
+\]
+
+
+
+\section{Results and Analysis}
+
+
+
 What are any of the sources of error or discrepancies in the data? How can we account for these?
 - The gauge on the pressure vessel may not be accurate
 - The true measurements were likely taken with an inaccurate gauge, and our uncertainties are likely larger than we think
@@ -177,9 +204,6 @@ What are any of the sources of error or discrepancies in the data? How can we ac
 - The pressure vessel could be at a different temperature than the room temperature
 - The DAQ could be interpreting the data incorrectly from an error in the voltage.
 - Delay in pressure changes from the valve opening.
-
-
-\section{Results and Analysis}
 
 \section{Conclusion}
 
