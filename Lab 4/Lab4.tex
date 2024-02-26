@@ -191,21 +191,143 @@ For the quarter-bridge gauge on the soda can, the voltage imbalance is related t
   \frac{V_{out}}{V_{DC}} = \frac{S_g}{4}(\epsilon_t)
 \]
 
+Our materials have the following properties:
+\begin{table}[h]
+  \centering
+  \caption{Material Data}
+  \label{tab:material-data}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  Material       & Young's Modulus (GPa) & Poisson's Ratio \\
+  \hline
+  Aluminum       & 70                     & 0.33            \\
+  PolyCarbonate  & 2.4                    & 0.37            \\
+  \hline
+  \end{tabular}
+\end{table}
+  
 
 
 \section{Results and Analysis}
 
+For part 1, we measured the following values for the radius and thickness of the poly-carbonate vessel:
+
+\begin{table}[H]
+  \centering
+  \caption{Part 1 Values}
+  \label{tab:part1-values}
+  \begin{tabular}{|c|c|}
+  \hline
+  Parameter               & Value           \\
+  \hline
+  Radius (mm)             & $50.8 \pm 0.0254$   \\
+  Thickness (mm)          & $3.175 \pm 0.0254$  \\
+  $V_{DC}$ (V)            & 5               \\
+  Gage Factor             & 2.11            \\
+  Scale Factor ($\frac{\text{psia}}{\text{mV}}$)   & 2  \\
+  \hline
+  \end{tabular}
+\end{table}
+
+The values for the presure vessel with the pressure transducer are in the following table:
+
+\begin{table}[H]
+  \centering
+  \caption{Pressure Transducer Data}
+  \label{tab:pressure-transducer-data}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Gage Read (MPa) & Pressure (V) & STD & Pressure (MPa) & Uncertainty (MPa) \\
+  \hline
+  0.000 & 0.0071 & 0.0005 & -0.00344738 & 0.000159801 \\
+  0.0344738 & 0.0095 & 0.00057 & 0.029647468 & 0.000159801 \\
+  0.0689476 & 0.0119 & 0.00054 & 0.062742316 & 0.000159801 \\
+  0.1034214 & 0.0145 & 0.00055 & 0.098595068 & 0.000159801 \\
+  0.1378952 & 0.0168 & 0.0005 & 0.130310964 & 0.000159801 \\
+  0.172369 & 0.0194 & 0.00055 & 0.166163716 & 0.000159801 \\
+  0.2068428 & 0.0215 & 0.00055 & 0.195121708 & 0.000159801 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+For the uncertainty values, we used the $\sqrt{\delta^2}$ equation derived in class, where $\delta$ is the mean standard deviation for each of the values with a standard deviation.
+
+This is the data for the strain gauge:
+
+\begin{table}[H]
+  \centering
+  \caption{Strain Gauge Data}
+  \label{tab:strain-gauge-data}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Gage Read (MPa) & Strain (V) & STD & Pressure (MPa) & Uncertainty (MPa) \\
+  \hline
+  0.000 & -0.01 & 0.00035 & 0 & 0.008023373 \\
+  0.0344738 & -0.011 & 0.00035 & 0.041512436 & 0.008023373 \\
+  0.0689476 & -0.0121 & 0.00037 & 0.087176117 & 0.008023373 \\
+  0.1034214 & -0.01295 & 0.00033 & 0.122461687 & 0.008023373 \\
+  0.1378952 & -0.0137 & 0.00036 & 0.153596015 & 0.008023373 \\
+  0.172369 & -0.0146 & 0.00037 & 0.190957208 & 0.008023373 \\
+  0.2068428 & -0.0153 & 0.00034 & 0.220015913 & 0.008023373 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+Comparing each of our sensors and different data points, we get the following:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{lab4images/SensorDifferentiation.png}
+  \caption{Sensor Differentiation}
+  \label{fig:sensor-differentiation}
+\end{figure}
 
 
-What are any of the sources of error or discrepancies in the data? How can we account for these?
-- The gauge on the pressure vessel may not be accurate
-- The true measurements were likely taken with an inaccurate gauge, and our uncertainties are likely larger than we think
-- Over time, the pressure vessel leaked
-- The pressure vessel could be at a different temperature than the room temperature
-- The DAQ could be interpreting the data incorrectly from an error in the voltage.
-- Delay in pressure changes from the valve opening.
+\begin{table}[H]
+  \centering
+  \caption{Gauge Comparison}
+  \label{tab:gauge-comparison}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Data Points & Strain Gauge & Pressure Transducer & Pressure Gage \\
+  \hline
+  1 & 0 & -0.00344738 & 0 \\
+  2 & 0.041512436 & 0.029647468 & 0.0344738 \\
+  3 & 0.087176117 & 0.062742316 & 0.0689476 \\
+  4 & 0.122461687 & 0.098595068 & 0.1034214 \\
+  5 & 0.153596015 & 0.130310964 & 0.1378952 \\
+  6 & 0.190957208 & 0.166163716 & 0.172369 \\
+  7 & 0.220015913 & 0.195121708 & 0.2068428 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+As for the soda can, we have the following data:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{lab4images/Cokecan.png}
+  \caption{Coke Can}
+  \label{fig:coke-can}
+\end{figure}
+
+While the pressure drop from the coke can is not super significant, we can still see a drop in pressure from the can. This was the cleanest data we had in our results from the coke can after three attempts.
+
+As for our data, while it is reasonably accurate, there are some discrepancies or sources of error that we can account for.
+
+During the experiment, we encountered several potential sources of error that could have affected the accuracy of our measurements. Firstly, the gauge on the pressure vessel may not have been entirely accurate, leading to discrepancies in the recorded data. Additionally, the true measurements may have been taken with an inaccurate gauge, resulting in larger uncertainties than initially estimated. Furthermore, the pressure vessel exhibited signs of leakage over time, which could have influenced the recorded pressure values. It is also possible that the temperature of the pressure vessel differed from the ambient room temperature, introducing further variability in the data. Moreover, there could have been errors in the voltage interpretation by the data acquisition system (DAQ), leading to inaccuracies in the recorded values. Lastly, there might have been a delay in pressure changes due to the opening of the valve, affecting the timing and magnitude of the recorded pressure readings.
+
+% What are any of the sources of error or discrepancies in the data? How can we account for these?
+% - The gauge on the pressure vessel may not be accurate
+% - The true measurements were likely taken with an inaccurate gauge, and our uncertainties are likely larger than we think
+% - Over time, the pressure vessel leaked
+% - The pressure vessel could be at a different temperature than the room temperature
+% - The DAQ could be interpreting the data incorrectly from an error in the voltage.
+% - Delay in pressure changes from the valve opening.
 
 \section{Conclusion}
+
+
 
 \newpage
 \thispagestyle{empty}  % Clear header/footer
