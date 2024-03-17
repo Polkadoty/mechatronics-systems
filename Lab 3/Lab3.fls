@@ -1,8 +1,8 @@
-PWD a:/Programs/mechatronics-systems/Lab 3
+PWD c:/Programs/E-Mech Labs/Lab 3
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT a:/Programs/mechatronics-systems/Lab 3/Lab3.tex
+INPUT c:/Programs/E-Mech Labs/Lab 3/Lab3.tex
 OUTPUT Lab3.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
