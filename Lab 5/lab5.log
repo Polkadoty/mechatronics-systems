@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  18 MAR 2024 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  18 MAR 2024 16:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -470,8 +470,7 @@ runsystem(del lab5.aex)...executed.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count346
 \l__pdf_internal_box=\box65
-)
-No file lab5.aux.
+) (./lab5.aux)
 \openout1 = `lab5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -492,7 +491,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
-(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count347
 \scratchdimen=\dimen257
@@ -551,6 +550,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 28.
+(./lab5.out) (./lab5.out)
 \@outlinefile=\write6
 \openout6 = `lab5.out'.
 
@@ -565,15 +565,14 @@ Package gensymb Info: Using text companion symbols for \degree, \celsius and \pe
 LaTeX Info: Redefining \ohm on input line 28.
 Package gensymb Info: Using \textohm for \ohm on input line 28.
 Package gensymb Info: Using \textmu for \micro on input line 28.
-<ase-logo-formal.png, id=4, 412.54124pt x 107.40125pt>
+<ase-logo-formal.png, id=40, 412.54124pt x 107.40125pt>
 File: ase-logo-formal.png Graphic file (type png)
 <use ase-logo-formal.png>
 Package pdftex.def Info: ase-logo-formal.png  used on input line 32.
 (pdftex.def)             Requested size: 284.52756pt x 74.07414pt.
-[1
+ [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>]
-No file lab5.toc.
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ase-logo-formal.png>] (./lab5.toc)
 \tf@toc=\write7
 \openout7 = `lab5.toc'.
 
@@ -583,127 +582,60 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.62 \newpage
               [1]
-
-LaTeX Warning: File `cantilever_sideview.png' not found on input line 83.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:83: Package pdftex.def Error: File `cantilever_sideview.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ... = 0.7\textwidth]{cantilever_sideview.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `cantilever_topview.png' not found on input line 88.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:88: Package pdftex.def Error: File `cantilever_topview.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.88 ... = 0.15\textwidth]{cantilever_topview.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-LaTeX Warning: File `Half_bridge_configs.png' not found on input line 132.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:132: Package pdftex.def Error: File `Half_bridge_configs.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.132 ... 0.5\textwidth]{Half_bridge_configs.png}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `configB_circuit.png' not found on input line 137.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:137: Package pdftex.def Error: File `configB_circuit.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.137 ...h = 0.75\textwidth]{configB_circuit.png}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3] [4]
-
-LaTeX Warning: File `blockdiag_labview_5.png' not found on input line 153.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:153: Package pdftex.def Error: File `blockdiag_labview_5.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.153 ...0.52\textwidth]{blockdiag_labview_5.png}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5]
-
-LaTeX Warning: File `labview_blockdiagram.png' not found on input line 158.
-
-
-c:/Programs/mechatronics-systems/Lab 5/lab5.tex:158: Package pdftex.def Error: File `labview_blockdiagram.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.158 ...0.85\textwidth]{labview_blockdiagram.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[6] [7] [8] [9] [10] (./lab5.aux)
+<lab5images/cantilever_sideview.png, id=64, 451.6875pt x 191.21437pt>
+File: lab5images/cantilever_sideview.png Graphic file (type png)
+<use lab5images/cantilever_sideview.png>
+Package pdftex.def Info: lab5images/cantilever_sideview.png  used on input line 83.
+(pdftex.def)             Requested size: 328.82707pt x 139.21185pt.
+<lab5images/cantilever_topview.png, id=65, 185.69376pt x 452.18938pt>
+File: lab5images/cantilever_topview.png Graphic file (type png)
+<use lab5images/cantilever_topview.png>
+Package pdftex.def Info: lab5images/cantilever_topview.png  used on input line 88.
+(pdftex.def)             Requested size: 70.46037pt x 171.58534pt.
+ [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab5images/cantilever_sideview.png> <./lab5images/cantilever_topview.png>]
+<lab5images/Half_bridge_configs.png, id=75, 440.847pt x 187.29974pt>
+File: lab5images/Half_bridge_configs.png Graphic file (type png)
+<use lab5images/Half_bridge_configs.png>
+Package pdftex.def Info: lab5images/Half_bridge_configs.png  used on input line 132.
+(pdftex.def)             Requested size: 234.8775pt x 99.78853pt.
+<lab5images/configB_circuit.png, id=76, 375.90437pt x 451.6875pt>
+File: lab5images/configB_circuit.png Graphic file (type png)
+<use lab5images/configB_circuit.png>
+Package pdftex.def Info: lab5images/configB_circuit.png  used on input line 137.
+(pdftex.def)             Requested size: 352.31625pt x 423.37328pt.
+ [3 <./lab5images/Half_bridge_configs.png>]
+<lab5images/blockdiag_labview_5.png, id=89, 3035.34pt x 4047.12pt>
+File: lab5images/blockdiag_labview_5.png Graphic file (type png)
+<use lab5images/blockdiag_labview_5.png>
+Package pdftex.def Info: lab5images/blockdiag_labview_5.png  used on input line 153.
+(pdftex.def)             Requested size: 244.27461pt x 325.6906pt.
+ [4 <./lab5images/configB_circuit.png>]
+<lab5images/labview_blockdiagram.png, id=97, 451.6875pt x 314.17375pt>
+File: lab5images/labview_blockdiagram.png Graphic file (type png)
+<use lab5images/labview_blockdiagram.png>
+Package pdftex.def Info: lab5images/labview_blockdiagram.png  used on input line 158.
+(pdftex.def)             Requested size: 399.29463pt x 277.74892pt.
+ [5 <./lab5images/blockdiag_labview_5.png> <./lab5images/labview_blockdiagram.png>] [6] [7] [8] [9] (./lab5.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-Package rerunfilecheck Warning: File `lab5.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `lab5.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  04B312FA6282A31EC1CA7307495136E7;1000.
+Package rerunfilecheck Info: File `lab5.out' has not changed.
+(rerunfilecheck)             Checksum: 04B312FA6282A31EC1CA7307495136E7;1000.
  ) 
 Here is how much of TeX's memory you used:
- 17110 strings out of 474222
- 291428 string characters out of 5750209
- 1933978 words of memory out of 5000000
- 39114 multiletter control sequences out of 15000+600000
+ 16992 strings out of 474222
+ 287516 string characters out of 5750209
+ 1937978 words of memory out of 5000000
+ 38989 multiletter control sequences out of 15000+600000
  562760 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,14n,77p,561b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,14n,77p,561b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on lab5.pdf (11 pages, 180420 bytes).
+Output written on lab5.pdf (10 pages, 26399550 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
