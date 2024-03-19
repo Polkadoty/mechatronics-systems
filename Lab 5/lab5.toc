@@ -2,8 +2,8 @@
 \contentsline {section}{\numberline {2}Equipment}{2}{section.2}%
 \contentsline {section}{\numberline {3}Procedure}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Part 1}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Part 2}{6}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Data Processing}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Variables and Equations}{6}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Results and Analysis}{7}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}%
+\contentsline {subsection}{\numberline {3.2}Part 2}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Data Processing}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Variables and Equations}{7}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Results and Analysis}{8}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}%

@@ -20,6 +20,7 @@
 \usepackage{textcomp, gensymb}
 \usepackage{caption}
 
+
 \pagestyle{fancy}
 \fancyhf{} % Clear header/footer settings
 \rhead{\thepage} % Page number on the right in the header
@@ -88,13 +89,13 @@ A uniform aluminum beam that is cantilevered at one end (root) with a string att
     \includegraphics[width = 0.15\textwidth]{lab5images/cantilever_topview.png}
 \end{figure}
 
-\item Digital Calipers, $\epsilon_{b} = 0.005\; \text{mm}$: 
+\item Digital Calipers, Bias Error $= 0.005\; \text{mm}$: 
 \vspace{1mm}
 
 Used for measuring outer and inner dimensions of objects. In our case we use it to the measure the wall thickness, $t_{b}$, and width, $b$, of the cantilever beam.
 \vspace{2.5mm}
 
-\item Ruler/Tape Measure, $\epsilon_{b} = 0.5\; \text{mm}$: 
+\item Ruler/Tape Measure, Bias Error $= 0.5\; \text{mm}$: 
 \vspace{1mm}
 
 Used to measure the length of the cantilever beam, $L_{F}$.
@@ -149,14 +150,18 @@ This experiment is broken up into two parts. In Part 1, we will be gathering the
 
 Before experimenting, we must set up the LabVIEW model following the form:
 
-\begin{center}
-    \frame{\includegraphics[width= 0.52\textwidth]{lab5images/blockdiag_labview_5.png}}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.85\textwidth]{lab5images/blockdiag_labview_5.png}
+    \caption{LabVIEW Block Diagram for modeling $V_{OUT}=f(W)$}
+    \label{fig:labview_blockdiagram_5}
+\end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.85\textwidth]{lab5images/labview_blockdiagram.png}
     \caption{LabVIEW Block Diagram for modeling $V_{OUT}=f(t)$}
+    \label{fig:labview_blockdiagram}
 \end{figure}
 
 The Write-to-File block will be used for Part 2 as we model the strain and output voltage as a function of time.
@@ -205,12 +210,146 @@ In this part, we will be utilizing the write-to-file block to collect our data t
 \hypertarget{datapro}{}
 \section{Data Processing}
 \subsection{Variables and Equations}
+
+Euler-Bernoulli Beam Theory: \\
+\begin{equation}
+    \label{eq:bending_strain}
+    \varepsilon_b = \frac{FL_f t_b}{2EI}
+\end{equation}
+
+Variables:
 \begin{enumerate}[label = \Roman*.]
-    \item 
+    \item \(\epsilon_b\): Bending Strain
+    \item \(F\): Force
+    \item \(L_f\): Length of the Beam
+    \item \(b\): Width of Beam
+    \item \(t_b\): Thickness of the Beam
+    \item \(E\): Young's Modulus
+    \item \(I\): Moment of Inertia
+    \item \( V \): Voltage
+    \item \( W \): Weight
 \end{enumerate}
+
+\begin{table}[ht]
+    \centering
+    \caption{Constants:}
+    \begin{tabular}{|l|c|}
+    \hline
+    \textbf{Property} & \textbf{Value} \\ \hline
+    \(L_{f}\) (mm) & \( 335 \pm 0.5 \) \\ \hline
+    \(b\) (mm) & \( 25.8 \pm 0.005 \) \\ \hline
+    \(t_b\) (mm) & \( 3.32 \pm 0.005 \) \\ \hline
+    \(E_{\text{aluminum}}\) (GPa) & 70 \\ \hline
+    $I$ (Moment of Inertia) \( \text{mm}^4 \) & \( 78.677 \pm 0.00158 \) \\ \hline
+    Gravity \( \text{m/s}^2 \) & 9.81 \\ \hline
+    \end{tabular}
+    \label{tab:constants}
+\end{table}
+    
+
 \section{Results and Analysis}
 
+\begin{table}[H]
+    \centering
+    \caption{Loading}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Weight(g) & Force (N) & Strain & Voltage (A) & Strain (A) & Voltage (B) & Strain (B) \\ \hline
+    0         & 0         & 0                   & 2.49077            & 0                 & 0.00458           & 0                \\ \hline
+    50        & 0.4905    & 4.95269E-05         & 2.49093            & 6.72E-05          & 0.00435           & 4.79167E-05      \\ \hline
+    90        & 0.8829    & 8.91484E-05         & 2.49106            & 0.0001218         & 0.00419           & 8.125E-05        \\ \hline
+    130       & 1.2753    & 0.00012877          & 2.49116            & 0.0001638         & 0.00404           & 0.0001125        \\ \hline
+    170       & 1.6677    & 0.000168391         & 2.49125            & 0.0002016         & 0.00385           & 0.000152083      \\ \hline
+    210       & 2.0601    & 0.000208013         & 2.49136            & 0.0002478         & 0.00366           & 0.000191667      \\ \hline
+    250       & 2.4525    & 0.000247635         & 2.49147            & 0.000294          & 0.00348           & 0.000229167      \\ \hline
+    \end{tabular}
+    \label{tab:loading}
+\end{table}
+    
+As shown in table \ref{tab:loading}, the measured values for both bridge A and B closely resemble the theoretical values.  They all increa
+saercni l
+
+\begin{table}[ht]
+    \centering
+    \caption{Unloading}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Weight (g) & Force (N) & Strain & Voltage (A) & Strain (A) & Voltage (B) & Strain (B) \\ \hline 
+    230 & 2.2563 & 0.000227824 & 2.49145 & 0.0002856 & 0.00358 & 0.000208333 \\ \hline
+    210 & 2.0601 & 0.000208013 & 2.49144 & 0.0002814 & 0.00366 & 0.000191667 \\ \hline
+    190 & 1.8639 & 0.000188202 & 2.49143 & 0.0002772 & 0.00378 & 0.000166667 \\ \hline
+    170 & 1.6677 & 0.000168391 & 2.49141 & 0.0002688 & 0.00386 & 0.00015 \\ \hline
+    150 & 1.4715 & 0.000148581 & 2.49139 & 0.0002604 & 0.00396 & 0.000129167 \\ \hline
+    130 & 1.2753 & 0.00012877  & 2.49137 & 0.000252  & 0.00405 & 0.000110417 \\ \hline
+    110 & 1.0791 & 0.000108959 & 2.49133 & 0.0002352 & 0.00411 & 9.79167E-05 \\ \hline
+    90  & 0.8829 & 8.91484E-05 & 2.49129 & 0.0002184 & 0.00421 & 7.70833E-05 \\ \hline
+    70  & 0.6867 & 6.93377E-05 & 2.49127 & 0.00021   & 0.00428 & 0.0000625  \\ \hline
+    50  & 0.4905 & 4.95269E-05 & 2.49125 & 0.0002016 & 0.00436 & 4.58333E-05 \\ \hline
+    0   & 0      & 0           & 2.49113 & 0.0001512 & 0.00456 & 4.16667E-06 \\ \hline
+    \end{tabular}
+    \label{tab:unloading}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.85\textwidth]{lab5images/ForcevsStrain.png}
+    \caption{Force vs Strain}
+    \label{fig:forcevsstrain}
+\end{figure}
+
+For all three cases in figure \ref{fig:forcevsstrain}, the loading stage is linear and at a similar rate.  For unloading, Configuration B follows the same curve as the loading stage, but configuration A does not.  This is because the bridge A has resistors in parallel, where bridge B is in series.  
+
+
+\begin{figure}[H]
+    \centering
+    % Row 1
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{lab5images/FFT10hz.png}
+      \caption{FFT at 10Hz}
+      \label{fig:fft10hz}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{lab5images/FFT20hz.png}
+      \caption{FFT at 20Hz}
+      \label{fig:fft20hz}
+    \end{minipage}
+    % Row 2
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{lab5images/FFT50hz.png}
+      \caption{FFT at 50Hz}
+      \label{fig:fft50hz}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{lab5images/FFT100hz.png}
+      \caption{FFT at 100Hz}
+      \label{fig:fft100hz}
+    \end{minipage}
+    % Row 3
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.95\linewidth]{lab5images/FFT1000hz.png}
+      \caption{FFT for all Sampling Frequencies}
+      \label{fig:fft1000hz}
+    \end{minipage}
+    \label{fig:ffts}
+\end{figure}
+    
+The sampling frequencies \(\textbf{f}_{S} = \left[10,\, 20,\, 50,\, 100,\, 1000\right]\; \text{Hz}\) has the natural frequencies \(\textbf{f}_{N} = \left[1.5,\, 3.15,\, 170.9,\, 345.9,\, 669.3\right]\; \text{Hz}\).  The natural frequency increases as the sampling frequency increases.
+\vspace{5mm}
+
+Nyquist Theorem states that 
+
 \section{Conclusion}
+In this lab, we learned how to use two different Wheatstone Bridge configurations to measure strain.  After subjecting a cantilever beam to a tip force, we measured the strain using strain gages and the wheatstone bridge.  After acquiring the data, a fourier transform was performed and the natural frequency was found.
+
+
+
+
 
 \newpage
 \thispagestyle{empty}  % Clear header/footer
@@ -227,8 +366,8 @@ In this part, we will be utilizing the write-to-file block to collect our data t
 \renewcommand{\thefigure}{A\arabic{figure}}
 \setcounter{figure}{0}
 
-% \section*{t-Distribution Tables}
-% \hypertarget{1}{\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}}
+\section*{t-Distribution Tables}
+\hypertarget{1}{\includegraphics[width=0.95\textwidth]{t_distribution_Table_lecture3.png}}
 
 \section*{NI-9215 Datasheet}
 \url{https://www.amc-systeme.de/files/pdf/ni-9215-amc.pdf}
