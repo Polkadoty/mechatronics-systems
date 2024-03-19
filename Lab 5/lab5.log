@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  18 MAR 2024 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.31)  18 MAR 2024 22:21
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Programs/mechatronics-systems/Lab 5/lab5.tex"
-(c:/Programs/mechatronics-systems/Lab 5/lab5.tex
+**"a:/Programs/mechatronics-systems/Lab 5/lab5.tex"
+(a:/Programs/mechatronics-systems/Lab 5/lab5.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -661,7 +661,7 @@ Overfull \hbox (66.51152pt too wide) in paragraph at lines 342--344
 <t_distribution_Table_lecture3.png, id=179, 399.29175pt x 486.01575pt>
 File: t_distribution_Table_lecture3.png Graphic file (type png)
 <use t_distribution_Table_lecture3.png>
-Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 371.
+Package pdftex.def Info: t_distribution_Table_lecture3.png  used on input line 378.
 (pdftex.def)             Requested size: 446.26582pt x 543.19928pt.
  [12 <./t_distribution_Table_lecture3.png>] (./lab5.aux)
  ***********
@@ -673,14 +673,14 @@ Package rerunfilecheck Info: File `lab5.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  17085 strings out of 474222
- 289757 string characters out of 5750209
+ 289757 string characters out of 5750203
  1947978 words of memory out of 5000000
  39062 multiletter control sequences out of 15000+600000
  562760 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,14n,77p,562b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,14n,77p,649b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on lab5.pdf (13 pages, 26937541 bytes).
+Output written on lab5.pdf (13 pages, 26938000 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams

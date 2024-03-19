@@ -339,17 +339,24 @@ For all three cases in figure \ref{fig:forcevsstrain}, the loading stage is line
     \label{fig:ffts}
 \end{figure}
     
-The sampling frequencies \(\textbf{f}_{S} = \left[10,\, 20,\, 50,\, 100,\, 1000\right]\; \text{Hz}\) has the natural frequencies \(\textbf{f}_{N} = \left[1.5,\, 3.15,\, 21.21,\, 21.39,\, 20.75\right]\; \text{Hz}\).  The natural frequency increases as the sampling frequency increases until it levels off at around 20 Hz. This is because we need double or greater for the sampling frequency compared to the natural frequency in order to have the natural frequency show up in the FFT.
-\vspace{5mm}
+The sampling frequencies \(\textbf{f}_{S} = \left[10,\, 20,\, 50,\, 100,\, 1000\right]\; \text{Hz}\) has the natural frequencies \(\textbf{f}_{N} = \left[1.5,\, 3.15,\, 170.9,\, 345.9,\, 669.3\right]\; \text{Hz}\).  The natural frequency increases as the sampling frequency increases.
+\vspace{1.5mm}
 
-
-Nyquist Theorem states that 
+Nyquist Theorem states that the sampling frequency should be at least twice that of the highest frequency (or in our case the natural frequency) acquired from the signal. This theorem was satisfied by the experiment.
 
 \section{Conclusion}
-In this lab, we learned how to use two different Wheatstone Bridge configurations to measure strain.  After subjecting a cantilever beam to a tip force, we measured the strain using strain gages and the wheatstone bridge.  After acquiring the data, a fourier transform was performed and the natural frequency was found.
+In this lab, we learned how to use two different Wheatstone Bridge configurations to measure strain. In Part 1, the cantilever beam was subjected to a tip force via hanging weights. We measured the strain using strain gages and the different wheatstone bridge configurations. Configuration B with the strain gages connected in series resulted in values closer to the theoretical values (from Euler-Bernoulli beam theory) as opposed to Configuration A. 
+\vspace{2.5mm}
 
+In Part 2, the cantilevered aluminum beam was subjected to a tip force that left the beam freely oscillating. After acquiring the strain measurements, a fourier transform was performed to our strain data as a function of time and the natural frequency of the cantilever beam was found to be around 20 to 21 Hz. This experiment showcased the material calculations possible from strain gage measurements and the accuracy they can provide to real measurements of strain.
 
+% In the august pursuit of knowledge, our endeavors extended beyond the mere acquisition of strain measurements, delving into the realm of computational enlightenment. Through the meticulous curation of our data, we invoked the sacred art of computation, discerning therein the profound revelations latent within our strain measurements.
 
+% From these hallowed measurements, we gleaned insights of unparalleled import, offering a glimpse into the inner workings of the cantilevered domain. Through the venerable lens of Euler-Bernoulli beam theory, our noble strain gauges, imbued with the solemn duty of observation, unveiled the subtle nuances of structural strain. In the esteemed embrace of Configuration B, wherein the strain gauges stood in harmonious series, our computations bore fruit, yielding values of regal resonance, echoing the esteemed dictates of theoretical expectation.
+
+% Moreover, as the cantilever beam, ensconced in the throes of oscillation, danced to the rhythm of celestial forces, our strain measurements emerged as heralds of revelation. Through the transformative alchemy of Fourier analysis, we beheld not merely oscillations in temporal flux, but the essence of the beam's natural frequency, a testament to the symbiotic dance between material and motion. With awe-inspiring clarity, our computations unveiled the majestic cadence of this frequency, resplendent in its revelation, oscillating with noble grace at frequencies ranging between 20 to 21 Hertz.
+
+% Thus, in the crucible of computation, our strain measurements transcended their humble origins, ascending to the loftiest heights of scholarly discourse. Through their noble revelations, we glimpsed the secrets of structural integrity, unraveling the enigma of material behavior with each precise calculation.
 
 
 \newpage
