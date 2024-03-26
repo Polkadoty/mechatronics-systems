@@ -1,0 +1,49 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nt}{read\PYGZus{}data}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{file\PYGZus{}path}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Lab}\PYG{n+nv}{ }\PYG{l+s}{Data/Lab6\PYGZus{}\PYGZus{}1.xlsx\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nt}{processing\PYGZus{}steps}\PYG{p}{:}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{read\PYGZus{}table}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{input}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Lab}\PYG{n+nv}{ }\PYG{l+s}{Data/Lab6\PYGZus{}\PYGZus{}1.xlsx\PYGZdq{}}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{generate\PYGZus{}time\PYGZus{}sequence}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{start}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{0.001}
+\PYG{+w}{          }\PYG{n+nt}{end}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{10}
+\PYG{+w}{          }\PYG{n+nt}{step}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{0.001}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{select\PYGZus{}data\PYGZus{}columns}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{columns}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[}\PYG{n+nv}{2}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{4}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{6}\PYG{p+pIndicator}{]}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{convert\PYGZus{}to\PYGZus{}array}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{input}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{data}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{calculate\PYGZus{}averages}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{axis}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{normalization}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{subtract}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{averages}
+\PYG{+w}{          }\PYG{n+nt}{adjust\PYGZus{}for\PYGZus{}calibration}\PYG{p}{:}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{mems\PYGZus{}x}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}scale}\PYG{n+nv}{ }\PYG{l+s}{by}\PYG{n+nv}{ }\PYG{l+s}{CaliMems\PYGZdq{}}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{mems\PYGZus{}y}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}scale}\PYG{n+nv}{ }\PYG{l+s}{by}\PYG{n+nv}{ }\PYG{l+s}{CaliMems,}\PYG{n+nv}{ }\PYG{l+s}{convert}\PYG{n+nv}{ }\PYG{l+s}{to}\PYG{n+nv}{ }\PYG{l+s}{degrees\PYGZdq{}}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{piezo\PYGZus{}y}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}scale}\PYG{n+nv}{ }\PYG{l+s}{by}\PYG{n+nv}{ }\PYG{l+s}{CaliPiezo,}\PYG{n+nv}{ }\PYG{l+s}{adjust}\PYG{n+nv}{ }\PYG{l+s}{scale}\PYG{n+nv}{ }\PYG{l+s}{factor\PYGZdq{}}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{fft\PYGZus{}analysis}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{components}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[}\PYG{n+nv}{X}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{mems\PYGZus{}x}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{mems\PYGZus{}y}\PYG{p+pIndicator}{]}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{numerical\PYGZus{}integration}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{calculate\PYGZus{}velocity\PYGZus{}and\PYGZus{}displacement}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{      }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{plot\PYGZus{}data}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{figures}\PYG{p}{:}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{figure\PYGZus{}1}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Acceleration}\PYG{n+nv}{ }\PYG{l+s}{and}\PYG{n+nv}{ }\PYG{l+s}{Velocity}\PYG{n+nv}{ }\PYG{l+s}{plots\PYGZdq{}}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{figure\PYGZus{}2}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Displacement}\PYG{n+nv}{ }\PYG{l+s}{plots\PYGZdq{}}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{figure\PYGZus{}3}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Frequency}\PYG{n+nv}{ }\PYG{l+s}{Response}\PYG{n+nv}{ }\PYG{l+s}{Analysis\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nt}{calibration\PYGZus{}constants}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{CaliMems}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}300*3.3/3,}\PYG{n+nv}{ }\PYG{l+s}{converted}\PYG{n+nv}{ }\PYG{l+s}{to}\PYG{n+nv}{ }\PYG{l+s}{V/(m/s\PYGZca{}2)\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{CaliPiezo}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}10,}\PYG{n+nv}{ }\PYG{l+s}{converted}\PYG{n+nv}{ }\PYG{l+s}{to}\PYG{n+nv}{ }\PYG{l+s}{V/(m/s\PYGZca{}2)\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nt}{analysis}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{frequency\PYGZus{}response}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{initial\PYGZus{}analysis}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{period}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}5}\PYG{n+nv}{ }\PYG{l+s}{seconds\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nt}{follow\PYGZus{}up\PYGZus{}analysis}\PYG{p}{:}
+\PYG{+w}{          }\PYG{n+nt}{period}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}last}\PYG{n+nv}{ }\PYG{l+s}{second\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{derive\PYGZus{}natural\PYGZus{}frequencies}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{method}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}find}\PYG{n+nv}{ }\PYG{l+s}{peak}\PYG{n+nv}{ }\PYG{l+s}{amplitude}\PYG{n+nv}{ }\PYG{l+s}{locations\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{compile\PYGZus{}results}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{format}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{table}
+\PYG{+w}{        }\PYG{n+nt}{contents}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Sensor,}\PYG{n+nv}{ }\PYG{l+s}{Frequency}\PYG{n+nv}{ }\PYG{l+s}{at}\PYG{n+nv}{ }\PYG{l+s}{5}\PYG{n+nv}{ }\PYG{l+s}{seconds,}\PYG{n+nv}{ }\PYG{l+s}{Frequency}\PYG{n+nv}{ }\PYG{l+s}{at}\PYG{n+nv}{ }\PYG{l+s}{Last}\PYG{n+nv}{ }\PYG{l+s}{Second\PYGZdq{}}
+\end{Verbatim}
