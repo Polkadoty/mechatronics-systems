@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.31)  25 MAR 2024 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.31)  25 MAR 2024 23:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -565,7 +565,7 @@ Package gensymb Info: Using text companion symbols for \degree, \celsius and \pe
 LaTeX Info: Redefining \ohm on input line 29.
 Package gensymb Info: Using \textohm for \ohm on input line 29.
 Package gensymb Info: Using \textmu for \micro on input line 29.
-<ase-logo-formal.png, id=36, 412.54124pt x 107.40125pt>
+<ase-logo-formal.png, id=44, 412.54124pt x 107.40125pt>
 File: ase-logo-formal.png Graphic file (type png)
 <use ase-logo-formal.png>
 Package pdftex.def Info: ase-logo-formal.png  used on input line 33.
@@ -582,38 +582,81 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.63 \newpage
               [1]
-<lab6images/wingmodellab6.png, id=59, 451.6875pt x 212.29312pt>
+<lab6images/wingmodellab6.png, id=69, 451.6875pt x 212.29312pt>
 File: lab6images/wingmodellab6.png Graphic file (type png)
 <use lab6images/wingmodellab6.png>
-Package pdftex.def Info: lab6images/wingmodellab6.png  used on input line 83.
+Package pdftex.def Info: lab6images/wingmodellab6.png  used on input line 82.
 (pdftex.def)             Requested size: 375.80544pt x 176.63731pt.
  [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./lab6images/wingmodellab6.png>]
-<lab6images/blockdiagramlab6.PNG, id=70, 840.13875pt x 700.86844pt>
+<lab6images/blockdiagramlab6.PNG, id=80, 840.13875pt x 700.86844pt>
 File: lab6images/blockdiagramlab6.PNG Graphic file (type png)
 <use lab6images/blockdiagramlab6.PNG>
 Package pdftex.def Info: lab6images/blockdiagramlab6.PNG  used on input line 125.
 (pdftex.def)             Requested size: 352.31625pt x 293.91357pt.
- [3 <./lab6images/blockdiagramlab6.PNG>] [4] [5] [6] [7] (./lab6report.aux)
+ [3 <./lab6images/blockdiagramlab6.PNG>]
+\openout4 = `lab6report.pyg'.
+
+ (./_minted-lab6report/default.pygstyle) (./_minted-lab6report/138FDEEDFE77E1ACAC044000CB60CEDA8FB9468E29219ADB0825CE73BB165A82.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+ [4])
+\openout4 = `lab6report.pyg'.
+
+ (./_minted-lab6report/782424BC6A45D1B9340F465F09A96F988FB9468E29219ADB0825CE73BB165A82.pygtex [5])
+<lab6images/disvelaccdata.png, id=113, 1896.33469pt x 1108.14pt>
+File: lab6images/disvelaccdata.png Graphic file (type png)
+<use lab6images/disvelaccdata.png>
+Package pdftex.def Info: lab6images/disvelaccdata.png  used on input line 292.
+(pdftex.def)             Requested size: 469.75502pt x 274.49799pt.
+ [6]
+<lab6images/frequencyanalysis5second.png, id=122, 796.47563pt x 490.83376pt>
+File: lab6images/frequencyanalysis5second.png Graphic file (type png)
+<use lab6images/frequencyanalysis5second.png>
+Package pdftex.def Info: lab6images/frequencyanalysis5second.png  used on input line 305.
+(pdftex.def)             Requested size: 375.80544pt x 231.59064pt.
+ [7 <./lab6images/disvelaccdata.png>]
+<lab6images/frequencyanalysislastsecond.png, id=130, 794.97pt x 544.28343pt>
+File: lab6images/frequencyanalysislastsecond.png Graphic file (type png)
+<use lab6images/frequencyanalysislastsecond.png>
+Package pdftex.def Info: lab6images/frequencyanalysislastsecond.png  used on input line 312.
+(pdftex.def)             Requested size: 375.80544pt x 257.30817pt.
+ [8 <./lab6images/frequencyanalysis5second.png (PNG copy)> <./lab6images/frequencyanalysislastsecond.png (PNG copy)>] [9] [10]
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 354.
+
+\openout4 = `lab6report.pyg'.
+
+(./_minted-lab6report/A4A3684E9791FE6308577618870BE9D7C06EA3E7A13C387FA3758A6BEB144EBE.pygtex [11] [12])
+\openout4 = `lab6report.pyg'.
+
+ (./_minted-lab6report/6686C31AC344D6288327CEA7EAD87DD3C06EA3E7A13C387FA3758A6BEB144EBE.pygtex [13] [14]) [15] [16] (./lab6report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `lab6report.out' has not changed.
-(rerunfilecheck)             Checksum: A2C3EA1AE19C07E50B43FB3615F16F53;1056.
+(rerunfilecheck)             Checksum: C6DE7955B97F0E2E6294BB9BF596015B;1352.
+runsystem(del lab6report.pyg)...executed.
+
  ) 
 Here is how much of TeX's memory you used:
- 16955 strings out of 474222
- 286496 string characters out of 5750203
- 1933978 words of memory out of 5000000
- 38963 multiletter control sequences out of 15000+600000
- 562141 words of font info for 50 fonts, out of 8000000 for 9000
+ 17157 strings out of 474222
+ 291834 string characters out of 5750203
+ 1943978 words of memory out of 5000000
+ 39130 multiletter control sequences out of 15000+600000
+ 562610 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,77p,604b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on lab6report.pdf (8 pages, 207140 bytes).
+ 70i,11n,77p,1334b,886s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on lab6report.pdf (17 pages, 463113 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

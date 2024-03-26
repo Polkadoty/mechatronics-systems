@@ -1,0 +1,63 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nt}{file\PYGZus{}processing}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{directory\PYGZus{}path}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Lab}\PYG{n+nv}{ }\PYG{l+s}{Data/*.xlsx\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{get\PYGZus{}files\PYGZus{}and\PYGZus{}folders}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{      }\PYG{n+nt}{file\PYGZus{}check}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{is\PYGZus{}file}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+
+\PYG{+w}{    }\PYG{n+nt}{initializations}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{figure}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1}
+\PYG{+w}{      }\PYG{n+nt}{natural\PYGZus{}frequencies\PYGZus{}5\PYGZus{}seconds}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[]}
+\PYG{+w}{      }\PYG{n+nt}{natural\PYGZus{}frequencies\PYGZus{}last\PYGZus{}second}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[]}
+
+\PYG{+w}{    }\PYG{n+nt}{processing\PYGZus{}steps}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{for\PYGZus{}each\PYGZus{}file}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{if}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}is\PYGZus{}file\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nt}{operations}\PYG{p}{:}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{read\PYGZus{}file}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{path}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Full}\PYG{n+nv}{ }\PYG{l+s}{path}\PYG{n+nv}{ }\PYG{l+s}{based}\PYG{n+nv}{ }\PYG{l+s}{on}\PYG{n+nv}{ }\PYG{l+s}{directory}\PYG{n+nv}{ }\PYG{l+s}{and}\PYG{n+nv}{ }\PYG{l+s}{file}\PYG{n+nv}{ }\PYG{l+s}{name\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{action}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Read}\PYG{n+nv}{ }\PYG{l+s}{table}\PYG{n+nv}{ }\PYG{l+s}{from}\PYG{n+nv}{ }\PYG{l+s}{Excel}\PYG{n+nv}{ }\PYG{l+s}{file\PYGZdq{}}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{preprocess\PYGZus{}data}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{time\PYGZus{}sequence}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}0.001}\PYG{n+nv}{ }\PYG{l+s}{to}\PYG{n+nv}{ }\PYG{l+s}{10}\PYG{n+nv}{ }\PYG{l+s}{in}\PYG{n+nv}{ }\PYG{l+s}{0.001}\PYG{n+nv}{ }\PYG{l+s}{increments\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{select\PYGZus{}columns}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[}\PYG{n+nv}{2}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{4}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{n+nv}{6}\PYG{p+pIndicator}{]}
+\PYG{+w}{              }\PYG{n+nt}{convert\PYGZus{}to\PYGZus{}array}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{              }\PYG{n+nt}{calculate\PYGZus{}averages}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{              }\PYG{n+nt}{normalize\PYGZus{}data}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Subtract}\PYG{n+nv}{ }\PYG{l+s}{averages,}\PYG{n+nv}{ }\PYG{l+s}{adjust}\PYG{n+nv}{ }\PYG{l+s}{for}\PYG{n+nv}{ }\PYG{l+s}{CaliPiezo\PYGZdq{}}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{fft\PYGZus{}analysis}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{component}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}data\PYGZus{}norm(:,3)\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{frequency\PYGZus{}range}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}0}\PYG{n+nv}{ }\PYG{l+s}{to}\PYG{n+nv}{ }\PYG{l+s}{1000\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{calculate\PYGZus{}amplitude}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{plot\PYGZus{}frequency\PYGZus{}response}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{figure}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1}
+\PYG{+w}{              }\PYG{n+nt}{plot}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Frequency}\PYG{n+nv}{ }\PYG{l+s}{vs.}\PYG{n+nv}{ }\PYG{l+s}{Amplitude}\PYG{n+nv}{ }\PYG{l+s}{(5}\PYG{n+nv}{ }\PYG{l+s}{seconds)\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{title}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Piezo}\PYG{n+nv}{ }\PYG{l+s}{(5}\PYG{n+nv}{ }\PYG{l+s}{seconds)\PYGZdq{}}
+\PYG{+w}{              }\PYG{n+nt}{add\PYGZus{}legend}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{identify\PYGZus{}natural\PYGZus{}frequency}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{find\PYGZus{}maximum\PYGZus{}amplitude\PYGZus{}location}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{              }\PYG{n+nt}{store\PYGZus{}frequency}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}NaturalFreqV0\PYGZus{}5\PYGZdq{}}
+\PYG{+w}{          }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{optional\PYGZus{}section}\PYG{p}{:}
+\PYG{+w}{              }\PYG{n+nt}{commented\PYGZus{}out}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{              }\PYG{n+nt}{description}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Analysis}\PYG{n+nv}{ }\PYG{l+s}{for}\PYG{n+nv}{ }\PYG{l+s}{the}\PYG{n+nv}{ }\PYG{l+s}{last}\PYG{n+nv}{ }\PYG{l+s}{second}\PYG{n+nv}{ }\PYG{l+s}{is}\PYG{n+nv}{ }\PYG{l+s}{prepared}\PYG{n+nv}{ }\PYG{l+s}{but}\PYG{n+nv}{ }\PYG{l+s}{not}\PYG{n+nv}{ }\PYG{l+s}{executed\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nt}{second\PYGZus{}loop}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{description}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Repeat}\PYG{n+nv}{ }\PYG{l+s}{steps}\PYG{n+nv}{ }\PYG{l+s}{for}\PYG{n+nv}{ }\PYG{l+s}{second}\PYG{n+nv}{ }\PYG{l+s}{analysis}\PYG{n+nv}{ }\PYG{l+s}{focusing}\PYG{n+nv}{ }\PYG{l+s}{on}\PYG{n+nv}{ }\PYG{l+s}{the}\PYG{n+nv}{ }\PYG{l+s}{last}\PYG{n+nv}{ }\PYG{l+s}{second\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{operations}\PYG{p}{:}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{adjust\PYGZus{}data\PYGZus{}set}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Halve}\PYG{n+nv}{ }\PYG{l+s}{N,}\PYG{n+nv}{ }\PYG{l+s}{adjust}\PYG{n+nv}{ }\PYG{l+s}{frequency}\PYG{n+nv}{ }\PYG{l+s}{range\PYGZdq{}}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{fft\PYGZus{}analysis}\PYG{p}{:}
+\PYG{+w}{            }\PYG{n+nt}{component}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}data\PYGZus{}norm(:,3)}\PYG{n+nv}{ }\PYG{l+s}{for}\PYG{n+nv}{ }\PYG{l+s}{last}\PYG{n+nv}{ }\PYG{l+s}{half\PYGZdq{}}
+\PYG{+w}{            }\PYG{n+nt}{calculate\PYGZus{}amplitude}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{plot\PYGZus{}frequency\PYGZus{}response}\PYG{p}{:}
+\PYG{+w}{            }\PYG{n+nt}{figure}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{2}
+\PYG{+w}{            }\PYG{n+nt}{plot}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Frequency}\PYG{n+nv}{ }\PYG{l+s}{vs.}\PYG{n+nv}{ }\PYG{l+s}{Amplitude}\PYG{n+nv}{ }\PYG{l+s}{(Last}\PYG{n+nv}{ }\PYG{l+s}{second)\PYGZdq{}}
+\PYG{+w}{            }\PYG{n+nt}{title}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Piezo}\PYG{n+nv}{ }\PYG{l+s}{(Last}\PYG{n+nv}{ }\PYG{l+s}{second)\PYGZdq{}}
+\PYG{+w}{            }\PYG{n+nt}{add\PYGZus{}legend}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{identify\PYGZus{}natural\PYGZus{}frequency}\PYG{p}{:}
+\PYG{+w}{            }\PYG{n+nt}{find\PYGZus{}maximum\PYGZus{}amplitude\PYGZus{}location}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{true}
+\PYG{+w}{            }\PYG{n+nt}{store\PYGZus{}frequency}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}NaturalFreq\PYGZus{}LastSec\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nt}{final\PYGZus{}steps}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{remove\PYGZus{}initial\PYGZus{}zeros}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}NaturalFreq\PYGZus{}LastSec}\PYG{n+nv}{ }\PYG{l+s}{adjustment\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nt}{calculate\PYGZus{}averages}\PYG{p}{:}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{average\PYGZus{}frequency\PYGZus{}5\PYGZus{}seconds}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Mean}\PYG{n+nv}{ }\PYG{l+s}{of}\PYG{n+nv}{ }\PYG{l+s}{NaturalFreqV0\PYGZus{}5\PYGZdq{}}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{average\PYGZus{}frequency\PYGZus{}last\PYGZus{}second}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Mean}\PYG{n+nv}{ }\PYG{l+s}{of}\PYG{n+nv}{ }\PYG{l+s}{NaturalFreq\PYGZus{}LastSec\PYGZdq{}}
+\end{Verbatim}

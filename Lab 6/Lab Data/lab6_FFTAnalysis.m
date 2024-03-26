@@ -1,5 +1,5 @@
 % Get a list of all files and folders in the directory
-Files = dir('Lab Files/*.xlsx');
+Files = dir('Lab Data/*.xlsx');
 i=1;
 % Get a logical vector that tells which is a file
 isFile = ~[Files.isdir];
@@ -8,7 +8,7 @@ figure()
 for iExcelSubject = 1:length(Files)
     if isFile(iExcelSubject)
         % Full path to file
-        Report = fullfile('Lab Files', Files(iExcelSubject).name);
+        Report = fullfile('Lab Data', Files(iExcelSubject).name);
         % Read the table from the Excel file
         T = readtable(Report);
         % Do something with table T
@@ -62,7 +62,7 @@ hold on;
 for iExcelSubject = 1:length(Files)
     if isFile(iExcelSubject)
         % Full path to file
-        Report = fullfile('Lab Files', Files(iExcelSubject).name);
+        Report = fullfile('Lab Data', Files(iExcelSubject).name);
         % Read the table from the Excel file
         T = readtable(Report);
         % Do something with table T

@@ -3,6 +3,8 @@
 \contentsline {section}{\numberline {3}Procedure}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Accelerometer Setup and Experiment}{4}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Data Processing}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Variables and Equations}{4}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Results and Analysis}{4}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{4}{section.6}%
+\contentsline {subsection}{\numberline {4.1}Script Pseudocode}{4}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Results and Analysis}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Accelerometer Data}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Power Spectrum Analysis}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}%
