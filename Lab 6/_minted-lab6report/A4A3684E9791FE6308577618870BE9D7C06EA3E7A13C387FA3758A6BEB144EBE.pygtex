@@ -1,0 +1,139 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n}{T}\PYG{p}{=}\PYG{n+nb}{readtable}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Lab Data/Lab6\PYGZus{}\PYGZus{}1.xlsx\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n+nb}{time}\PYG{p}{=}\PYG{l+m+mf}{0.001}\PYG{p}{:}\PYG{l+m+mf}{0.001}\PYG{p}{:}\PYG{l+m+mi}{10}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{data}\PYG{p}{=[}\PYG{n}{T}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{(:,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{(:,}\PYG{l+m+mi}{6}\PYG{p}{)];}
+\PYG{+w}{    }\PYG{n}{data}\PYG{p}{=}\PYG{n+nb}{table2array}\PYG{p}{(}\PYG{n}{data}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{averages}\PYG{p}{=}\PYG{n+nb}{mean}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{[}\PYG{n}{N}\PYG{p}{,}\PYG{n}{M}\PYG{p}{]=}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{T}\PYG{p}{);}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 1:mems (x)}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 2:mems (y)}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 3:piezo (y)}
+\PYG{+w}{    }\PYG{n}{CaliMems}\PYG{p}{=}\PYG{l+m+mi}{300}\PYG{o}{*}\PYG{l+m+mf}{3.3}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}mv/g}
+\PYG{+w}{    }\PYG{n}{CaliMems}\PYG{p}{=}\PYG{n}{CaliMems}\PYG{o}{*}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{1000}\PYG{o}{/}\PYG{l+m+mf}{9.81}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}V/(m/s\PYGZca{}2)}
+\PYG{+w}{    }\PYG{n}{CaliPiezo}\PYG{p}{=}\PYG{l+m+mi}{10}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}mV/g}
+\PYG{+w}{    }\PYG{n}{CaliPiezo}\PYG{p}{=}\PYG{n}{CaliPiezo}\PYG{o}{*}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{1000}\PYG{o}{/}\PYG{l+m+mf}{9.81}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}V/(m/s\PYGZca{}2)}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}norm}\PYG{p}{=}\PYG{n+nb}{bsxfun}\PYG{p}{(@}\PYG{n}{minus}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{data}\PYG{+w}{ }\PYG{p}{,}\PYG{+w}{ }\PYG{n}{averages}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{3}\PYG{p}{)=}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{o}{/}\PYG{n}{CaliPiezo}\PYG{o}{/}\PYG{l+m+mf}{2.815}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)=}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{/}\PYG{n}{CaliMems}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}mems x}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)=}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{n}{CaliMems}\PYG{o}{*}\PYG{l+m+mi}{180}\PYG{p}{;}\PYG{+w}{ }\PYG{c}{\PYGZpc{}mems y}
+\PYG{+w}{    }\PYG{n}{X}\PYG{p}{=}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{3}\PYG{p}{);}
+
+
+\PYG{+w}{    }\PYG{n}{V0}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{V1}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{V2}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{3}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Frequency}\PYG{p}{=}\PYG{n+nb}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{p}{,}\PYG{n}{N}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{}Numerical Integration}
+\PYG{+w}{    }\PYG{n}{VelMemX}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{VelMemX}\PYG{p}{=}\PYG{n}{VelMemX}\PYG{o}{\PYGZhy{}}\PYG{n}{VelMemX}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{VelMemY}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{VelMemY}\PYG{p}{=}\PYG{n}{VelMemY}\PYG{o}{\PYGZhy{}}\PYG{n}{VelMemY}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{VelPiezoY}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{X}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{VelPiezoY}\PYG{p}{=}\PYG{n}{VelPiezoY}\PYG{o}{\PYGZhy{}}\PYG{n}{VelPiezoY}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disMemX}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelMemX}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disMemX}\PYG{p}{=}\PYG{n}{disMemX}\PYG{o}{\PYGZhy{}}\PYG{n}{disMemX}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disMemY}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelMemY}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disMemY}\PYG{p}{=}\PYG{n}{disMemY}\PYG{o}{\PYGZhy{}}\PYG{n}{disMemY}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disPiezoY}\PYG{p}{=}\PYG{n+nb}{cumtrapz}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelPiezoY}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{disPiezoY}\PYG{p}{=}\PYG{n}{disPiezoY}\PYG{o}{\PYGZhy{}}\PYG{n}{disPiezoY}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{)))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(X) Acceleration\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{)))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(Y) Acceleration\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{X}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Piezo Acceleration\PYGZsq{}}\PYG{p}{)}
+
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelMemX}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(X) Velocity\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelMemY}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(Y) Velocity\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{VelPiezoY}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Piezo Velocity\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{disMemX}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(X) Displacement\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{8}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{disMemY}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(Y) Displacement\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{9}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n+nb}{time}\PYG{p}{,}\PYG{n}{disPiezoY}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Piezo(Y) Displacement\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{}Frequency Response}
+
+\PYG{+w}{    }\PYG{n}{Amplitude1}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V0}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Amplitude2}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Amplitude3}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 5 Seconds}
+\PYG{+w}{    }\PYG{n+nb}{figure}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(X) (5 seconds)\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(Y) (5 seconds)\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude3}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Piezo (5 seconds)\PYGZsq{}}\PYG{p}{)}
+
+\PYG{+w}{    }\PYG{n}{loc1}\PYG{p}{=}\PYG{n}{Amplitude1}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{loc2}\PYG{p}{=}\PYG{n}{Amplitude2}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{loc3}\PYG{p}{=}\PYG{n}{Amplitude3}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude3}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{));}
+
+\PYG{+w}{    }\PYG{n}{NaturalFreqV0}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV1}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV2}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc3}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{NaturalFreqV0\PYGZus{}5}\PYG{p}{=}\PYG{n}{NaturalFreqV0}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV1\PYGZus{}5}\PYG{p}{=}\PYG{n}{NaturalFreqV1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV2\PYGZus{}5}\PYG{p}{=}\PYG{n}{NaturalFreqV2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} Last second}
+\PYG{+w}{    }\PYG{n}{N2}\PYG{p}{=}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{Frequency}\PYG{p}{=}\PYG{n+nb}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{p}{,}\PYG{n}{N2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}norm}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{p}{,:)=[];}
+\PYG{+w}{    }\PYG{n}{V0}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{V1}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{V2}\PYG{p}{=}\PYG{n+nb}{fft}\PYG{p}{(}\PYG{n}{data\PYGZus{}norm}\PYG{p}{(:,}\PYG{l+m+mi}{3}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Amplitude1}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N2}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V0}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Amplitude2}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N2}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{Amplitude3}\PYG{p}{=}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{n}{N2}\PYG{o}{*}\PYG{n+nb}{real}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{V2}\PYG{p}{));}
+
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(X) (Last second)\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Mems(Y) (Last second)\PYGZsq{}}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{subplot}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nb}{plot}\PYG{p}{(}\PYG{n}{Frequency}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{),}\PYG{n}{Amplitude3}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{))}
+\PYG{+w}{    }\PYG{n+nb}{title}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Piezo (Last second)\PYGZsq{}}\PYG{p}{)}
+
+\PYG{+w}{    }\PYG{n}{loc1}\PYG{p}{=}\PYG{n+nb}{find}\PYG{p}{(}\PYG{n}{Amplitude1}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)));}
+\PYG{+w}{    }\PYG{n}{loc2}\PYG{p}{=}\PYG{n+nb}{find}\PYG{p}{(}\PYG{n}{Amplitude2}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)));}
+\PYG{+w}{    }\PYG{n}{loc3}\PYG{p}{=}\PYG{n+nb}{find}\PYG{p}{(}\PYG{n}{Amplitude3}\PYG{o}{==}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{Amplitude3}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{N2}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)));}
+
+\PYG{+w}{    }\PYG{n}{NaturalFreqV0}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc1}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{NaturalFreqV1}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc2}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV2}\PYG{p}{=}\PYG{n}{Frequency}\PYG{p}{(}\PYG{n}{loc3}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{NaturalFreqV0\PYGZus{}Last}\PYG{p}{=}\PYG{n}{NaturalFreqV0}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV1\PYGZus{}Last}\PYG{p}{=}\PYG{n}{NaturalFreqV1}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{NaturalFreqV2\PYGZus{}Last}\PYG{p}{=}\PYG{n}{NaturalFreqV2}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{n}{Frequency\PYGZus{}5s}\PYG{p}{=[}\PYG{n}{NaturalFreqV0\PYGZus{}5}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{NaturalFreqV1\PYGZus{}5}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{NaturalFreqV2\PYGZus{}5}\PYG{p}{];}
+\PYG{+w}{    }\PYG{n}{Frequency\PYGZus{}LastSec}\PYG{p}{=[}\PYG{n}{NaturalFreqV0\PYGZus{}Last}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{NaturalFreqV1\PYGZus{}Last}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{NaturalFreqV2\PYGZus{}Last}\PYG{p}{];}
+\PYG{+w}{    }\PYG{n}{Sensor}\PYG{p}{=[}\PYG{l+s}{\PYGZdq{}Mems(X)\PYGZdq{}}\PYG{p}{;}\PYG{l+s}{\PYGZdq{}Mems(Y)\PYGZdq{}}\PYG{p}{;}\PYG{l+s}{\PYGZdq{}Piezo(Y)\PYGZdq{}}\PYG{p}{];}
+\PYG{+w}{    }\PYG{n}{Table}\PYG{p}{=}\PYG{n+nb}{table}\PYG{p}{(}\PYG{n}{Sensor}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Frequency\PYGZus{}5s}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Frequency\PYGZus{}LastSec}\PYG{p}{)}
+\end{Verbatim}
