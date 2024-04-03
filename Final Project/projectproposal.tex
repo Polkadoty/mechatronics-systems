@@ -16,75 +16,68 @@
 \setlength\parindent{0pt}
 
 
-\pagestyle{fancy}
-\fancyhf{} % Clear header/footer settings
-\rhead{\thepage} % Page number on the right in the header
-\lhead{ASE 375 Final Project Proposal} % Your lab report title on the left
+% \pagestyle{fancy}
+% \fancyhf{} % Clear header/footer settings
+% \rhead{\thepage} % Page number on the right in the header
+% \lhead{ASE 375 Final Project Proposal} % Your lab report title on the left
+
+% \title{Propeller Twist Efficiency}
+% \author{Group 6: Andrew Doty, Andres Suniaga, Dennis Hom}
 
 \begin{document}
+\begin{flushleft}
+    \small{ASE 375 Group 6 (14115): Andrew Doty, Andres Suniaga, Dennis Hom}\\[2mm]    
+    \Large{\textbf{Project Proposal: Propeller Twist Efficiency}}\\[2mm]
+\end{flushleft}
+% \maketitle
+% \begin{titlepage}
+  % \centering
+  % \includegraphics[height=2.5cm]{ase-logo-formal.png}  % Adjust the height as needed
+  % \vspace{1cm}  % Add some vertical space
+ 
+%   \Large \textbf{ASE 375 Electromechanical Systems}\\
+%   \large \textbf{Section 14115}\\
+%   \vspace{0.5cm}
+%   \textbf{Monday: 3:00 - 6:00 pm}\\
+ 
+%   \vspace{1cm}
+ 
+%   \hrule
+%   \vspace{0.5cm}
+ 
+%   \Huge \textbf{Final Project Proposal: \\
+%                 Propeller Twist Efficiency}
+%  \Huge \textbf{}\\
+ 
+%   \vspace{0.5cm}
+%   \hrule
+ 
+%   \vspace{1cm}
+ 
+%   \normalsize \textbf{Group 6: Andrew Doty, Andres Suniaga, Dennis Hom}\\
+%   \normalsize \textbf{Due Date: 04/01/2024}
+ 
+% \end{titlepage}
 
-\begin{titlepage}
-  \centering
-  \includegraphics[height=2.5cm]{ase-logo-formal.png}  % Adjust the height as needed
-  \vspace{1cm}  % Add some vertical space
- 
-  \Large \textbf{ASE 375 Electromechanical Systems}\\
-  \large \textbf{Section 14115}\\
-  \vspace{0.5cm}
-  \textbf{Monday: 3:00 - 6:00 pm}\\
- 
-  \vspace{1cm}
- 
-  \hrule
-  \vspace{0.5cm}
- 
-  \Huge \textbf{Final Project Proposal: \\
-                Propeller Twist Efficiency}\\
-  \Huge \textbf{}\\
- 
-  \vspace{0.5cm}
-  \hrule
- 
-  \vspace{1cm}
- 
-  \normalsize \textbf{Group 6: Andrew Doty, Andres Suniaga, Dennis Hom}\\
-  \normalsize \textbf{Due Date: 04/01/2024}
- 
-\end{titlepage}
-\newpage
-
-\section{Introduction}
-Question: Imagine we want to design an RC aircraft. What is the most efficient propeller for our motor? Moreover, How does propeller twist affect efficiency?
-\\[2mm]
-Propeller twist defines the angle of attack of the blade of the propeller. Twist varies from the hub to the tip of the propeller due to the different speeds along the blade, but this twist allows for uniform lift throughout the propeller's blade.
-
-\section{List of Equipment}
-\begin{enumerate}
-    \item Tension Link Load Cell, along with required connections and components
-    \item BLDC Motor with the proper rated Brushless Electronic Speed Controller 
-    \begin{itemize}
-        \item Stator diameter and height to be determined.
-        \item $\text{K}_{\text{v}}\; [\frac{
-        \text{RPM}}{\text{V}}]$ to be determined .
-    \end{itemize}
-    \item Power Supply or 3-6S Lithium-Ion/Polymer battery with Voltmeter, Ammeter, and Watt-meter
-    \item PWM Wave Generator or PWM/Servo Tester
-    \item Two-Blade Propellers of different pitch
-    \begin{itemize}
-        \item Propeller diameter to be determined, based upon motor specifications.
-    \end{itemize}
-    \item Thrust Stand with mounting for BLDC Motor and Placement of Load Cell
-\end{enumerate}
-
+\section{Question}
+Imagine we are designing an RC aircraft. \textbf{How does propeller twist affect efficiency?} Twist defines the angle of incidence of the propeller. This varies from the hub to the tip of the prop due to the different speeds along the blade as it spins.
 \section{Experiment}
-How will we determine the propeller's efficiency? Using a thrust stand designed to mount our BLDC Motor, we will measure the thrust force and the power used. The load cell shall be placed underneath the motor on the stand and will measure the force of thrust as shown in Figure \ref{fig:finalsetup}. We will keep track of the input voltage, current, and power from the power supply, which shall read out these electrical quantities.
+How will we determine the propeller's efficiency? Using an arm designed to mount a DC Motor and Speed Controller, we will measure the thrust force and the power used. The speed of the motor will be controlled via PWM generator communicating through the speed controller. For consistency, the same PWM signal will be supplied for all tests. We will use strain gages placed at the root of the arm as shown in Figure \ref{fig:finalsetup} to measure the propeller thrust at the tip. With a power supply, we can ensure that the same input voltage is supplied and from a watt-meter we can gather the electrical power consumption.
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{EMech_FinalExperiment_IdeaSetup.png}
+    \includegraphics[width = 0.5\textwidth]{EMech_FinalExperiment_IdeaSetup_Updated.png}
     \caption{Hypothetical Experiment Setup}
     \label{fig:finalsetup}
 \end{figure}
-We will experiment with propellers of different twist but same diameter. With the data gathered from the load cell and power consumption, we shall determine the propeller efficiency by $\eta_{p} = \dfrac{F_{T}\, V}{P}$, where $F_{T} = \; \text{Thrust}$, $P = \; \text{Electrical Power}$, and $V = \; \text{Flight Velocity}$. We will normalize this efficiency parameter by $V$, assuming a constant theoretical flight velocity. The propeller with the highest $\eta_{p}$ will be the chosen propeller for our RC aircraft.
-\newpage
-
+We will experiment with a number of propellers of different twist but same diameter. We can test the consistency of the motor's RPM and how it compares to the manufacturer's $\text{K}_{\text{v}}$ with a hall-effect sensor. With a ratio of the propeller thrust and electrical power consumption we can determine the "efficiency" (power loading) of the propeller and how it is affected by twist. 
+\section{List of Equipment}
+\begin{enumerate}
+    \item Strain Gages, with dummy resistors and DAQ
+    \item Hall Effect Sensor and Miniature Magnet
+    \item BLDC Motor with the proper rated Brushless Electronic Speed Controller 
+    \item Power Supply supplying operational voltage, with Voltmeter, Ammeter, and Watt-meter
+    \item PWM Wave Generator or PWM/Servo Tester
+    \item 3-5 Two-Blade Propellers of same diameter, dependent on the motor specifications, and different twist 
+    \item Thrust Stand/Arm with mounting for BLDC Motor
+\end{enumerate}
 \end{document}
