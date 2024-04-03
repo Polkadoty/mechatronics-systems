@@ -254,9 +254,41 @@ Variables:
 
     
 \section{Results and Analysis}
+\subsection{Part 1} 
 
+\begin{table}
+    \centering
+    \begin{tabular}{ccccc}
+         Mass&  Weight (N)&  V (mean)&  V (STD)&  V (norm)   \\
+         0&  0&  -0.00172&  0.0005&  0   \\
+         50&  0.491&  0.00282&  0.0006&  0.00454   \\
+         90&  0.883&  0.00647&  0.0005&  0.00819   \\
+         130&  1.275&  0.0102&  0.0005&  0.0119  \\
+ 170& 1.667& 0.0141& 0.0005& 0.0158 \\
+ 210& 2.06& 0.0176& 0.0004& 0.0193 \\
+ 250& 2.453& 0.0215& 0.0005& 0.0232 \\
+    \end{tabular}
+    \caption{Load Cell Calibration}
+    \label{tab:my_label}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PUT THE GRAPH AND TABLE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+This leads to a Calibration Factor of \begin{equation} C = 0.0095 \dfrac{V}{N}\ \end{equation}
+
+Through the use of a multimeter, \(R_{G}\) is measured as 2.699\text{k}\Omega\).  To calculate the gain of the amplifier, \textbf{Eq. 1} and \textbf{Eq. 2} are used. \(G\) is calculated to be 38.051.
+\subsection{Part 2} 
+%%%%%%%%%%% PUT ALL THE OTHER GRAPHS HERE %%%%%%%%%%%%%%%%%%%%%
+% tip displacement vs Freq %
+% Force vs Freq %
+% Accel vs Freq %
+% ^^^ THESE 3 NEXT TO EACHOTHER %
+
+% Frequency Response %%%%% in its own spot %%%%%
+The Frequency Response function is the tip bending displacement vs. input force.  It is taken by dividing the magnitude of the tip displacement by the input force and then plotting it for each frequency tested.  
+The peak of this graph is the natural frequency, which is 55 Hz.  
 \section{Conclusion}
+
+This experiment gave a natural frequency of 55 Hz.  The previous lab had a calculated natural frequency of ~59 Hz.  
 
 
 \newpage
