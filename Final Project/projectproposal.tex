@@ -60,27 +60,24 @@
 % \end{titlepage}
 
 \section{Question}
-\textbf{How does propeller twist affect efficiency?} Twist defines the angle of incidence of the propeller. This varies from the hub to the tip of the prop due to the different speeds along the blade as the propeller spins.
+Imagine we are designing an RC aircraft. \textbf{How does propeller twist affect efficiency?} Twist defines the angle of incidence of the propeller. This varies from the hub to the tip of the prop due to the different speeds along the blade as it spins.
 \section{Experiment}
-How will we determine the propeller's efficiency? Using a thrust stand designed to mount a Brushless DC Motor and Speed Controller, we will measure the thrust force and the power used. The speed of the motor will be controlled via PWM signal generator communicating through the speed controller. For consistency, the same PWM signal will be supplied for all tests. Using a load cell placed at the root of our stand (beam as shown in \ref{fig:finalsetup}) we will measure the propeller's thrust. For accurate data collection we will calibrate this load cell to measure this thrust applied at the tip of the stand. With the DAQ, we can gather this load cell data.  With a power supply, we can ensure that the same input voltage is supplied and from a watt-meter we can gather the electrical power consumption.
+How will we determine the propeller's efficiency? Using an arm designed to mount a DC Motor and Speed Controller, we will measure the thrust force and the power used. The speed of the motor will be controlled via PWM generator communicating through the speed controller. For consistency, the same PWM signal will be supplied for all tests. We will use strain gages placed at the root of the arm as shown in Figure \ref{fig:finalsetup} to measure the propeller thrust at the tip. With a power supply, we can ensure that the same input voltage is supplied and from a watt-meter we can gather the electrical power consumption.
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{finalproject/EMech_FinalExperiment_IdeaSetup_Updated.png}
+    \includegraphics[width = 0.5\textwidth]{EMech_FinalExperiment_IdeaSetup_Updated.png}
     \caption{Hypothetical Experiment Setup}
     \label{fig:finalsetup}
 \end{figure}
-We will experiment with a number of propellers of different twist but same diameter. With a ratio of the propeller thrust and electrical power consumption we can determine the efficiency of the propeller and how it is affected by twist.
+We will experiment with a number of propellers of different twist but same diameter. We can test the consistency of the motor's RPM and how it compares to the manufacturer's $\text{K}_{\text{v}}$ with a hall-effect sensor. With a ratio of the propeller thrust and electrical power consumption we can determine the "efficiency" (power loading) of the propeller and how it is affected by twist. 
 \section{List of Equipment}
 \begin{enumerate}
-    \item Tension Link Load Cell, along with required connections and components for DAQ 
+    \item Strain Gages, with dummy resistors and DAQ
+    \item Hall Effect Sensor and Miniature Magnet
     \item BLDC Motor with the proper rated Brushless Electronic Speed Controller 
-    \begin{itemize}
-        \item Stator diameter and height and $\text{K}_{\text{v}}\; [\frac{
-        \text{RPM}}{\text{V}}]$ to be determined.
-    \end{itemize}
-    \item Power Supply or 3-6S Lithium-Ion/Polymer battery, with Voltmeter, Ammeter, and Watt-meter
+    \item Power Supply supplying operational voltage, with Voltmeter, Ammeter, and Watt-meter
     \item PWM Wave Generator or PWM/Servo Tester
-    \item 3-5 Two-Blade Propellers of same diameter (dependent on the motor specifications) and different twist
-    \item Thrust Stand with mounting for BLDC Motor and Placement of Load Cell
+    \item 3-5 Two-Blade Propellers of same diameter, dependent on the motor specifications, and different twist 
+    \item Thrust Stand/Arm with mounting for BLDC Motor
 \end{enumerate}
 \end{document}
