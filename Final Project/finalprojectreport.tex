@@ -1,0 +1,118 @@
+\documentclass{article}
+
+%package setup
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{comment}
+\usepackage{placeins}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{appendix}
+\usepackage{soul}
+\usepackage{comment}
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}
+\usepackage{matlab-prettifier}
+\usepackage{minted}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{textcomp, gensymb}
+\usepackage{caption}
+
+
+\pagestyle{fancy}
+\fancyhf{} % Clear header/footer settings
+\rhead{\thepage} % Page number on the right in the header
+\lhead{ASE375 Final Report} % Your lab report title on the left
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \includegraphics[width=10cm]{ase-logo-formal.png}  % Adjust the width as needed
+  \vspace{1cm}  % Add some vertical space
+ 
+  \Large \textbf{ASE 375 Electromechanical Systems}\\
+  \large \textbf{Section 14115}\\
+  \vspace{0.5cm}
+  \textbf{Monday: 3:00 - 6:00 pm}\\
+ 
+  \vspace{1cm}
+ 
+  \hrule
+  \vspace{0.5cm}
+ 
+  \Huge \textbf{Final Report:\\
+    Propeller Twist Effect on Efficiency}\\
+  \Huge \textbf{}\\
+ 
+  \vspace{0.5cm}
+  \hrule
+ 
+  \vspace{1cm}
+ 
+  \normalsize \textbf{Andrew Doty, Andres Suniaga, Dennis Hom}\\
+  \normalsize \textbf{Due Date: 05/02/2024}
+ 
+\end{titlepage}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\section{Introduction}
+% Talk about what we are calculating in this experiment and the purpose of this lab
+
+\section{Equipment}
+Measurement devices and hardware used in this lab include:
+\begin{itemize}
+
+\item Carbon Fiber Beam with Motor Mounting Holes: 
+\vspace{1mm}
+
+\vspace{2.5mm}
+
+\end{itemize}
+
+\section{Procedure}
+
+ 
+\section{Conclusion}
+
+\newpage
+\thispagestyle{empty}  % Clear header/footer
+\begin{center}
+	\vspace*{\fill}
+	{\Huge Appendix}
+	\vspace*{\fill}
+\end{center}
+
+% Start appendices
+\newpage
+\begin{appendices}
+\pagestyle{fancy}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+\pagebreak
+
+\hypertarget{datasheets}{}
+\section{Datasheets}
+\begin{enumerate}[label = {[\arabic*]}]
+\small
+\item \hypertarget{1}{Multistar Elite 2300KV Motors}
+\item ESC
+\item Propeller
+\item Servo Tester
+\item Photodiode
+\item NI9215
+\item AD623
+
+
+\end{enumerate}
+
+\end{appendices}
+
+\end{document}
