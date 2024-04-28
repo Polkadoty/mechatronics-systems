@@ -159,6 +159,8 @@ Used to capture images through a sequence of tensile loads applied to the test a
 \end{enumerate}
 \hypertarget{datapro}{}
 \section{Data Processing}
+Below shows the equations we used to compute the theoretical values and compare to our measured values as we will show in our results.
+
 \subsection{Variables and Equations}  
 
 Nominal Stress at a cross-section containing the hole diameter:
@@ -221,6 +223,8 @@ Theoretical Stress Concentration factor (for $0 \leq d \leq D$):
 %Organize images of the aluminum and polycarbonate in this section%
 %-----------------------------------------------------------------%
 
+The aluminum and polycarbonate test strips were subjected to tensile loading using the Instron 3300 Series Universal Testing Machine until failure. Digital Image Correlation (DIC) was employed to measure the strain distribution around the center hole of each test article. Figure 4 shows the aluminum strip at the point of breakage, while Figure 5 depicts the polycarbonate strip at failure. The failure patterns differ between the two materials due to their varying material properties.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{lab9images/aluminum_break.jpg}
@@ -235,12 +239,16 @@ Theoretical Stress Concentration factor (for $0 \leq d \leq D$):
     \label{fig:PCfail}
 \end{figure}
 
+DIC analysis was performed on the sequence of images captured during the tensile loading process. Figure 6 presents the strain distribution image for the aluminum strip at a load of 8 kN. The color plot clearly shows the concentration of strain around the center hole, with the highest strain values (indicated by the red and yellow regions) located near the hole's edge. Figure 7 provides the corresponding strain distribution plot along a vertical line drawn near the hole's edge. The peak strain value reaches approximately 0.15 at the hole's edge, demonstrating the stress concentration effect.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{lab9images/meow color plot aluminum.PNG}
     \caption{Aluminum strain distribution image at 8kN}
     \label{fig:al8kNpic}
 \end{figure}
+
+
 
 \begin{figure}[H]
     \centering
@@ -249,6 +257,8 @@ Theoretical Stress Concentration factor (for $0 \leq d \leq D$):
     \label{fig:al8kNplot}
 \end{figure}
 
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{lab9images/1800Npccolored_strainyy.PNG}
@@ -256,16 +266,58 @@ Theoretical Stress Concentration factor (for $0 \leq d \leq D$):
     \label{fig:PC1800Npic}
 \end{figure}
 
+Similarly, Figure 8 displays the strain distribution image for the polycarbonate strip at a load of 1800 N. The color plot reveals a more diffuse strain distribution compared to the aluminum strip, with the highest strain values concentrated around the center hole. Figure 9 shows the strain distribution plot for the polycarbonate strip, with a peak strain value of about 0.043 near the hole's edge.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.6\textwidth]{lab9images/1800Npcplot_strainyy.png}
     \caption{Poly-carbonate strain distribution plot at 1800N}
     \label{fig:PC1800Nplot}
 \end{figure}
+
+The force-displacement curves for both the aluminum and polycarbonate strips, as measured by the Instron machine, are presented in Figure 10. The aluminum strip exhibits a linear elastic behavior followed by a sudden failure, while the polycarbonate strip shows a more ductile response with a larger displacement before failure. This difference in behavior can be attributed to the inherent material properties of the two test articles, as shown in Table 2.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.6\textwidth]{lab9images/forcevsdisplacement.png}
+    \caption{Force vs Displacement on Instron Machine for Polycarbonate and Aluminum}
+    \label{fig:forcedisplacement}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.6\textwidth]{lab9images/strainvsforce.png}
+    \caption{Force vs Strain on Instron Machine for Polycarbonate and Aluminum}
+    \label{fig:strainforce}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+    \hline
+     & \textbf{Aluminum} & \textbf{PolyCarbonate} \\ \hline
+    Inner Diameter (d) & \(9.5\pm0.05\) & \(9.44\pm0.05\) \\ \hline
+    Outer Diameter (mm) & \(25.21\pm0.05\) & \(25.18\pm0.05\) \\ \hline
+    Thickness (mm) & \(1.4\pm0.05\) & \(2.79\pm0.05\) \\ \hline
+    \(\sigma_{\text{MAX}}\) (Mpa) & \(367.55255\) & \(58.92364157\) \\ \hline
+    Elastic Modulus (Gpa) & \(71.7\) & \(2\) \\ \hline
+    Strain at \(\sigma_{\text{MAX}}\) & \(0.148\) & \(0.09\) \\ \hline
+    \(K_t\) (Measured) & \(2.891\) & \(3.103\) \\ \hline
+    \(K_t\) (theoretical) & \(2.256\pm0.07\) & \(2.258\pm0.06\) \\ \hline
+    \end{tabular}
+    \caption{Comparison of Aluminum and PolyCarbonate properties}
+    \label{table:materials}
+\end{table}
+    
+The measured stress concentration factors (Kt) for the aluminum and polycarbonate strips are 2.891 and 3.103, respectively. These values are higher than the theoretical Kt values of 2.256 ± 0.07 and 2.258 ± 0.06, calculated using the provided equation. The discrepancy between the measured and theoretical values may be due to factors such as material imperfections, machining irregularities, or limitations in the DIC analysis.
  
 \section{Conclusion}
 
+In this experiment, the stress concentration effect around the center holes of aluminum and polycarbonate test strips was investigated using tensile loading and Digital Image Correlation (DIC). The results demonstrate that the presence of a hole in the test articles leads to a localized increase in strain, with the highest strain values observed near the hole's edge. The aluminum strip exhibited a brittle failure mode, while the polycarbonate strip showed a more ductile behavior, as evidenced by their respective force-displacement curves and failure patterns. \\
 
+The measured stress concentration factors (Kt) for both materials were found to be higher than the theoretical values, indicating the influence of factors not accounted for in the theoretical calculations. This discrepancy highlights the importance of experimental verification in determining the actual stress concentration effects in materials. \\
+
+The DIC technique proved to be a valuable tool for visualizing and quantifying the strain distribution around the center holes, providing insights into the local deformation behavior of the test articles. The results of this experiment emphasize the significance of considering stress concentration effects in the design and analysis of components containing discontinuities, such as holes, to ensure their structural integrity and performance.
 
 \newpage
 \thispagestyle{empty}  % Clear header/footer
