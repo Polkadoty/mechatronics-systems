@@ -129,12 +129,27 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
   \label{fig:labviewsetupfinal}
 \end{figure}
 
-%
+%finish trial procedure
 \begin{enumerate}
   \item 
 \end{enumerate}
 
 \section{Data Processing}
+%add in variables and equations used to calculate theoretical and measured values
+
+\subsection{Variables and Equations}  
+
+Angular Speed, Rotations Per Minute (RPM):
+\begin{equation}
+    \Omega = K_{v}\cdot V_{DC}
+\end{equation}
+
+Variables:
+\begin{itemize}
+    \item \(K_{v}\; \text{RPM/V}\):  RPM a motor will spin at full throttle
+    \item \(V_{DC}\): DC Voltage supplied to the motor
+\end{itemize}
+\vspace{5mm}
 
 \section{Results and Analysis}
 
@@ -209,7 +224,7 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
   % Uncertainty Calculation:  Uncertainty = sqrt( (0.05/Watts)^2 (StrainGage_STD/StrainGageValue)^2 ()^2 (DAQ)^2)
 
 \section{Conclusion}
-
+%Wrap up conclusion
 
 
 \newpage
