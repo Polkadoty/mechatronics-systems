@@ -76,47 +76,80 @@ Measurement devices and hardware used in this lab include:
 
   A cantilevered carbon fiber beam will be used to mount the motor, strain gages, and electronic speed controller. Below is the setup of the experiment:
 
-%   \begin{figure}
-%     \centering
-%     \includegraphics{}
-%     \caption{Caption}
-%     \label{fig:enter-label}
-% \end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{finalprojectimages/finalprojectsetup.png}
+    \caption{Experiment Setup}
+    \label{fig:finalsetup}
+  \end{figure}
 
 
   \vspace{2.5mm}
 
-  \item Dummy resistors. Specifically, a 10k$\Omega$ resistor, a 1k$\Omega$ resistor, and two 350$\Omega$ resistors will be used in the circuit. The two 350 $\Omega$ resistors will be used as dummy resistors for the wheatstone bridge configuration, and the 10k$\Omega$ and 1k$\Omega$ resistors will be used for the photodiode circuit.
   \item Two strain gages, one placed on the top of the carbon-fiber beam and one placed on the bottom. The strain gages will be connected to a DAQ to measure the strain on the beam.
-  \item NI-9215 DAQ to measure the strain gage and photodiode output.
-  \item Amplifier (AD623), to amplify the output of the strain gages and reduce the impact of bias error.
-  \item 650nm Laser Pointer (red). The laser pointer is placed above the propeller offset by 2-3 centimeters from the center and shines through it to hit the photodiode.
-  \item Si Photodiode, which converts optical power to electrical current. This in concert with the laser pointer will measure the RPM of the propeller, as the propeller will break the beam twice per rotation.
-  \item BLDC Motor with the proper rated Brushless Electronic Speed Controller 
-  \item Power Supply supplying operational voltage, with Voltmeter, Ammeter, and Watt-meter
-  \item PWM Wave Generator or PWM/Servo Tester
-  \item 2 Two-Blade Propellers of same diameter and different twist (6x6 in and 6x5.5in)
-  \item Thrust Stand/Arm with mounting for BLDC Motor, this uses aluminum 40/40 extrusions to mount the motor and propeller.
-  \item Breadboard and wires to connect the circuit.
+  \item NI-9215 DAQ \hypertarget{7}{[7]} to measure the strain gage and photodiode electrical output.
+  \item Instrumentation Amplifier (AD623) \hypertarget{8}{[8]}, to amplify the output of the strain gages and reduce the impact of bias error.
+  \item 650nm Laser Pointer (Red). The laser pointer is placed above the propeller offset by 2-3 centimeters from the center and shines through it to hit the photodiode.
+  \item Si Photodiode \hypertarget{6}{[6]}, which converts optical power to electrical current. This in concert with the laser pointer will measure the RPM of the propeller, as the propeller will break the beam twice per rotation.
+  \item BLDC Motor \hyperlink{1}{[1]} with 20A Brushless Electronic Speed Controller (ESC) \hyperlink{2}{[2]} 
+  \item DC Power Supply supplying operational voltage (Replicating 3-Cell Lithium Polymer Battery, 11.1 V), and Watt-meter (\(\epsilon_{b} = 0.05\; \text{W}\)) \hypertarget{9}{[9]}
+  \item Servo Tester \hypertarget{5}{[5]} used to send PWM signal to ESC to spin the DC motor at a certain angular rate.
+  \item 2 Two-Blade Propellers of 6" diameter and different twist (6x6 \hypertarget{3}{[3]} 6x5.5 \hypertarget{4}{[4]})
+  \item Breadboard and wires to connect the circuit. A 10k$\Omega$ resistor, 1k$\Omega$ resistor, and two 350$\Omega$ resistors will be used in the circuit. The two 350 $\Omega$ resistors will be used as dummy resistors for the wheatstone half-bridge configuration (Configuration B used as shown in Lab 5), and the 10k$\Omega$ and 1k$\Omega$ resistors will be used for the photodiode circuit. The full circuit is shown below:
+  \vspace{1mm}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{finalprojectimages/finalsetupcircuit.jpg}
+    \caption{Circuit for Photodiode and Strain Gages}
+    \label{fig:finalsetupcircuit}
+  \end{figure}
+
 \end{enumerate}
 
-To prepare the carbon fiber beam for the strain gages, we sanded down the beam with 80, 120, and 220 grit sandpaper. We then cleaned the beam with isopropyl alcohol and applied the strain gages to the beam with superglue as performed in lab 4. The strain gages were connected to a DAQ and dummy resistors to calibrate the strain gages.
+NOTE: To prepare the carbon fiber beam for the strain gages, we sanded down the beam with 80, 120, and 220 grit sandpaper. We then cleaned the beam with isopropyl alcohol and applied the strain gages to the beam with superglue as performed in lab 4. The strain gages were connected to a DAQ and dummy resistors to calibrate the strain gages.
+\vspace{1mm}
 
-After some initial testing, the strain gage output was not considered distinguishable from the bias error. To reduce the impact of bias error, we used an amplifier (AD623) to amplify the output of the strain gages as requested by Dr. Sirohi. This greatly improved the accuracy of our results.  
+After some initial testing, the strain gage output was not considered distinguishable from the digitization error. To reduce the impact of this digitization error, we used an amplifier (AD623) to amplify the output of the strain gages.  
 
 \section{Procedure}
 
 \subsection{Strain Gage Calibration}
 
-For calibration, as in lab 3, variable weights were placed on the far end of the cantilevered beam. The strain gage output was recorded at each weight increment, loading from 0 to 250 grams and then unloading back to 0 grams. The strain gage output was tared before the loading and unloading process.
+For calibration, as in Lab 3, variable brass-slotted weights were placed on the tip end of the cantilevered beam. The strain gage output was recorded at each weight increment, loading from 0 to 250 grams and then unloading back to 0 grams. The strain gage output was tared before the loading and unloading process.
 
 \subsection{Trial Procedure}
+Before beginning the trials, ensure the LabVIEW model is set up as shown below:
+%put labview setup image here
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.5\textwidth]{finalprojectimages/labviewfinalprojectmodel.PNG}
+  \caption{LabVIEW Model for Photodiode and Strain Gages}
+  \label{fig:labviewsetupfinal}
+\end{figure}
 
+%finish trial procedure
+\begin{enumerate}
+  \item 
+\end{enumerate}
 
 \section{Data Processing}
+%add in variables and equations used to calculate theoretical and measured values
 
+\subsection{Variables and Equations}  
 
+Angular Speed, Rotations Per Minute (RPM):
+\begin{equation}
+    \Omega = K_{v}\cdot V_{DC}
+\end{equation}
+
+Variables:
+\begin{itemize}
+    \item \(K_{v}\; \text{RPM/V}\):  RPM a motor will spin at full throttle
+    \item \(V_{DC}\): DC Voltage supplied to the motor
+\end{itemize}
+\vspace{5mm}
 
 \section{Results and Analysis}
 
@@ -151,9 +184,9 @@ For calibration, as in lab 3, variable weights were placed on the far end of the
   RPM (measured) & 26453.2969 & 27705.3444 \\
   RPM (Theoretical) & 26197 & 26990 \\
   RPM (\% error) & 0.97834 & 2.6504 \\
-  Force (N) & 1.2674 & 1.4088 \\
+  Force (g) & 129.1952 & 143.6091 \\
   Wattage (W) & 45.55 & 46.7 \\
-  Efficiency & 2.7823 & 3.0168 \\
+  Thrust-to-Power (g/W) & 2.8363 & 3.0751 \\
   Uncertainty (\%) & 0.017541 & 0.016756 \\
   \hline
   \end{tabular}
@@ -161,6 +194,7 @@ For calibration, as in lab 3, variable weights were placed on the far end of the
   \label{table:propeller_comparison1}
   \end{table}
 
+  
 \begin{table}[h!]
   \centering
   \begin{tabular}{lcc}
@@ -171,9 +205,9 @@ For calibration, as in lab 3, variable weights were placed on the far end of the
   RPM (measured) & 25883.3191 & 26272.3077 \\
   RPM (Theoretical) & 26197 & 26990 \\
   RPM (\% error) & 1.1974 & 2.6591 \\
-  Force (N) & 1.2653 & 1.4337 \\
+  Force (g) & 128.9811 & 146.1474 \\
   Wattage (W) & 44.25 & 47.3 \\
-  Efficiency & 2.8594 & 3.031 \\
+  Thrust-to-Power (g/W) & 2.9148 & 3.3028 \\
   Uncertainty (\%) & 0.017554 & 0.01674 \\
   \hline
   \end{tabular}
@@ -181,8 +215,17 @@ For calibration, as in lab 3, variable weights were placed on the far end of the
   \label{table:propeller_performance2}
   \end{table}
   
+  For Uncertainty in the Thrust to Power ratio, the Wattage, Strain Gage, and DAQ were all sources of error. It was calculated using \begin{equation}
+    \epsilon = \sqrt{ \frac{\delta x_1}{x_1}^2 + \cdots + \frac{\delta x_n}{x_n}^2} = \sqrt{ \frac{\delta W}{W}^2 + \frac{\delta \epsilon_{SG}}{\epsilon_{SG}}^2 + (\epsilon_{DAQ})^2}
+   \end{equation}
+   where \begin{equation}
+    \delta W = 0.05 W, \quad \delta \epsilon_{SG} = 0.0002, \quad \text{and} \quad \epsilon_{DAQ} = \frac{5V}{2^{16}-1} 
+  \end{equation} 
+  % Uncertainty Calculation:  Uncertainty = sqrt( (0.05/Watts)^2 (StrainGage_STD/StrainGageValue)^2 ()^2 (DAQ)^2)
 
 \section{Conclusion}
+%Wrap up conclusion
+
 
 \newpage
 \thispagestyle{empty}  % Clear header/footer
@@ -205,15 +248,15 @@ For calibration, as in lab 3, variable weights were placed on the far end of the
 \section{Datasheets}
 \begin{enumerate}[label = {[\arabic*]}]
 \small
-\item \hypertarget{1}{Multistar Elite 2300KV Motors}
-\item ESC
-\item Propeller
-\item Servo Tester
-\item Photodiode
-\item NI9215
-\item AD623
-
-
+\item \hypertarget{1}{\href{https://hobbyking.com/en_us/multistar-elite-2204-2300kv-multi-rotor-motor-cw-prop-adapter.html}{Multistar Elite 2204-2300KV Multi-Rotor Motor}}
+\item \hypertarget{2}{\href{https://hobbyking.com/en_us/afro-20a-race-spec-mini-esc-with-bec.html}{ Afro 20A Race Spec Mini ESC with BEC}}
+\item \hypertarget{3}{\href{https://www.apcprop.com/product/6x6e/}{APC 6x6E Propeller}}
+\item \hypertarget{4}{\href{https://www.apcprop.com/product/6x5-5e/}{APC 6x5.5E Propeller}}
+\item \hypertarget{5}{\href{https://hitecrcd.com/products/servos/discontinued-servos-servo-accessories/discontinued-programmers/hfp-25-digital-servo-programmer-tester-2/product}{HFP-25 Digital Servo Programmer \& Tester}}
+\item \hypertarget{6}{\href{https://www.thorlabs.com/drawings/e7e91d1f442ec5dc-834C7101-FD1F-1B62-609D921F0FC0E314/FDS1010-SpecSheet.pdf}{Silicon Photodiode, FDS1010}}
+\item \hypertarget{7}{\href{https://www.amc-systeme.de/files/pdf/ni-9215-amc.pdf}{NI-9215 Datasheet}}
+\item \hypertarget{8}{\href{https://www.analog.com/media/en/technical-documentation/data-sheets/ad623.pdf}{AD623 Instrumentation Amplifier Datasheet}}
+\item \hypertarget{9}{\href{https://www.amazon.com/Analyzer-Digital-Balance-Battery-Voltage/dp/B0753DPC2D/ref=asc_df_B0753DPC2D/?tag=hyprod-20&linkCode=df0&hvadid=309806250188&hvpos=&hvnetw=g&hvrand=1339579772044864897&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9028280&hvtargid=pla-567839154382&psc=1&mcid=0273f08627a23b188506d62979b40559&gclid=CjwKCAjw57exBhAsEiwAaIxaZg9oUrMDzZ3wh-Y_MJXKuUsgDDHnvtvx1OtjC213FpZroDuJ3cO4sBoCM-YQAvD_BwE}{RC Watt Meter DC 60V/100A }}
 \end{enumerate}
 
 \end{appendices}
