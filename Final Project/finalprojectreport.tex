@@ -84,7 +84,7 @@ Measurement devices and hardware used in this lab include:
   \end{figure}
 
 
-  \vspace{2.5mm}
+   \vspace{2.5mm}
 
   \item Two strain gages, one placed on the top of the carbon-fiber beam and one placed on the bottom. The strain gages will be connected to a DAQ to measure the strain on the beam.
   \item NI-9215 DAQ \hyperlink{7}{[7]} to measure the strain gage and photodiode electrical output.
@@ -116,7 +116,11 @@ After some initial testing, the strain gage output was not considered distinguis
 
 \subsection{Strain Gage Calibration}
 
-For calibration, as in Lab 3, variable brass-slotted weights were placed on the tip end of the cantilevered beam. The strain gage output was recorded at each weight increment, loading from 0 to 250 grams and then unloading back to 0 grams. The strain gage output was tared before the loading and unloading process.
+For calibration, variable brass-slotted weights were placed on the tip end of the cantilevered beam. The strain gage output was recorded at the following weights:
+\begin{equation}
+    W = [0, 50, 90, 130, 170, 210, 250, 210, 170, 130, 90, 50, 0]
+\end{equation}
+The half-bridge configuration allows for the linearity to be constant while increasing and decreasing the weights.
 
 \subsection{Trial Procedure}
 Before beginning the trials, ensure the LabVIEW model is set up as shown below:
@@ -124,7 +128,7 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.9\textwidth]{finalprojectimages/labviewfinalprojectmodel.PNG}
+  \includegraphics[width = \textwidth]{finalprojectimages/labviewfinalprojectmodel.PNG}
   \caption{LabVIEW Model for Photodiode and Strain Gages}
   \label{fig:labviewsetupfinal}
 \end{figure}
@@ -142,38 +146,82 @@ Listed below are the steps to take to run this experiment:
 
 Angular Speed, Rotations Per Minute (RPM):
 \begin{equation}
-    \Omega = K_{v}\cdot V_{DC}
+    \Omega_{\text{Theoretical}} = K_{v}\cdot V_{DC}
+\end{equation}
+\begin{equation}
+    \Omega_{\text{Measured}} = \frac{60}{\left(\frac{T}{2}\right)}
 \end{equation}
 
 Variables:
 \begin{itemize}
     \item \(K_{v}\; \text{RPM/V}\):  RPM a motor will spin at full throttle
     \item \(V_{DC}\): DC Voltage supplied to the motor
+    \item \(T\): Period of the Photodiode (seconds)
+\end{itemize}
+
+\vspace{5mm}
+Thrust-To-Power Ratio
+\begin{equation}
+    \eta = \frac{F_{T}}{W}
+\end{equation}
+
+Variables:
+\begin{itemize}
+    \item \(F_{T}\): Thrust (grams-force)
+    \item \(W\): Electrical Power Consumption (Watts)
 \end{itemize}
 \vspace{5mm}
 
+Gain of the AD623:
+\begin{equation}
+    G = \dfrac{100\text{k}\Omega}{R_{G}}
+\end{equation}
+
+Variables:
+\begin{itemize}
+    \item \(R_{G}\): Gain Resistor (2.7k$\Omega$)
+\end{itemize}
+
 \section{Results and Analysis}
+% SOMEONE PUT STRAIN GAGE GRAPH HERE %
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.75\textwidth]{finalprojectimages/Trial1_ForcevTime.png}
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/StrainGageCalibration.png}
+  \caption{Strain Gage Calibration}
+  \label{fig:strain gage}
+\end{figure}
+
+
+The slope of Figure \ref{fig:strain gage} is the ratio at which the strain gage linear increases Voltage as the Force applied increases.  Using the calibration as reference, the ratio can be defined as,
+\begin{equation*}
+   \text{Force}_{\text{NEWTONS}} = \frac{1}{59638.7}\; V
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial1_ForcevTime.png}
   \caption{Force vs Time for Trial 1}
   \label{fig:forcevtime}
 \end{figure}
+% CAN SOMEONE PUT TRIAL 1 AND 2 NEXT TO EACHOTHER INSTEAD OF ON TOP? IDK IF THEY ARE TBH I CANT COMPILE RN
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial2_ForcevTime.png}
+  \caption{Force vs Time for Trial 2}
+  \label{fig:forcevtime2}
+\end{figure}
+
+After applying the Calibration Constant to the data with the propellers, a Gaussian filter was used to smooth out the data.  The resultant data was the same in both trials, with the (6x5.5) Propeller providing slightly more thrust than the (6x6).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.75\textwidth]{finalprojectimages/Trial1_PhotoDiode.png}
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial1_PhotoDiode.png}
   \caption{Photodiode Output for Trial 1}
   \label{fig:photodiode}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 0.75\textwidth]{finalprojectimages/Trial2_ForcevTime.png}
-  \caption{Force vs Time for Trial 2}
-  \label{fig:forcevtime2}
-\end{figure}
+To measure the angular rate of each propeller, the photodiode response was recorded.  The time difference between two consecutive photodiode peaks was considered its period, and since the photodiode responded twice per rotation, the period was divided by 2.  As shown in eq. XX, the periods were calculated and are shown in Table. XXX
 
 \begin{table}[H]
   \centering
@@ -188,13 +236,14 @@ Variables:
   Force (g) & 129.1952 & 143.6091 \\
   Wattage (W) & 45.55 & 46.7 \\
   Thrust-to-Power (g/W) & 2.8363 & 3.0751 \\
-  Uncertainty (\%) & 0.017541 & 0.016756 \\
+  Uncertainty (\%) & 1.77541 & 1.6756 \\
   \hline
   \end{tabular}
   \caption{Comparison of Propeller Performance - Trial 1}
   \label{table:propeller_comparison1}
   \end{table}
 
+The data from Trial 1 is contained in Table. XX.  The measured RPM for the (6x6) propeller was less than 1\% off of the theoretical, whereas the (6x5.5) propeller was slightly more inaccurate at 2.65\%.  The (6x5.5) Propeller required higher wattage, but produced higher thrust force in return.  The thrust-to-power ratio (g/W) was not significantly affected by the higher wattage, as the (6x5.5) propeller remained slightly more efficient than the (6x6).  
   
 \begin{table}[H]
   \centering
@@ -209,12 +258,14 @@ Variables:
   Force (g) & 128.9811 & 146.1474 \\
   Wattage (W) & 44.25 & 47.3 \\
   Thrust-to-Power (g/W) & 2.9148 & 3.3028 \\
-  Uncertainty (\%) & 0.017554 & 0.01674 \\
+  Uncertainty (\%) & 1.7554 & 1.674 \\
   \hline
   \end{tabular}
   \caption{Comparison of Propeller Performance - Trial 2}
   \label{table:propeller_performance2}
   \end{table}
+
+Table XX. contains Trial 2.  Nearly every observation made in Trial 1 is also made here.  The force generated by each propeller was nearly identical across both trials, and the uncertainty remained under 2\% for each individual Propeller.  
   
   For Uncertainty in the Thrust to Power ratio, the Wattage, Strain Gage, and DAQ were all sources of error. It was calculated using \begin{equation}
     \epsilon = \sqrt{ \frac{\delta x_1}{x_1}^2 + \cdots + \frac{\delta x_n}{x_n}^2} = \sqrt{ \frac{\delta W}{W}^2 + \frac{\delta \epsilon_{SG}}{\epsilon_{SG}}^2 + (\epsilon_{DAQ})^2}
