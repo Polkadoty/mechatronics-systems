@@ -78,29 +78,29 @@ Measurement devices and hardware used in this lab include:
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{finalprojectimages/finalprojectsetup.png}
+    \includegraphics[width = 0.85\textwidth]{finalprojectimages/finalprojectsetup.png}
     \caption{Experiment Setup}
     \label{fig:finalsetup}
   \end{figure}
 
 
-  \vspace{2.5mm}
+   \vspace{2.5mm}
 
   \item Two strain gages, one placed on the top of the carbon-fiber beam and one placed on the bottom. The strain gages will be connected to a DAQ to measure the strain on the beam.
-  \item NI-9215 DAQ \hypertarget{7}{[7]} to measure the strain gage and photodiode electrical output.
+  \item NI-9215 DAQ \hyperlink{7}{[7]} to measure the strain gage and photodiode electrical output.
   \item Instrumentation Amplifier (AD623) \hypertarget{8}{[8]}, to amplify the output of the strain gages and reduce the impact of bias error.
   \item 650nm Laser Pointer (Red). The laser pointer is placed above the propeller offset by 2-3 centimeters from the center and shines through it to hit the photodiode.
-  \item Si Photodiode \hypertarget{6}{[6]}, which converts optical power to electrical current. This in concert with the laser pointer will measure the RPM of the propeller, as the propeller will break the beam twice per rotation.
+  \item Si Photodiode \hyperlink{6}{[6]}, which converts optical power to electrical current. This in concert with the laser pointer will measure the RPM of the propeller, as the propeller will break the beam twice per rotation.
   \item BLDC Motor \hyperlink{1}{[1]} with 20A Brushless Electronic Speed Controller (ESC) \hyperlink{2}{[2]} 
-  \item DC Power Supply supplying operational voltage (Replicating 3-Cell Lithium Polymer Battery, 11.1 V), and Watt-meter (\(\epsilon_{b} = 0.05\; \text{W}\)) \hypertarget{9}{[9]}
-  \item Servo Tester \hypertarget{5}{[5]} used to send PWM signal to ESC to spin the DC motor at a certain angular rate.
-  \item 2 Two-Blade Propellers of 6" diameter and different twist (6x6 \hypertarget{3}{[3]} 6x5.5 \hypertarget{4}{[4]})
-  \item Breadboard and wires to connect the circuit. A 10k$\Omega$ resistor, 1k$\Omega$ resistor, and two 350$\Omega$ resistors will be used in the circuit. The two 350 $\Omega$ resistors will be used as dummy resistors for the wheatstone half-bridge configuration (Configuration B used as shown in Lab 5), and the 10k$\Omega$ and 1k$\Omega$ resistors will be used for the photodiode circuit. The full circuit is shown below:
+  \item DC Power Supply supplying operational voltage (Replicating 3-Cell Lithium Polymer Battery, 11.1 V), and Watt-meter (\(\epsilon_{b} = 0.05\; \text{W}\)) \hyperlink{9}{[9]}
+  \item Servo Tester \hyperlink{5}{[5]} used to send PWM signal to ESC to spin the DC motor at a certain angular rate.
+  \item 2 Two-Blade Propellers of 6" diameter and different twist (6x6 \hyperlink{3}{[3]} 6x5.5 \hyperlink{4}{[4]})
+  \item Breadboard and wires to connect the circuit. A 10k$\Omega$ resistor, 1k$\Omega$ resistor, a 2.7k$\Omega$ resistor, and two 350$\Omega$ resistors will be used in the circuit. The two 350 $\Omega$ resistors will be used as dummy resistors for the Wheatstone half-bridge configuration (Configuration B used as shown in Lab 5), and the 10k$\Omega$ and 1k$\Omega$ resistors will be used for the photo-diode circuit. The 2.7k$\Omega$ resistor is used to set the gain for the instrumentation amplifier. The full circuit is shown below:
   \vspace{1mm}
 
   \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{finalprojectimages/finalsetupcircuit.jpg}
+    \includegraphics[width = 0.8\textwidth]{finalprojectimages/finalsetupcircuit.jpg}
     \caption{Circuit for Photodiode and Strain Gages}
     \label{fig:finalsetupcircuit}
   \end{figure}
@@ -128,14 +128,15 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.5\textwidth]{finalprojectimages/labviewfinalprojectmodel.PNG}
+  \includegraphics[width = \textwidth]{finalprojectimages/labviewfinalprojectmodel.PNG}
   \caption{LabVIEW Model for Photodiode and Strain Gages}
   \label{fig:labviewsetupfinal}
 \end{figure}
 
 %finish trial procedure
+Listed below are the steps to take to run this experiment:
 \begin{enumerate}
-  \item 
+  \item Begin by
 \end{enumerate}
 
 \section{Data Processing}
@@ -145,10 +146,10 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
 
 Angular Speed, Rotations Per Minute (RPM):
 \begin{equation}
-    \Omega_{Theoretical} = K_{v}\cdot V_{DC}
+    \Omega_{\text{Theoretical}} = K_{v}\cdot V_{DC}
 \end{equation}
 \begin{equation}
-    \Omega_{Measured} = \frac{60}{\frac{T}{2}}
+    \Omega_{\text{Measured}} = \frac{60}{\left(\frac{T}{2}\right)}
 \end{equation}
 
 Variables:
@@ -161,43 +162,61 @@ Variables:
 \vspace{5mm}
 Thrust-To-Power Ratio
 \begin{equation}
-    \eta = \frac{m}{W}
+    \eta = \frac{F_{T}}{W}
 \end{equation}
 
 Variables:
 \begin{itemize}
-    \item \(m\): Mass (grams)
-    \item \(W\): Wattage
+    \item \(F_{T}\): Thrust (grams-force)
+    \item \(W\): Electrical Power Consumption (Watts)
 \end{itemize}
 \vspace{5mm}
+
+Gain of the AD623:
+\begin{equation}
+    G = \dfrac{100\text{k}\Omega}{R_{G}}
+\end{equation}
+
+Variables:
+\begin{itemize}
+    \item \(R_{G}\): Gain Resistor (2.7k$\Omega$)
+\end{itemize}
 
 \section{Results and Analysis}
 % SOMEONE PUT STRAIN GAGE GRAPH HERE %
 
-The slope of figure XXX is the ratio at which the strain gage linear increases Voltage as the Force applied increases.  Using the calibration as reference, the ratio can be defined as 
-\begin{equation}
-   Force_{NEWTONS} = \frac{1}{59638.7} V
-   \end{equation}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/StrainGageCalibration.png}
+  \caption{Strain Gage Calibration}
+  \label{fig:strain gage}
+\end{figure}
+
+
+The slope of Figure \ref{fig:strain gage} is the ratio at which the strain gage linear increases Voltage as the Force applied increases.  Using the calibration as reference, the ratio can be defined as,
+\begin{equation*}
+   \text{Force}_{\text{NEWTONS}} = \frac{1}{59638.7}\; V
+\end{equation*}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.5\textwidth]{finalprojectimages/Trial1_ForcevTime.png}
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial1_ForcevTime.png}
   \caption{Force vs Time for Trial 1}
   \label{fig:forcevtime}
 \end{figure}
 % CAN SOMEONE PUT TRIAL 1 AND 2 NEXT TO EACHOTHER INSTEAD OF ON TOP? IDK IF THEY ARE TBH I CANT COMPILE RN
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.5\textwidth]{finalprojectimages/Trial2_ForcevTime.png}
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial2_ForcevTime.png}
   \caption{Force vs Time for Trial 2}
   \label{fig:forcevtime2}
 \end{figure}
 
-After applying the Calibration Constant to the data with the propellers, a Gaussian filter was used to smooth out the data.  The resultant data was the same in both trials, with the (6x5.5) Propeller providing slightly more thrust than the (6x6) 
+After applying the Calibration Constant to the data with the propellers, a Gaussian filter was used to smooth out the data.  The resultant data was the same in both trials, with the (6x5.5) Propeller providing slightly more thrust than the (6x6).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.5\textwidth]{finalprojectimages/Trial1_PhotoDiode.png}
+  \includegraphics[width = 0.85\textwidth]{finalprojectimages/Trial1_PhotoDiode.png}
   \caption{Photodiode Output for Trial 1}
   \label{fig:photodiode}
 \end{figure}
@@ -226,7 +245,7 @@ To measure the angular rate of each propeller, the photodiode response was recor
 
 The data from Trial 1 is contained in Table. XX.  The measured RPM for the (6x6) propeller was less than 1\% off of the theoretical, whereas the (6x5.5) propeller was slightly more inaccurate at 2.65\%.  The (6x5.5) Propeller required higher wattage, but produced higher thrust force in return.  The thrust-to-power ratio (g/W) was not significantly affected by the higher wattage, as the (6x5.5) propeller remained slightly more efficient than the (6x6).  
   
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{lcc}
   \hline
