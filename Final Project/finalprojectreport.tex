@@ -141,13 +141,17 @@ Before beginning the trials, ensure the LabVIEW model is set up as shown below:
 
 Angular Speed, Rotations Per Minute (RPM):
 \begin{equation}
-    \Omega = K_{v}\cdot V_{DC}
+    \Omega_{Theoretical} = K_{v}\cdot V_{DC}
+\end{equation}
+\begin{equation}
+    \Omega_{Measured} = \frac{60}{\frac{T}{2}}
 \end{equation}
 
 Variables:
 \begin{itemize}
     \item \(K_{v}\; \text{RPM/V}\):  RPM a motor will spin at full throttle
     \item \(V_{DC}\): DC Voltage supplied to the motor
+    \item \(T\): Period of the Photodiode (seconds)
 \end{itemize}
 \vspace{5mm}
 
